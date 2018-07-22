@@ -1,1 +1,1 @@
-# jonny-cho.github.io
+[블로그](https://jonny-cho.github.io)
