@@ -3,7 +3,7 @@ title: 'JonnyCho'
 tagline: '개발의숲 블로그'
 description: 'A Jekyll theme adapted from <a href="http://lanyon.getpoole.com/" target="_blank">Lanyon</a>. Made by <a href="http://codinfox.github.io" target="_blank">@codinfox</a>.'
 baseurl: ""
-url: http://jonny-cho.github.io
+url: http://jonny-cho.github.io 
 logo: '/public/logo.png'
 
 # Site configurations

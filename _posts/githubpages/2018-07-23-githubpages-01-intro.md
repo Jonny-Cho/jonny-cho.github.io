@@ -1,12 +1,10 @@
 ---
 layout: post
-title: 지킬로 Github Pages 블로그 만들기 1
+title: 지킬로 Github Pages 블로그 만들기
 category: githubpages
 tags: [githubpages]
 comments: true
 ---
-
-# 지킬로 Github Pages 블로그 만들기 1
 
 ## 깃허브 아이디 만들기
 
@@ -35,6 +33,7 @@ git push
 ---
 
 ### 참고자료
-* [How to create Jekyll blog using Github Pages - Tutorial 4](https://youtu.be/U0idtvxVo9I)
-* [codinfox](http://codinfox.github.io/)
-* [초보몽키의 개발공부로그](https://wayhome25.github.io/)
+* [깃허브 코드 확인](https://github.com/Jonny-Cho/jonny-cho.github.io/commit/6e69c6e9e7122c56f5e56ed6cc5437fe1f263c11){: target="_blank" }
+* [How to create Jekyll blog using Github Pages - Tutorial 4](https://youtu.be/U0idtvxVo9I){: target="_blank" }
+* [codinfox](http://codinfox.github.io/){: target="_blank" }
+* [초보몽키의 개발공부로그](https://wayhome25.github.io/){: target="_blank" }
