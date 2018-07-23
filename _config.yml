@@ -48,7 +48,7 @@ nav:
     - { javascript: '/blog/categories/#javascript' }
     - { nodejs: '/blog/categories/#nodejs' }
     - { MySQL: '/blog/categories/#mySQL' }
-    - { 알고리즘 문제풀이: '/blog/categories/#알고리즘-문제풀이' }
+    - { 알고리즘 문제풀이: '/blog/categories/#algorithm' }
     - { git: '/blog/categories/#git' }
     - { github pages: '/blog/categories/#githubpages' }
     - { etc: '/blog/categories/#etc' }
