@@ -9,11 +9,12 @@
       <div class="sidebar-personal-info-section">
         <a href="http://github.com/jonny-cho">
           <img src="/public/logo.png" title="View on Gravatar" alt="View on Gravatar" />
+          </div>
+          <div class="sidebar-personal-info-section">
+            <p>{{ site.author.description }}</p>
+          </div>
         </a>
-      </div>
-      <div class="sidebar-personal-info-section">
-        <p>{{ site.author.description }}</p>
-      </div>
+      
       {% if site.author.contact %}
       {% assign len = site.author.contact | size %}
       {% assign current_index = 0 %}
