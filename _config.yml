@@ -20,12 +20,10 @@ paginate: 5
 paginate_path: '/blog/page:num'
 permalink: pretty
 
-# version: 1.0.0
-
 # About/contact
 author:
   name: Jonny
-  description: Jonny blog using githubpages and jekyll.
+  description: 프로그래밍 공부를 기록하는 공간입니다
   gravatar: 3c2986ad7ac1f2230ea3596f44563328 # md5 hash of your email address
   contact:
     # linkedin:  https://www.linkedin.com/in/lizhihao
