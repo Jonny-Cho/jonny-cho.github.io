@@ -27,9 +27,11 @@ category: githubpages
 tags: [githubpages] #[태그1, 태그2] 같이 여러 태그들을 사용할 수 있다.
 comments: true
 ---
-```
+
 
 이 부분에 마크다운 문법으로 글을 쓴다
+
+```
 
 ## git commit 하기
 ```shell
