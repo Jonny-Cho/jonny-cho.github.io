@@ -31,3 +31,10 @@ git push
 * CSS적용이 안되었다. 개발자 도구로 확인해보면 CSS링크가 다른 것을 확인 할 수 있다.
 * _config.yml 파일에 들어가서 baseurl: ”” 으로 바꿔준다. (따옴표안에 경로가 지정되어 있던 것을 삭제해준다)
 * 새로고침해보자. 1단계 클리어.
+
+---
+
+### 참고자료
+* [How to create Jekyll blog using Github Pages - Tutorial 4](https://youtu.be/U0idtvxVo9I)
+* [codinfox](http://codinfox.github.io/)
+* [초보몽키의 개발공부로그](https://wayhome25.github.io/)
