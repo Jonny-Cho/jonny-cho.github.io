@@ -56,8 +56,8 @@ nav:
 
   About:          
     - '/about/'
-  Search:
-    - '/search/'
+  # Search:
+  #   - '/search/'
 
 # Where are tags and categories displayed
 tag_page: '/blog/tags/'
