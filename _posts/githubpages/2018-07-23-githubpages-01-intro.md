@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 생활코딩 git 01 - add, commit, log, diff, reset, revert
-category: git
-tags: [git]
+title: 지킬로 Github Pages 블로그 만들기 1
+category: githubpages
+tags: [git, githubpages, jekyll]
 comments: true
 ---
 
