@@ -1,6 +1,6 @@
 # Site Info
 title: 'JonnyCho'
-tagline: '개발의 숲 블로그'
+tagline: '개발의숲 블로그'
 description: 'A Jekyll theme adapted from <a href="http://lanyon.getpoole.com/" target="_blank">Lanyon</a>. Made by <a href="http://codinfox.github.io" target="_blank">@codinfox</a>.'
 baseurl: ""
 url: http://jonny-cho.github.io
@@ -20,7 +20,7 @@ paginate: 5
 paginate_path: '/blog/page:num'
 permalink: pretty
 
-version: 1.0.0
+# version: 1.0.0
 
 # About/contact
 author:
@@ -33,31 +33,44 @@ author:
     # facebook:  <hide>
     # twitter:   https://twitter.com/Li_Zhihao
     # weibo:     http://weibo.com/41173780
-    email:     matilto:andante2183@gmail.com
+    email:     mailto:andante2183@gmail.com
 
 # Navigation (2nd level links supported)
 nav:
   Home:           
-    - '/'
-  Blog:           
     - '/blog/'
-    - { Categories: '/blog/categories/' }
-    - { Tags: '/blog/tags/' }
+  Categories:           
+    - '/'
+    # - { Categories All: '/blog/categories/' }
+    - { 개발일기: '/blog/categories/#dev' }
+    - { 컴퓨터공학 : '/blog/categories/#cs' }
+    - { Python & Django: '/blog/categories/#python' }
+    - { JAVA: '/blog/categories/#java' }
+    - { Ruby on Rails: '/blog/categories/#ror' }
+    - { javascript: '/blog/categories/#javascript' }
+    - { nodejs: '/blog/categories/#nodejs' }
+    - { MySQL: '/blog/categories/#mySQL' }
+    - { 알고리즘 문제풀이: '/blog/categories/#알고리즘-문제풀이' }
+    - { git: '/blog/categories/#git' }
+    - { github pages: '/blog/categories/#githubpages' }
+    - { etc: '/blog/categories/#etc' }
+    # - { Tags: '/blog/tags/' }
+
   About:          
     - '/about/'
-  Github Project: 
-    - 'http://jonny-cho.github.io/'
+  Search:
+    - '/search/'
 
 # Where are tags and categories displayed
 tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 
-hero:
-  image: /public/img/we_will_be_giants_by_yalestewart.jpg
-  caption: Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
+# hero:
+#   image: /public/img/we_will_be_giants_by_yalestewart.jpg
+#   caption: Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
 
 # Puglins
 mathjax: true # whether support mathjax
 google_analytics_token: 'UA-122658187-1' # leave blank if you don't want google analytics
-disqus_short_name: 'jonnycho' # leave blank if you don't want disqus
+disqus_short_name: 'andante2183' # leave blank if you don't want disqus
 
