@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 마크다운으로 포스팅 하기
+title: 03-마크다운으로 포스팅 하기
 category: githubpages
 tags: [githubpages]
 comments: true

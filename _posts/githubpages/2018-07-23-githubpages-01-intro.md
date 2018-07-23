@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 지킬로 Github Pages 블로그 만들기
+title: 01-지킬로 Github Pages 블로그 만들기
 category: githubpages
 tags: [githubpages]
 comments: true

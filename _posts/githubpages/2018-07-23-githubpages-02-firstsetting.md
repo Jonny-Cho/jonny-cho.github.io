@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 블로그 커스텀 세팅하기
+title: 02-블로그 커스텀 세팅하기
 category: githubpages
 tags: [githubpages]
 comments: true
