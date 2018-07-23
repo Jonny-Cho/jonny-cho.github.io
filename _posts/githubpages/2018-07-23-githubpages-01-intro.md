@@ -2,7 +2,7 @@
 layout: post
 title: 지킬로 Github Pages 블로그 만들기 1
 category: githubpages
-tags: [git, githubpages, jekyll]
+tags: [githubpages]
 comments: true
 ---
 
