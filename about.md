@@ -4,7 +4,7 @@ title: About
 ---
 
 <p class="message">
-  초보 개발자가 곧 될겁니다.<br>
+  개발의숲 입구에 서 있습니다<br>
 </p>
 
 ## 개발공부

@@ -23,7 +23,7 @@ permalink: pretty
 # About/contact
 author:
   name: Jonny
-  description: 개발의숲 입구에 서 있습니다.
+  description:
   gravatar: # md5 hash of your email address
   contact:
     # linkedin:  https://www.linkedin.com/in/lizhihao
