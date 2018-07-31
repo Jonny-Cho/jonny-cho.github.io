@@ -100,7 +100,7 @@ You need python
 ```python
 # 간단하게 넣기
 >>> "I eat %s apples." % 3
-'I eat 3 apples.
+'I eat 3 apples.'
 
 #공백 넣기
 >>> "%10s" % "hi"
@@ -203,15 +203,15 @@ print('"점프 투 파이썬" 문제를 풀어보자')
 `"점프 투 파이썬" 문제를 풀어보자`
 
 [문제2] 다음과 같은 문자열을 출력하시오
+```
 Life is too short
 You need Python
+```
 
 [풀이]
 ```python
-print("""
-Life is too short
-You need Python
-""")
+print("""Life is too short
+You need Python""")
 ```
 ```
 Life is too short
