@@ -6,7 +6,7 @@ tags: [python, 자료형]
 comments: true
 ---
 
-{:toc}
+[TOC]
 
 ## 숫자형을 구분해보자[^1]
 
