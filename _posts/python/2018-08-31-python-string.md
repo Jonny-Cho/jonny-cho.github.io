@@ -8,7 +8,9 @@ comments: true
 
 ## 문자열(String)은
 * 따옴표로 싸여있으면 전부 문자열이다
+
 ```python
+
 "파이썬" # 큰따옴표
 'Python' # 작은따옴표
 "123" # 숫자처럼 보이지만 문자열
@@ -36,7 +38,9 @@ You need python
 
 ## 문자열 연산하기
 * 문자열 더하고 곱하기
+
 ```python
+
 #문자열 더하기
 >>> head = "Cafe"
 >>> tail = " latte" #띄어쓰기를 위해 문자앞 공백을 넣었다
@@ -47,10 +51,13 @@ You need python
 >>> a = "macbook"
 >>> a * 2
 'macbookmacbook'
+
 ```
 
 ## 문자열 인덱싱(Indexing)과 슬라이싱(Slicing)
+
 * 인덱싱은 가리키다, 슬라이싱은 잘라낸다는 의미이다
+
 ```python
 #인덱싱
 >>>a = "Life is too short, You need Python"
@@ -101,6 +108,7 @@ You need python
 ```
 
 * format 함수를 이용한 포매팅
+
 ```python
 >>> "I eat {} apples".format(3)
 'I eat 3 apples'
