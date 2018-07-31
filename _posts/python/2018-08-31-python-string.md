@@ -224,11 +224,14 @@ You need Python
 
 [풀이]
 ```python
-print(" " * 24 + "PYTHON") #또는
+print("%30s" % "PYTHON") # 총 30개의 자리를 만들고 그 자리 끝에 PYTHON 출력
+print(" " * 24 + "PYTHON") # 공백 24개를 만들고 그 뒤에 PYTHON 출력
 print("{}PYTHON".format(" "*24))
 ```
 
 ```
+'                        PYTHON'
+'                        PYTHON'
 '                        PYTHON'
 ```                        
 
