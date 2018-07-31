@@ -1,6 +1,6 @@
 ---
 layout: post
-title: python기초 숫자형 파헤치기
+title: python기초 01 숫자형 파헤치기
 category: python
 tags: [python, 자료형]
 comments: true

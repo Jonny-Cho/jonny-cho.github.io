@@ -1,6 +1,6 @@
 ---
 layout: post
-title: python기초 문자열 자료형
+title: python기초 02 문자열 자료형
 category: python
 tags: [python, 자료형]
 comments: true
