@@ -31,4 +31,4 @@ comments: true
 ## 튜플의 인덱싱과 슬라이싱은 리스트와 똑같다. 더하기와 곱하기도 마찬가지로 같다.
 
 ### 참고자료
-* [점프 투 파이썬](https://wikidocs.net/14)
+* [점프 투 파이썬](https://wikidocs.net/15)
