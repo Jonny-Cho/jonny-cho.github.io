@@ -158,6 +158,7 @@ while num > 0:
 ```
 > 어려웠다. 1) 별을 7개에서 1개까지 출력하기 2) 짝수 걸러내기 3) 빈칸 삽입하기 순으로 진행했다.
 3)번에서 TypeError: can't multiply sequence by non-int of type 'float' 타입에러가 나서 생각해보니 그냥 / 으로 나눠져 있어서 // 으로 고쳤다. /으로 나누면 자동으로 float으로 형변환을 해준다.
+> 가운데 정렬 `"{0:^10}".format("hi")` 이 형식으로 쓰고 싶었는데 실패
 
 ### 참고자료
 * [점프 투 파이썬](https://wikidocs.net/21)
