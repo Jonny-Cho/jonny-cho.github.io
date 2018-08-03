@@ -157,7 +157,7 @@ print(a)
 
 ## 함수 안에서 함수 밖의 변수를 변경하는 방법
 
-1. return 이용하기
+* return 이용하기
 
 ```python
 a = 1 
@@ -169,7 +169,7 @@ a = vartest(a)
 print(a)
 ```
 
-2. global 명령어 이용하기
+* global 명령어 이용하기
 
 ```python
 a = 1 
