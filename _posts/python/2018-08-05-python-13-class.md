@@ -328,7 +328,7 @@ class SafeFourCal(FourCal):
 ...
 ```
 
-홍길동|42|A 와 같은 문자열을 생성자의 입력으로 받아서 name, age, grade라는 객체변수를 생성하는 Data클래스를 생성하였다.
+`홍길동|42|A` 와 같은 문자열을 생성자의 입력으로 받아서 name, age, grade라는 객체변수를 생성하는 Data클래스를 생성하였다.
 
 위처럼 Data 클래스를 만들면 다음처럼 사용할 수 있게 된다.
 ```python
@@ -466,18 +466,17 @@ TypeError: __init__() missing 1 required positional argument: 'init_value'
 [풀이]
 
 init_value를 __init__의 매개변수로 넣었는데 사용을 안했다.
-사실 필요가 없는거 아닌가? 빼버리자
 
 ```python
 class Calculator:
-    def __init__(self): #init_value 뺌
-        self.value = 0 #0으로 바꿈
+    def __init__(self, init_value=0): #init_value의 초기값이 없었다
+        self.value = init_value
 
     def add(self, val): 
         self.value += val
         return self.value #return 추가
 
-cal = Calculator()
+cal = Calculator() #위에서 초기값을 안넣었다면 여기 괄호사이에 0을 넣어도 된다.
 
 print(cal.add(3))
 print(cal.add(4))
