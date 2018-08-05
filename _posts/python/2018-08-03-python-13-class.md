@@ -265,7 +265,7 @@ TypeError: __init__() missing 2 required positional arguments: 'first' and 'seco
         pass
 ```
 
-### 매서드 오버라이딩
+### 매소드 오버라이딩
 
 0으로 나눌 때 오류가 아닌 0을 리턴하도록 만들고 싶다면 어떻게 해야 할까?
 
@@ -385,7 +385,235 @@ print_age와 print_grade 함수 만들기
 
 ## 연습문제
 
+[문제1] Calculator 1
 
+다음은 계산기처럼 동작하는 Calculator클래스이다. add라는 메서드를 이용하면 현재 계산기의 객체 변수 value에 입력으로 받은 값을 더해 준다.
+```python
+class Calculator:
+    def __init__(self):
+        self.value = 0
+
+    def add(val):
+        self.value += val
+```
+위와 같은 Calculator 클래스를 다음과 같이 사용하였다.
+```python
+cal = Calculator()
+cal.add(3)
+cal.add(4)
+
+print(cal.value)  # 7을 출력해야 한다.
+```
+3과 4를 add했으므로 객체변수 value가 7이 되어 7을 출력해야 하지만 다음과 같은 오류가 발생했다.
+```python
+Traceback (most recent call last):
+  File "....py", line 9, in <module>
+    cal.add(3)
+TypeError: add() takes 1 positional argument but 2 were given
+```
+오류가 발생하지 않도록 클래스의 잘못된 부분을 찾아 고치시오.
+
+[풀이]
+
+* "add함수안에 1개의 인수만 넣어야 하는데, 지금은 2개가 들어갔다." 는 해석을 못하겠지만 빠진 것을 채워 넣으니 해결된다.
+
+1. 클래스안에서 함수(메소드)를 사용할때는 항상 self를 넣는다.
+2. 출력되려면 return을 넣어야한다.
+
+```python
+class Calculator:
+    def __init__(self):
+        self.value = 0
+
+    def add(self, val): #self가 없없다.
+        self.value += val
+        return self.value #return도 없었고
+
+cal = Calculator()
+
+print(cal.add(3))
+print(cal.add(4))
+```
+
+[문제2] Calculator 2
+
+다음과 같은 Calculator 클래스가 있다.
+```python
+class Calculator:
+    def __init__(self, init_value):
+        self.value = init_value
+
+    def add(self, val):
+        self.value += val
+```
+이 클래스를 다음과 같이 사용해 보았다.
+```python
+cal = Calculator()
+cal.add(3)
+cal.add(4)
+
+print(cal.value)
+```
+위 코드를 실행했더니 다음과 같은 오류가 발생한다.
+```python
+Traceback (most recent call last):
+  File "....py", line 8, in <module>
+    cal = Calculator()
+TypeError: __init__() missing 1 required positional argument: 'init_value'
+```
+오류가 난 이유가 무엇인지 설명하고 오류를 해결하시오.
+
+[풀이]
+
+init_value를 __init__의 매개변수로 넣었는데 사용을 안했다.
+사실 필요가 없는거 아닌가? 빼버리자
+
+```python
+class Calculator:
+    def __init__(self): #init_value 뺌
+        self.value = 0 #0으로 바꿈
+
+    def add(self, val): 
+        self.value += val
+        return self.value #return 추가
+
+cal = Calculator()
+
+print(cal.add(3))
+print(cal.add(4))
+```
+
+[문제3] UpgradeCalculator
+
+다음은 Calculator 클래스이다.
+```python
+class Calculator:
+    def __init__(self):
+        self.value = 0
+
+    def add(self, val):
+        self.value += val
+        return self.value
+```
+위 클래스를 상속하는 UpgradeCalculator를 만들고 값을 뺄 수 있는 minus 메서드를 추가하시오. 즉, 다음과 같이 동작하는 클래스를 만드시오.
+```python
+cal = UpgradeCalculator()
+cal.add(10)
+cal.minus(7)
+
+print(cal.value)  # 10에서 7을 뺀 3을 출력
+```
+
+[풀이]
+
+1. Calculator 클래스를 상속받아 UpgradeCalculator 클래스를 만든다.
+2. minus 메서드를 추가한다.
+3. 객체변수 cal에 UpgradeCalculator를 담고
+4. cal.minus를 마음껏 사용한다.
+
+```python
+class UpgradeCalculator(Calculator):
+	def minus(self, val):
+		self.value -= val
+		return self.value
+
+cal = UpgradeCalculator()
+
+print(cal.add(10))
+print(cal.minus(7))
+```
+```
+10
+3
+```
+
+[문제4] MaxLimitCalculator
+
+이번에 여러분이 작성해야 하는 클래스는 MaxLimitCalculator 클래스이다. MaxLimitCalculator 클래스는 객체변수 value가 100이상의 값은 가질 수 없도록 제한하는 클래스이다. 즉, 다음과 같이 동작해야 한다.
+```python
+cal = MaxLimitCalculator()
+cal.add(50)  # 50 더하기
+cal.add(60)  # 60 더하기
+
+print(cal.value)  # 100 출력 
+```
+단, 한가지 전제 조건이 있다. 그 조건은 반드시 다음과 같은 Calculator 클래스를 상속해서 만들어야 한다는 것이다.
+```python
+class Calculator:
+    def __init__(self):
+        self.value = 0
+
+    def add(self, val):
+        self.value += val
+```
+위와 같은 조건을 만족하는 MaxLimitCalculator 클래스를 작성하시오.
+
+[풀이]
+
+1. Calculator 클래스를 상속받아 MaxLimitCalculator 클래스를 만든다.
+2. MaxLimitCalculator에 add 메소드를 다시 정의한다
+3. 객체변수 cal에 MaxLimitCalculator를 담고 사용한다
+4. 아 이거 그거다 오버라이팅. 원래있던 add 메소드를 덮어씌우는 거
+
+```python
+class MaxLimitCalculator(Calculator):
+    def add(self, val):
+        self.value += val
+        if self.value > 100:
+            self.value = 100
+            return self.value
+        else:
+            return self.value
+
+cal = MaxLimitCalculator()
+
+print(cal.add(60))
+print(cal.add(30))
+print(cal.add(20))
+print(cal.add(50))
+```
+
+```
+60
+90
+100
+100
+```
+
+> 깔끔한 코드는 아니지만 작동하는 것으로 일단 패스. 나중에 정답과 비교해보자
+
+[문제5] Calculator 3
+
+다음과 같이 동작하는 Calculator 클래스를 작성하시오.
+```python
+cal1 = Calculator([1,2,3,4,5])
+print(cal1.sum())  # 15 출력
+print(cal1.avg())  # 3.0 출력
+
+cal2 = Calculator([6,7,8,9,10])
+print(cal2.sum())  # 40 출력
+print(cal2.avg())  # 8.0 출력
+```
+
+[풀이]
+풀 수 있을 것 같은데 못풀겠는 문제. 개념정리 다시하자. 아래는 정답
+
+```python
+class Calculator:
+    def __init__(self, numberList):
+        self.numberList = numberList
+
+    def sum(self):
+        result = 0
+        for num in self.numberList:
+            result += num
+        return result
+
+    def avg(self):
+        total = self.sum( )
+        return total / len(self.numberList)
+
+```
 
 ### 참고자료
 * [점프 투 파이썬](https://wikidocs.net/28)
