@@ -41,17 +41,18 @@ nav:
     - '/'
     # - { Categories All: '/blog/categories/' }
     - { 개발일기: '/blog/categories/#dev' }
-    - { 컴퓨터공학 : '/blog/categories/#cs' }
-    - { Python & Django: '/blog/categories/#python' }
+    # - { 컴퓨터공학 : '/blog/categories/#cs' }
+    - { Python: '/blog/categories/#python' }
+    - { Django: '/blog/categories/#django' }
     - { JAVA: '/blog/categories/#java' }
     - { Ruby on Rails: '/blog/categories/#ror' }
     - { javascript: '/blog/categories/#javascript' }
     - { nodejs: '/blog/categories/#nodejs' }
-    - { MySQL: '/blog/categories/#mySQL' }
+    # - { MySQL: '/blog/categories/#mySQL' }
     - { 알고리즘 문제풀이: '/blog/categories/#algorithm' }
     - { git: '/blog/categories/#git' }
     - { github pages: '/blog/categories/#githubpages' }
-    - { etc: '/blog/categories/#etc' }
+    # - { etc: '/blog/categories/#etc' }
     # - { Tags: '/blog/tags/' }
 
   About:          
