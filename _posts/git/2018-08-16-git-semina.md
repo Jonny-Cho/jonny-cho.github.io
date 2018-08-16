@@ -40,15 +40,15 @@ rmdir - 디렉토리 지우기
 
 2) 코드 편집기 설치
 
-3) [깃허브링크](https://github.com/HuiwonKo/MSP_Seminar_20180727) 에서 pdf 다운로드
+3) [깃허브링크](https://github.com/ekdud2412/MSP_Seminar_20180816) 에서 pdf 다운로드
 
 ## Version Control System, Git, Github
 
 1) VCS - 과거 특정 시점의 버전을 다시 불러올 수 있는 시스템
 
-local VCS - Mac OSX의 RCS
-central VCS - CVCS
-**distributed(분산) VCS - Git, Mercurial, Bazaar**
+* local VCS - Mac OSX의 RCS
+* central VCS - CVCS
+* distributed(분산) VCS - **Git**, Mercurial, Bazaar
 
 2) Github
 - Git 이라는 도구를 응용할 때 필요한 원격 저장소 사이트
@@ -60,7 +60,7 @@ central VCS - CVCS
 git init - Working Directory
 git add - Staging Area
 git commit - Local Repository
-#commit은 변화본의 단위라는 말이 의미있었다.
+#commit은 변화의 단위라는 말이 의미있었다.
 
 git push - Remote Repository
 ```
@@ -83,7 +83,7 @@ master는 브랜치
 * commit은 의미있는 단위로 끊어서
 * 깃푸쉬는 신중하게
 
----
+------------
 
 [실습]
 
@@ -114,7 +114,9 @@ git push
 
 ## Collaborate with Git Practice - Pull Request
 
-![collaborate](/assets/post-img/git/collaborate.png/)
+
+![Collaborate]({{site.url}}/assets/post-img/git/collaborate.png)
+
 
 ### 협업하기
     - Setting/colaborators에서 이메일추가
