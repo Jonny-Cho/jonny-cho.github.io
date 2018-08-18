@@ -6,19 +6,33 @@
   }
   
   @media (min-width: 38rem) {
-    font-size: 1.0rem;
+    font-size: .8rem;
 
-    h1 { font-size: 2.5rem; }
+    h1 { font-size: 1.6rem; }
     h2 { 
       margin: 2em 0 1em 0;
-      font-size: 2.25rem; 
-      color: #ec4c6a;
+      font-size: 1.0rem; 
     }
     h3, h4, h5, h6 {
       margin: 2em 0 1em 0;
-      font-size: 1.4rem;
+      font-size: 0.8rem;
     }
   }
+
+  // @media (min-width: 38rem) {
+  //   font-size: 1.0rem;
+
+  //   h1 { font-size: 2.5rem; }
+  //   h2 { 
+  //     margin: 2em 0 1em 0;
+  //     font-size: 2.25rem; 
+  //     color: #ec4c6a;
+  //   }
+  //   h3, h4, h5, h6 {
+  //     margin: 2em 0 1em 0;
+  //     font-size: 1.4rem;
+  //   }
+  // }
 
   h2 {
     margin-top: 1rem;
