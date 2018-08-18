@@ -20,7 +20,9 @@ comments: true
 ---
 [이론]
 
-## Intro
+## Git 기초
+
+### Intro
 
 1) Linux 기본 Command
 
@@ -41,7 +43,7 @@ rmdir - 디렉토리 지우기
 
 3) [깃허브링크](https://github.com/ekdud2412/MSP_Seminar_20180816) 에서 pdf 다운로드
 
-## Version Control System, Git, Github
+#### Version Control System, Git, Github
 
 1) VCS - 과거 특정 시점의 버전을 다시 불러올 수 있는 시스템
 
@@ -53,7 +55,7 @@ rmdir - 디렉토리 지우기
 - Git 이라는 도구를 응용할 때 필요한 원격 저장소 사이트
 - 각종 Remote Repository(원격 저장소)들의 집합
 
-## Practice Setting
+### Practice Setting
 
 ```bash
 git init - Working Directory
@@ -64,7 +66,7 @@ git commit - Local Repository
 git push - Remote Repository
 ```
 
-## Git Workflow
+### Git Workflow
 
 ```bash
 git init
@@ -86,7 +88,7 @@ master는 브랜치
 
 [실습]
 
-## Git Workflow Practice (1)
+### Git Workflow Practice (1)
 
 * workflow 익히기
 
@@ -98,7 +100,7 @@ git add remote origin 경로
 git push -u origin master
 ```
 
-## Git Workflow Practice (2)
+### Git Workflow Practice (2)
 
 * commit 여러번 한 후 한번에 push하기
 
