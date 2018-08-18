@@ -6,17 +6,16 @@ tags: [git]
 comments: true
 ---
 
-Event Attendee code
-msevent298cu
-
-2:00 - 5:00 git 기초
+2:00 - 5:00 git 기초  
 5:00 - 6:00 git advanced
 
-발표자 Microsoft student partner 고희원
+발표자 Microsoft student partner  
+고희원, 다영
 
 ---
 
-깃을 저장소 용도로만 사용하고 있어서 협업으로서의 git을 배우기 위해 참여. merge나 branch에 익숙해지는게 목표 충돌해결까지 되면 금상첨화
+* 깃을 저장소 용도로만 사용하고 있어서 협업으로서의 git을 배우기 위해 참여.
+* merge와 branch에 익숙해지는게 목표.
 
 ---
 [이론]
