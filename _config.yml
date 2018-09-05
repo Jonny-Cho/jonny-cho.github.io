@@ -45,10 +45,10 @@ nav:
     - { Java: '/blog/categories/#java' }
     - { Python: '/blog/categories/#python' }
     - { Django: '/blog/categories/#django' }
-    - { JAVA: '/blog/categories/#java' }
-    - { Ruby on Rails: '/blog/categories/#ror' }
-    - { javascript: '/blog/categories/#javascript' }
-    - { nodejs: '/blog/categories/#nodejs' }
+    # - { JAVA: '/blog/categories/#java' }
+    # - { Ruby on Rails: '/blog/categories/#ror' }
+    # - { javascript: '/blog/categories/#javascript' }
+    # - { nodejs: '/blog/categories/#nodejs' }
     # - { MySQL: '/blog/categories/#mySQL' }
     - { 알고리즘 문제풀이: '/blog/categories/#algorithm' }
     - { git: '/blog/categories/#git' }
