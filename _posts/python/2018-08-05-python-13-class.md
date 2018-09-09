@@ -552,7 +552,7 @@ class Calculator:
 1. Calculator 클래스를 상속받아 MaxLimitCalculator 클래스를 만든다.
 2. MaxLimitCalculator에 add 메소드를 다시 정의한다
 3. 객체변수 cal에 MaxLimitCalculator를 담고 사용한다
-4. 아 이거 그거다 오버라이팅. 원래있던 add 메소드를 덮어씌우는 거
+4. 아 이거 그거다 팅. 원래있던 add 메소드를 덮어씌우는 거
 
 ```python
 class MaxLimitCalculator(Calculator):
