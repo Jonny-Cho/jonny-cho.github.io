@@ -123,7 +123,7 @@ class Point {
 
     double getDistance(Point p){ // 매개변수와 입력값 비교
         int a = this.x - p.x;
-        int b = this.y - p.y
+        int b = this.y - p.y;
         
         return Mathsqrt(a*a+b*b); // 두 점 사이 거리 공식 -> 피타고라스로 법칙으로 유도
     }
@@ -178,7 +178,7 @@ class Point {
 
     static double getDistance(Point p){ // 매개변수와 입력값 비교
         int a = p1.x - p2.x;
-        int b = p1.y - p2.y
+        int b = p1.y - p2.y;
         
         return Mathsqrt(a*a+b*b);
     }
@@ -241,7 +241,7 @@ class Point {
 
     static double getDistance(Point p){ // 매개변수와 입력값 비교
         int a = p1.x - p2.x;
-        int b = p1.y - p2.y
+        int b = p1.y - p2.y;
         
         return Mathsqrt(a*a+b*b);
     }
@@ -330,6 +330,47 @@ class Point3D extends Point{
         // return "x = " + x + ", y = " + y + ", z = " + z; 
         return super.toString() + ", z = " + z; // 상속받은거 이용하자 참조변수구분 super (괄호없음)
     }
+}
+
+class Point {
+    int x;
+    int y;
+
+    public String toString(){
+        return "x = " + x + ", y = " + y ;
+    }
+
+    Point(){
+        this(1, 1);
+        // x = 1; // x는 인스턴스변수
+        // y = 1;
+    } // 기본생성자
+    Point(int x, int y){
+        this.x = x; //this.x는 인스턴스변수, x는 로컬변수
+        this.y = y;
+    } // 매개변수 있는 생성자
+
+    double getDistance(Point p){ // 매개변수와 입력값 비교
+        // int a = this.x - p.x;
+        // int b = this.y - p.y
+        // return Mathsqrt(a*a+b*b);
+        return getDistance(this, p) // 다른함수호출
+    }
+
+    static double getDistance(Point p){ // 매개변수와 입력값 비교
+        int a = p1.x - p2.x;
+        int b = p1.y - p2.y;
+        
+        return Mathsqrt(a*a+b*b);
+    }
+
+    // 이 부분 이해잘안됨. 개념 다시
+    public boolean equals(Object obj){
+        if(!(obj instanceof Point)) return false; // 1)
+        Point p = (Point) obj; // 형변환
+        return this.x == p.x && this.y == p.y; // 2)
+    }
+
 }
 
 public class PointTest {
