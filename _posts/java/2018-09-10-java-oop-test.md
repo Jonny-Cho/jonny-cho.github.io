@@ -316,7 +316,9 @@ class Point3D extends Point{
 
     Point3D(){
         this(1, 1, 1);
-        z = 1;
+        // x = 1;
+        // y = 1;
+        // z = 1;
     }
 
     Point3D(int x, int y, int z){
