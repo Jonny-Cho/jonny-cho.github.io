@@ -83,7 +83,7 @@ public class GenericPrac{
 showInfo(arrayNation);
 showInfo(arrayCity);
 ```
-* 위 두개의 코드가 모두 실행이 되려면 array 타입이 <Nation>이어도, <City>여도 안된다. 자유롭게 사용하기 위해 <?> 와일드카드 사용
+* 위 두개의 코드가 모두 실행이 되려면 array 타입이 `<Nation>`이어도, `<City>`여도 안된다. 자유롭게 사용하기 위해 <?> 와일드카드 사용
 
 * 하지만 <?> 만 사용했을 때는 Nation, City가 아니라 어떤 타입이 와도 오류가 발생하지 않는다. Nation의 자손만 사용가능하게 하기 위해서 <? extends Nation> 을 사용
 * 주로 <? extends T> Upper Bounded Wildcard 와일드 카드의 상향 제한 형태로 많이 쓴다 T와 그 자손들만 가능
