@@ -43,6 +43,7 @@ nav:
     - { 개발일기: '/blog/categories/#dev' }
     # - { 컴퓨터공학 : '/blog/categories/#cs' }
     - { Java: '/blog/categories/#java' }
+    - { Oracle: '/blog/categories/#oracle' }
     - { Python: '/blog/categories/#python' }
     - { Django: '/blog/categories/#django' }
     # - { JAVA: '/blog/categories/#java' }
