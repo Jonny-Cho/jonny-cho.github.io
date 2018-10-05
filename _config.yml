@@ -46,7 +46,6 @@ nav:
     - { SQL: '/blog/categories/#sql' }
     - { Python: '/blog/categories/#python' }
     - { Django: '/blog/categories/#django' }
-    # - { JAVA: '/blog/categories/#java' }
     # - { Ruby on Rails: '/blog/categories/#ror' }
     # - { javascript: '/blog/categories/#javascript' }
     # - { nodejs: '/blog/categories/#nodejs' }
