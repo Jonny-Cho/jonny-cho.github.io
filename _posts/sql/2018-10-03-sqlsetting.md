@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [참고] 오라클 SQL 세팅하기(SQL developer + Oracle DB 11g Express)
+title: (참고) 오라클 SQL 세팅하기(SQL developer + Oracle DB 11g Express)
 category: sql
 tags: [SQL]
 comments: true
