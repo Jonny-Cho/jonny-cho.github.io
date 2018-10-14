@@ -190,7 +190,7 @@ for(var i=0; i<3; i++){
 // setTimeout이 비동기 함수이기 때문에 for문이 끝난후 값이 반환된다.
 
 // 콜백함수를 클로저로 변경 -> i와 x를 분리하는 것이 핵심
-// 0,1,2이 출력된다
+// 0,1,2가 잘 출력된다
 for(var i=0; i<3; i++){
 	(function(x){
 		setTimeout(function(){alert(x);}, 0);
