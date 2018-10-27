@@ -39,7 +39,7 @@ nav:
     - '/blog/'
   Categories:           
     - '/'
-    # - { Categories All: '/blog/categories/' }
+    - { Categories All: '/blog/categories/' }
     - { 개발일기: '/blog/categories/#dev' }
     # - { 컴퓨터공학 : '/blog/categories/#cs' }
     - { Java: '/blog/categories/#java' }
