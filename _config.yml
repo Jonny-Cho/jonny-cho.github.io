@@ -31,15 +31,15 @@ author:
     # facebook:  <hide>
     # twitter:   https://twitter.com/Li_Zhihao
     # weibo:     http://weibo.com/41173780
-    email:     mailto:andante2183@gmail.com
+    # email:     mailto:
 
 # Navigation (2nd level links supported)
 nav:
-  Home:           
+  All Posts:           
     - '/blog/'
   Categories:           
     - '/'
-    - { Categories All: '/blog/categories/' }
+    # - { Categories All: '/blog/categories/' }
     - { 개발일기: '/blog/categories/#dev' }
     # - { 컴퓨터공학 : '/blog/categories/#cs' }
     - { Java: '/blog/categories/#java' }
