@@ -36,7 +36,7 @@ author:
 # Navigation (2nd level links supported)
 nav:
   All Posts:           
-    - '/blog/'
+    - '/all/'
   Categories:           
     - '/'
     # - { Categories All: '/blog/categories/' }
