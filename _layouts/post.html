@@ -36,20 +36,20 @@ layout: default
   {% endfor %}
 {% endif %}
 
-{% if prev_post %}
-  <h2>Prev Post</h2>
-  <div class="article__previous">
-    <h3>
-      <a href="{{ prev_post.url }}">{{ prev_post.title }}</a>
-    </h3>
-  </div>
-{% endif %}
-
 {% if next_post %}
   <h2>Next Post</h2>
   <div class="article__next">
     <h3>
       <a href="{{ next_post.url }}">{{ next_post.title }}</a>
+    </h3>
+  </div>
+{% endif %}
+
+{% if prev_post %}
+  <h2>Prev Post</h2>
+  <div class="article__previous">
+    <h3>
+      <a href="{{ prev_post.url }}">{{ prev_post.title }}</a>
     </h3>
   </div>
 {% endif %}
