@@ -95,8 +95,6 @@ comments: true
     * export PATH=$PATH:$JAVA_HOME/bin
     * esc -> :wq
 
-## 테스트 <a id="5"></a>
-
 * 톰캣 환경설정 (server.xml)
     * vi /usr/apache-tomcat-8.5.37/conf/server.xml
     * port는 80으로 변경
@@ -109,7 +107,7 @@ comments: true
             redirectPort="8443" />
 ```
 
-## 톰캣 실행 및 테스트 <a id="6"></a>
+## 톰캣 실행 및 테스트 <a id="5"></a>
 
 * `/usr/apache-tomcat-8.5.37/bin/startup.sh`
 * `ps -ef | grep tomcat`
@@ -117,7 +115,7 @@ comments: true
 * ifconfig로 아이피 확인후 브라우저에서 접속
 * `http://아이피`
 
-## 서비스 등록 <a id="7"></a>
+## 서비스 등록 <a id="6"></a>
 
 * 서버가 실행되면 tomcat이 자동으로 실행되도록 서비스를 등록
 
@@ -149,7 +147,7 @@ SuccessExitStatus=143
 WantedBy=multi-user.target
 ```
 
-## 서비스 관리
+## 서비스 관리 <a id="7"></a>
 
 * 마지막으로 서비스를 활성화 시킵니다.
 
