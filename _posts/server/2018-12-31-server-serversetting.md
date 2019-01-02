@@ -66,32 +66,34 @@ comments: true
         * tar xvfz apache-tomcat-8.5.37
         
 ## JDK 설치
-    * [오라클 jdk](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html){:target="_blank"}
-    * linux x64 -> rpm 파일 링크 복사 하지말고 클릭해서 다운로드
-    * /usr/ 경로로 파일옮김
-    * rpm -ivh xxx.rpm 파일 압축해제
-    * /usr/java 폴더가 생김
-    * jdk1.8.0_191 로 파일명 변경
 
-    * 방화벽 설정 - 하지 않으면 외부에서 접속 못함
-        * firewall-cmd --permanent --add-port=80/tcp
-        * firewall-cmd --reload
+* [오라클 jdk](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html){:target="_blank"}
+* linux x64 -> rpm 파일 링크 복사 하지말고 클릭해서 다운로드
+* /usr/ 경로로 파일옮김
+* rpm -ivh xxx.rpm 파일 압축해제
+* /usr/java 폴더가 생김
+* jdk1.8.0_191 로 파일명 변경
 
-        * 서비스 활성화, 부팅시 실행
-            * systemctl enable tomcat
-        * 서비스 시작
-            * systemctl start tomcat   
+* 방화벽 설정 - 하지 않으면 외부에서 접속 못함
+    * firewall-cmd --permanent --add-port=80/tcp
+    * firewall-cmd --reload
+
+    * 서비스 활성화, 부팅시 실행
+        * systemctl enable tomcat
+    * 서비스 시작
+        * systemctl start tomcat
 
 ## 환경변수 설정
-    * 어느 디렉터리에서나 tomcat을 실행할 수 있도록 환경변수 설정
-    * vi /etc/profile
-        
-        * #tomcat export
-        * CATALINA_HOME=/usr/apache-tomcat-8.5.37
-        * #java_home
-        * export JAVA_HOME=/usr/java/jdk1.8.0_191
-        * export PATH=$PATH:$JAVA_HOME/bin
-        * esc -> :wq
+
+* 어느 디렉터리에서나 tomcat을 실행할 수 있도록 환경변수 설정
+* vi /etc/profile
+    
+    * #tomcat export
+    * CATALINA_HOME=/usr/apache-tomcat-8.5.37
+    * #java_home
+    * export JAVA_HOME=/usr/java/jdk1.8.0_191
+    * export PATH=$PATH:$JAVA_HOME/bin
+    * esc -> :wq
 
 ## 테스트
 
@@ -108,14 +110,16 @@ comments: true
 ```
 
 ## 톰캣 실행 및 테스트
-    * /usr/apache-tomcat-8.5.37/bin/startup.sh
-    * ps -ef | grep tomcat
 
-    * ifconfig로 아이피 확인후 브라우저에서 접속
-    * http://아이피
+* /usr/apache-tomcat-8.5.37/bin/startup.sh
+* ps -ef | grep tomcat
+
+* ifconfig로 아이피 확인후 브라우저에서 접속
+* http://아이피
 
 ## 서비스 등록
-    * 서버가 실행되면 tomcat이 자동으로 실행되도록 서비스를 등록
+
+* 서버가 실행되면 tomcat이 자동으로 실행되도록 서비스를 등록
 
 ```
 # /usr/local/apache-tomcat-8.5.37/bin/catalina.sh stop
