@@ -8,15 +8,15 @@ comments: true
 
 ## 순서
 
-1. CentOS 설치
-2. 톰캣 설치
-3. JDK 설치
-4. 환경변수 설정
-5. 톰캣 실행 및 테스트
-6. 서비스 등록
-7. 서비스 관리
+1. [CentOS 설치](#1)
+2. [톰캣 설치](#2)
+3. [JDK 설치](#3)
+4. [환경변수 설정](#4)
+5. [톰캣 실행 및 테스트](#5)
+6. [서비스 등록](#6)
+7. [서비스 관리](#7)
 
-## CentOS 설치
+## CentOS 설치 <a id="1"></a>
 
 1. USB 만들기
     * [wikidocs 리눅스 개발 놀이터 만들기 - 설치 USB 만들기](https://wikidocs.net/16269){:target="_blank"}
@@ -50,7 +50,7 @@ comments: true
 
 5. yum update - 5분정도 걸림
 
-## 톰캣 설치
+## 톰캣 설치 <a id="2"></a>
 
 1. 의존성 설치
     * wget 설치
@@ -65,7 +65,7 @@ comments: true
         * `wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz`
         * tar xvfz apache-tomcat-8.5.37
         
-## JDK 설치
+## JDK 설치 <a id="3"></a>
 
 * [오라클 jdk](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html){:target="_blank"}
 * linux x64 -> rpm 파일 링크 복사 하지말고 클릭해서 다운로드
@@ -83,7 +83,7 @@ comments: true
     * 서비스 시작
         * systemctl start tomcat
 
-## 환경변수 설정
+## 환경변수 설정 <a id="4"></a>
 
 * 어느 디렉터리에서나 tomcat을 실행할 수 있도록 환경변수 설정
 * vi /etc/profile
@@ -95,7 +95,7 @@ comments: true
     * export PATH=$PATH:$JAVA_HOME/bin
     * esc -> :wq
 
-## 테스트
+## 테스트 <a id="5"></a>
 
 * 톰캣 환경설정 (server.xml)
     * vi /usr/apache-tomcat-8.5.37/conf/server.xml
@@ -109,7 +109,7 @@ comments: true
             redirectPort="8443" />
 ```
 
-## 톰캣 실행 및 테스트
+## 톰캣 실행 및 테스트 <a id="6"></a>
 
 * /usr/apache-tomcat-8.5.37/bin/startup.sh
 * ps -ef | grep tomcat
@@ -117,7 +117,7 @@ comments: true
 * ifconfig로 아이피 확인후 브라우저에서 접속
 * http://아이피
 
-## 서비스 등록
+## 서비스 등록 <a id="7"></a>
 
 * 서버가 실행되면 tomcat이 자동으로 실행되도록 서비스를 등록
 
