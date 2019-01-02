@@ -112,7 +112,7 @@ comments: true
 ## 톰캣 실행 및 테스트 <a id="6"></a>
 
 * /usr/apache-tomcat-8.5.37/bin/startup.sh
-* ps -ef | grep tomcat
+* `ps -ef | grep tomcat`
 
 * ifconfig로 아이피 확인후 브라우저에서 접속
 * http://아이피
