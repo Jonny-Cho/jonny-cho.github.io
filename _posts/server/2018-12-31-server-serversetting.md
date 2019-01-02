@@ -94,17 +94,61 @@ comments: true
     * port는 80으로 변경
     * URIEncoding="UTF-8" 추가
 
+```
+<Connector port="80" protocol="HTTP/1.1"
+            URIEncoding="UTF-8"
+            connectionTimeout="20000"
+            redirectPort="8443" />
+```
+
 5. 톰캣 실행 및 테스트
     * /usr/apache-tomcat-8.5.37/bin/startup.sh
     * ps -ef | grep tomcat
 
     * ifconfig로 아이피 확인후 브라우저에서 접속
 
+6. 서비스 등록
+    * 서버가 실행되면 tomcat이 자동으로 실행되도록 서비스를 등록
+
 ```
-<Connector port="80" protocol="HTTP/1.1"
-            URIEncoding="UTF-8"
-            connectionTimeout="20000"
-            redirectPort="8443" />
+# /usr/local/apache-tomcat-8.5.37/bin/catalina.sh stop
+
+# vi /usr/lib/systemd/system/tomcat.service
+[Unit]
+Description=tomcat8
+After=network.target syslog.target
+
+[Service]
+Type=forking
+
+Environment=JAVA_HOME=/usr/java/jdk1.8.0_191
+User=root
+Group=root
+
+ExecStart=/usr/apache-tomcat-8.5.37/bin/startup.sh
+ExecStop=/usr/apache-tomcat-8.5.37/bin/shutdown.sh
+
+UMask=0007
+RestartSec=10
+Restart=always
+
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+7. 서비스 관리
+
+* 마지막으로 서비스를 활성화 시킵니다.
+
+서비스가 등록이 되었는지 확인하기 위해 재부팅을 한 후, 프로세스를 확인하는 것으로 테스트를 마칩니다.
+
+재부팅을 했는데 톰캣이 돌아가고 있으면 서비스 등록이 성공적으로 된 것입니다.
+
+```
+# systemctl enable tomcat.service # systemctl start tomcat.service # ps -ef | grep tomcat # reboot # ps -ef | grep tomcat
 ```
 
 ---
