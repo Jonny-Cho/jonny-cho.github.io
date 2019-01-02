@@ -148,7 +148,11 @@ WantedBy=multi-user.target
 재부팅을 했는데 톰캣이 돌아가고 있으면 서비스 등록이 성공적으로 된 것입니다.
 
 ```
-# systemctl enable tomcat.service # systemctl start tomcat.service # ps -ef | grep tomcat # reboot # ps -ef | grep tomcat
+# systemctl enable tomcat.service 
+# systemctl start tomcat.service 
+# ps -ef | grep tomcat 
+# reboot 
+# ps -ef | grep tomcat
 ```
 
 ---
