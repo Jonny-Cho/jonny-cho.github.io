@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 최종 프로젝트 1 - Spring - MyBatis - MySQL 연결하기
+title: Spring - MyBatis - MySQL 연결하기
 category: spring
 tags: [spring, 스프링, MySQL]
 comments: true
