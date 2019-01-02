@@ -54,7 +54,7 @@ comments: true
 
 1. 의존성 설치
     * wget 설치
-    * 참고 [victolee 블로그](https://victorydntmd.tistory.com/224){:tarter="_blank"}
+    * 참고 [victolee 블로그](https://victorydntmd.tistory.com/224){:target="_blank"}
     * yum install -y wget
     * 이미 설치된 경우 - already installed and latest version
 2. 톰캣 다운로드
@@ -62,7 +62,7 @@ comments: true
         * [톰캣 다운로드 홈페이지](https://tomcat.apache.org/download-80.cgi){:target="_blank"}
         * core - tar.gz - copy link location
         * cd /usr
-        * wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz
+        * `wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz`
         * tar xvfz apache-tomcat-8.5.37
         
 ## JDK 설치
