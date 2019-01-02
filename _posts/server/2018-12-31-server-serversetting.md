@@ -10,6 +10,11 @@ comments: true
 
 1. CentOS 설치
 2. 톰캣 설치
+3. JDK 설치
+4. 환경변수 설정
+5. 톰캣 실행 및 테스트
+6. 서비스 등록
+7. 서비스 관리
 
 ## CentOS 설치
 
@@ -59,18 +64,8 @@ comments: true
         * cd /usr
         * wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz
         * tar xvfz apache-tomcat-8.5.37
-    2. 환경 변수 설정
-        * 어느 디렉터리에서나 tomcat을 실행할 수 있도록 환경변수 설정
-        * vi /etc/profile
-            
-            * #tomcat export
-            * CATALINA_HOME=/usr/apache-tomcat-8.5.37
-            * #java_home
-            * export JAVA_HOME=/usr/java/jdk1.8.0_191
-            * export PATH=$PATH:$JAVA_HOME/bin
-            * esc -> :wq
         
-3. JDK 다운로드
+## JDK 설치
     * [오라클 jdk](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html){:target="_blank"}
     * linux x64 -> rpm 파일 링크 복사 하지말고 클릭해서 다운로드
     * /usr/ 경로로 파일옮김
@@ -85,11 +80,22 @@ comments: true
         * 서비스 활성화, 부팅시 실행
             * systemctl enable tomcat
         * 서비스 시작
-            * systemctl start tomcat
-        
-        * 웹브라우저에서 http://아이피
+            * systemctl start tomcat   
 
-4. 톰캣 환경설정 (server.xml)
+## 환경변수 설정
+    * 어느 디렉터리에서나 tomcat을 실행할 수 있도록 환경변수 설정
+    * vi /etc/profile
+        
+        * #tomcat export
+        * CATALINA_HOME=/usr/apache-tomcat-8.5.37
+        * #java_home
+        * export JAVA_HOME=/usr/java/jdk1.8.0_191
+        * export PATH=$PATH:$JAVA_HOME/bin
+        * esc -> :wq
+
+## 테스트
+
+* 톰캣 환경설정 (server.xml)
     * vi /usr/apache-tomcat-8.5.37/conf/server.xml
     * port는 80으로 변경
     * URIEncoding="UTF-8" 추가
@@ -106,6 +112,7 @@ comments: true
     * ps -ef | grep tomcat
 
     * ifconfig로 아이피 확인후 브라우저에서 접속
+    * http://아이피
 
 ## 서비스 등록
     * 서버가 실행되면 tomcat이 자동으로 실행되도록 서비스를 등록
@@ -136,7 +143,6 @@ SuccessExitStatus=143
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
 ## 서비스 관리
