@@ -101,13 +101,13 @@ comments: true
             redirectPort="8443" />
 ```
 
-5. 톰캣 실행 및 테스트
+## 톰캣 실행 및 테스트
     * /usr/apache-tomcat-8.5.37/bin/startup.sh
     * ps -ef | grep tomcat
 
     * ifconfig로 아이피 확인후 브라우저에서 접속
 
-6. 서비스 등록
+## 서비스 등록
     * 서버가 실행되면 tomcat이 자동으로 실행되도록 서비스를 등록
 
 ```
@@ -139,7 +139,7 @@ WantedBy=multi-user.target
 
 ```
 
-7. 서비스 관리
+## 서비스 관리
 
 * 마지막으로 서비스를 활성화 시킵니다.
 
