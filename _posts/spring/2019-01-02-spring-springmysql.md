@@ -93,13 +93,18 @@ public interface BoardService {
 ### BoardServiceImpl
 
 ```java
+@Service("bs")
+public class BoardServiceImpl implements BoardService {
+
 	@Autowired
 	IDao dao;
-
+	
 	@Override
 	public ArrayList<BDto> list() {
 		return dao.list();
 	}
+
+}
 ```
 
 ### IDao
@@ -119,6 +124,20 @@ public interface IDao {
 		SELECT * FROM TBL_BOARD ORDER BY 1 DESC
 	</select>
 </mapper>
+```
+
+### BDto
+
+```java
+public class BDto {
+	private String name;
+	private double grade;
+	private String address;
+	private BigDecimal location_x;
+	private BigDecimal location_y;
+
+	// 생성자, getter/setter, tostring
+}
 ```
 
 ### list.jsp
