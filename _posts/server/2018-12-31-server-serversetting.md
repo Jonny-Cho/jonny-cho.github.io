@@ -75,13 +75,8 @@ comments: true
 * jdk1.8.0_191 로 파일명 변경
 
 * 방화벽 설정 - 하지 않으면 외부에서 접속 못함
-    * firewall-cmd --permanent --add-port=80/tcp
-    * firewall-cmd --reload
-
-    * 서비스 활성화, 부팅시 실행
-        * systemctl enable tomcat
-    * 서비스 시작
-        * systemctl start tomcat
+    * `firewall-cmd --permanent --add-port=80/tcp`
+    * `firewall-cmd --reload`
 
 ## 환경변수 설정 <a id="4"></a>
 
@@ -89,7 +84,7 @@ comments: true
 * vi /etc/profile
     
     * #tomcat export
-    * CATALINA_HOME=/usr/apache-tomcat-8.5.37
+    * export CATALINA_HOME=/usr/apache-tomcat-8.5.37
     * #java_home
     * export JAVA_HOME=/usr/java/jdk1.8.0_191
     * export PATH=$PATH:$JAVA_HOME/bin
