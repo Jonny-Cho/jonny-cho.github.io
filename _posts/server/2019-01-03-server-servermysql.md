@@ -8,15 +8,11 @@ comments: true
 
 ## 순서
 
-1. [CentOS 설치](#1)
-2. [톰캣 설치](#2)
-3. [JDK 설치](#3)
-4. [환경변수 설정](#4)
-5. [톰캣 실행 및 테스트](#5)
-6. [서비스 등록](#6)
-7. [서비스 관리](#7)
+1. [MySQL 5.7 설치](#1)
+2. [UTF-8 (한글) 설정](#2)
+3. [MySQL 구동](#3)
 
-## MySQL 5.7 설치
+## MySQL 5.7 설치 <a id="1"></a>
 
 [정광섭님 블로그 - CentOS에 MySQL 5.7 설치하기](https://www.lesstif.com/pages/viewpage.action?pageId=24445108){:target="_blank"}
 
@@ -46,7 +42,7 @@ comments: true
     * mysql-community-common
 
 
-## UTF-8 (한글) 설정
+## UTF-8 (한글) 설정 <a id="2"></a>
 
 [Confluence-MySQL 기본 인코딩을 UTF8 로 변경](http://wincloud.link/pages/viewpage.action?pageId=9469960){:target="_blank"}
 
@@ -103,7 +99,7 @@ Threads: 5  Questions: 312  Slow queries: 0  Opens: 67  Flush tables: 1  Open ta
 mysql>
 ```
 
-## MySQL 구동
+## MySQL 구동 <a id="3"></a>
 
 `systemctl start mysqld`
 
