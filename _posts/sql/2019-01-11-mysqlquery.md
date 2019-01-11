@@ -7,10 +7,9 @@ comments: true
 ---
 
 ## 문제
+이미지 확인
 
-{{category}}
-
-![방찾기-스토리보드]({{site.url}}/assets/post-img/{{category}}/f-1.jpg)
+![방찾기-스토리보드]({{site.url}}/assets/post-img/sql/F-1.jpg)
 
 
 ## 해결
