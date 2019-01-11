@@ -8,9 +8,9 @@ comments: true
 
 ## 문제
 
-{{category}}
 
-![방찾기-스토리보드]({{site.url}}/assets/post-img/{{category}}/f-1.jpg)
+{% page.categories %}
+![방찾기-스토리보드]({{site.url}}/assets/post-img/{% page.categories %}/f-1.jpg)
 
 
 ## 해결
