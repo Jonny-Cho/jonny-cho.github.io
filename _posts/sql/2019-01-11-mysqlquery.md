@@ -11,6 +11,7 @@ comments: true
 test
 {% page.categories %}
 ![방찾기-스토리보드]({{site.url}}/assets/post-img/{% page.categories %}/f-1.jpg)
+![방찾기-스토리보드]({{site.url}}/assets/post-img/sql/f-1.jpg)
 
 
 ## 해결
