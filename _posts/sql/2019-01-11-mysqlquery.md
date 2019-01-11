@@ -8,7 +8,7 @@ comments: true
 
 ## 문제
 
-
+test
 {% page.categories %}
 ![방찾기-스토리보드]({{site.url}}/assets/post-img/{% page.categories %}/f-1.jpg)
 
