@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 리눅스 (CentOS7) 서버 세팅 정리 (아파치 톰캣)
+title: 리눅스 CentOS7 서버 세팅 정리 (아파치 톰캣)
 category: server
 tags: [server]
 comments: true
