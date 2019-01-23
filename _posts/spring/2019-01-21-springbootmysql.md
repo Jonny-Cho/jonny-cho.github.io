@@ -6,12 +6,14 @@ tags: [springboot, 스프링부트, MySQL]
 comments: true
 ---
 
-* 개발환경
-
 * 순서
 	* springboot 프로젝트 생성
 	* pom.xml 확인
-	* 
+	* Dto 작성
+	* DAO(Mapper) Interface 작성
+	* Mapper.xml 작성
+	* application.properties 작성
+	* Controller 작성
 	* thymeleaf를 이용해 view에 출력
 
 ## springboot 프로젝트 생성
