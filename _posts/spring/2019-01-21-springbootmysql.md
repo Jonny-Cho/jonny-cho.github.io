@@ -150,9 +150,9 @@ public class MapController {
 
 <table>
       <tr>
-        <th>NAME</th>
-        <th>PRICE</th>
-        <th>IN STOCK</th>
+        <th>id</th>
+        <th>name</th>
+        <th>address</th>
       </tr>
       <tr th:each="list : ${list}">
         <td th:text="${list.id}">aa</td>
