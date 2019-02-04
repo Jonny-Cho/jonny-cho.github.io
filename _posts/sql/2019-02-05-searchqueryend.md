@@ -13,10 +13,10 @@ comments: true
 -- 날짜 19-01-01 ~ 19-01-03
 -- 인원 4명
 -- 가격 10000 ~ 80000
--- 성별 여성전용, 남성전용, 무관
+-- 성별 여성전용, 남성전용, 무관 모두 선택한 경우
 -- 테마 맛집
 -- 편의시설 1,3,5,7 (세탁기, 주방/식당, 취사가능, 와이파이)
-select gh.guestHouseCode, gh.guestHouseName, gh.address, gh.avgRating, gr.recommendRating,
+select distinct gh.guestHouseCode, gh.guestHouseName, gh.address, gh.avgRating, gr.recommendRating,
 	   ghmin.minprice, gh.businessTrip, gh.gourmet, gh.trip, gh.shopping,
 	   rvc.reviewCnt, fi.originalName
 from guestHouse_tb gh
@@ -86,3 +86,23 @@ and gh.gourmet = 1
 order by gh.guestHouseCode
 ;
 ```
+
+### 이후에 할 일
+
+1. 선택
+	* 사실 완전한 완성은 아니다.
+	* 키워드 검색이 들어 있지는 않기 때문인데, 여러가지 고려사항이 남아있다.
+		* 예를들어 키워드 검색에 강남을 입력 했을 때 [우주](https://www.woozoo.kr/houses){:target="_blank"} 처럼
+		* 지도가 강남으로 포커스되고 
+		* 그 지도안에 들어있는 모든 게스트하우스를 밑에 나타내게 하고 싶었던 것인데
+		* 위의 쿼리문에 추가할 경우 DB로 날려서 새로고침 되어야 하기 때문
+		* 애초에 우주와 여기어때를 둘 다 참고해서 UI가 섞인게 원인
+			1. 우주처럼 나타내는 것을 포기하고 쿼리문에 추가할 것인지
+			2. 키워드 검색의 위치를 바꾸고 ajax 요청으로 처리할 것인지 선택해야한다
+
+2. 성능
+	* 일단 꾸역꾸역 만들기는 했는데
+	* 인덱스를 사용한 것도아니고 (들어만 보고 아직 이해를 잘 못하기도 했다)
+	* 이것저것 생각나는 대로 합친 것이어서 중복이 많을 수도 있고
+	* 나는 모르지만 더 개선할 부분이 분명히 있다
+	* 그래서 구루비에 다시 물어볼 예정
