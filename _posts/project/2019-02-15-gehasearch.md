@@ -6,15 +6,21 @@ tags: [프로젝트]
 comments: true
 ---
 
+* 결과화면
+
+![GEHA-방찾기-결과화면]({{site.url}}/assets/post-img/project/search.png)
+
 * 스토리보드
 
 ![GEHA-방찾기-스토리보드]({{site.url}}/assets/post-img/sql/storyboard.jpg)
 
-* 결과화면
+* ERD
 
-![GEHA-방찾기]({{site.url}}/assets/post-img/project/search.png)
+![GEHA-방찾기-ERD]({{site.url}}/assets/post-img/project/erd.png)
+
 
 * 사용한 기술 **(주요 기술)**
+
 	* Backend & DB
 		* **Springboot 2.x**
 		* **MySQL 5.7**
@@ -58,6 +64,7 @@ comments: true
 	* [SearchDto.java](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/java/com/bit/geha/dto/SearchDto.java){:target="_blank"}
 
 	* **[searchMapper.xml](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/mapper/searchMapper.xml){:target="_blank"}**
+		* Mapper 검색 쿼리 설명 (링크 추가하기)
 
 * [홈페이지 링크](){:target="_blank"}
 
