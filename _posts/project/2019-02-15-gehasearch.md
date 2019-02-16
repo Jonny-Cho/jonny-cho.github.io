@@ -44,7 +44,7 @@ comments: true
 	* 다음 지도 API에서 제공하는 기능을 적절하게 사용해서 사용자 경험을 더 좋게 하도록 노력
 	* Git과 GitHub를 적극 사용해서 협업으로서의 버전관리에 익숙해짐
 
-* 소스코드 깃허브 링크
+* 소스코드 깃허브 링크 **(주요 소스코드)**
 
 	* **[search.html](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/templates/search.html){:target="_blank"}**
 		* html / css / javascript를 한번에 확인할 수 있습니다.
