@@ -38,7 +38,7 @@ comments: true
 		* air datepicker
 		* Serialize Object
 	* 개발 환경
-		* Window10
+		* Windows 10
 		* STS 3.x
 		* Maven
 		* MyBatis
