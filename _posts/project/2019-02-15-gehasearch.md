@@ -6,6 +6,8 @@ tags: [프로젝트]
 comments: true
 ---
 
+* [홈페이지 링크](){:target="_blank"}
+
 * 결과화면
 
 ![GEHA-방찾기-결과화면]({{site.url}}/assets/post-img/project/search.png)
@@ -53,6 +55,8 @@ comments: true
 
 	* **[search.html](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/templates/search.html){:target="_blank"}**
 		* html / css / javascript를 한번에 확인할 수 있습니다.
+
+	* [search.css](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/static/css/search.css){:target="_blank"}
 	
 	* **[SearchController.java](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/java/com/bit/geha/controller/SearchController.java){:target="_blank"}**
 	
@@ -63,9 +67,7 @@ comments: true
 	* [SearchDto.java](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/java/com/bit/geha/dto/SearchDto.java){:target="_blank"}
 
 	* **[searchMapper.xml](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/mapper/searchMapper.xml){:target="_blank"}**
-		* Mapper 검색 쿼리 설명 (링크 추가하기)
-
-* [홈페이지 링크](){:target="_blank"}
+		* [Mapper 검색 쿼리 설명]({{site.url}}/project/2019/02/16/gehaquery/)
 
 * 기능 설명
 	1. 검색 부분
