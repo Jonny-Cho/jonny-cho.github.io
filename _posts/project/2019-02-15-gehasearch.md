@@ -103,7 +103,7 @@ comments: true
 	* [우주](https://www.woozoo.kr/houses){:target="_blank"}
 	* [다음 지도 API](http://apis.map.daum.net/web/){:target="_blank"}
 	* [구루비](http://www.gurubee.net/){:target="_blank"}
-	* 코드로 배우는 스프링 웹 프로젝트
+	* 코드로 배우는 스프링 웹 프로젝트 - 구멍가게 코딩단 - 남가람북스
 	* [jQuery UI - Slider](https://jqueryui.com/slider/#range){:target="_blank"}
 	* [jQuery Serialize Object](https://github.com/macek/jquery-serialize-object){:target="_blank"}
 	* [Air Datepicker](http://t1m0n.name/air-datepicker/docs/){:target="_blank"}
