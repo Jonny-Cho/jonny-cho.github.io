@@ -46,17 +46,18 @@ comments: true
 		* VSCODE
 		* HeidiSQL
 
-* 간단한 설명
-	* 게스트하우스 프로젝트에서 중요한 부분인 검색 페이지를 맡음
-	* 날짜와 인원수를 동시에 검색하는 검색 쿼리에 시간을 가장 많이 투자
-	* AJAX를 사용해 모든 검색이 하나의 url에서 동작하도록 구성
-	* 다음 지도 API에서 제공하는 기능을 적절하게 사용해서 사용자 경험을 더 좋게 하도록 노력
-	* Git과 GitHub를 적극 사용해서 협업으로서의 버전관리에 익숙해짐
+* 간단한 설명 & 배운 점
+
+	* 게스트하우스 프로젝트에서 중요한 부분인 검색 페이지를 맡았습니다
+	* 날짜와 인원수를 동시에 검색하는 검색 쿼리에 시간을 가장 많이 투자했습니다
+	* AJAX를 사용해 모든 검색이 하나의 url에서 동작하도록 구성했습니다
+	* 다음 지도 API에서 제공하는 기능을 적절하게 사용해서 사용자 경험을 향상시켰습니다
+	* Git과 GitHub를 적극 사용해서 협업으로서의 버전관리에 익숙해졌습니다
+	* SQL의 기초문법 특히 여러가지 Join의 차이점을 정확하게 알고 사용할 수 있게 되었습니다
 
 * 소스코드 깃허브 링크 **(주요 소스코드)**
 
 	* **[search.html](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/templates/search.html){:target="_blank"}**
-		* html / css / javascript를 한번에 확인할 수 있습니다.
 
 	* [search.css](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/static/css/search.css){:target="_blank"}
 	
@@ -92,11 +93,6 @@ comments: true
 		* [구루비 - 예약사이트 날짜검색&인원검색 방법](http://www.gurubee.net/article/80746){:target="_blank"}
 	* 카카오 API에서 다른 오버레이를 클릭했을 때 기존 오버레이 삭제하는 부분
 		* [kakao devtalk - Ajax 검색 결과가 달라질 때 다중 마커 삭제 방법](https://devtalk.kakao.com/t/ajax/68718){:target="_blank"}
-
-* 소감
-	* 뜬구름 같았던 Ajax의 개념이 명확해졌고 사용자 경험을 얼마나 개선할 수 있는지 체감했습니다.
-	* SQL의 기초문법 특히 여러가지 Join의 차이점을 정확하게 알고 사용할 수 있게 되었습니다.
-	* 생각보다 프론트앤드에 시간을 많이 쏟게 되어버렸는데 다음 프로젝트를 한다면 스프링의 특징이자 장점인 시큐리티, 트랜잭션, AOP를 사용할 수 있는 사이트를 만들고 싶다. (가상 은행?)
 
 * References
 
