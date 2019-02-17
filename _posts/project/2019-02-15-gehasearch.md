@@ -70,7 +70,7 @@ comments: true
 	* [SearchDto.java](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/java/com/bit/geha/dto/SearchDto.java){:target="_blank"}
 
 	* **[searchMapper.xml](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/mapper/searchMapper.xml){:target="_blank"}**
-		* [Mapper 검색 쿼리 설명]({{site.url}}/project/2019/02/16/gehaquery/){:target="}
+		* [Mapper 검색 쿼리 설명]({{site.url}}/project/2019/02/16/gehaquery/){:target="_blank"}
 
 * 기능 설명
 	1. 검색 부분
