@@ -6,21 +6,21 @@ tags: [프로젝트]
 comments: true
 ---
 
-* [홈페이지 링크](){:target="_blank"}
+### [홈페이지 링크](){:target="_blank"}
 
-* 결과화면
+### 결과화면
 
 ![GEHA-방찾기-결과화면]({{site.url}}/assets/post-img/project/search.png)
 
-* 스토리보드
+### 스토리보드
 
 ![GEHA-방찾기-스토리보드]({{site.url}}/assets/post-img/sql/storyboard.jpg)
 
-* ERD
+### ERD
 
 ![GEHA-방찾기-ERD]({{site.url}}/assets/post-img/project/erd.png)
 
-* 사용한 기술 **(주요 기술)**
+## 사용한 기술 **(주요 기술)**
 
 	* Backend & DB
 		* **Springboot 2.x**
@@ -46,16 +46,16 @@ comments: true
 		* VSCODE
 		* HeidiSQL
 
-* 간단한 설명 & 배운 점
+## 간단한 설명 & 배운 점
 
 	* 게스트하우스 프로젝트에서 중요한 부분인 검색 페이지를 맡았습니다
-	* 날짜와 인원수를 동시에 검색하는 검색 쿼리에 시간을 가장 많이 투자했습니다
+	* 날짜와 인원수를 동시에 검색하는 검색 쿼리를 만드는 데에 공을 많이 들였습니다
 	* AJAX를 사용해 모든 검색이 하나의 url에서 동작하도록 구성했습니다
 	* 다음 지도 API에서 제공하는 기능을 적절하게 사용해서 사용자 경험을 향상시켰습니다
 	* Git과 GitHub를 적극 사용해서 협업으로서의 버전관리에 익숙해졌습니다
 	* SQL의 기초문법 특히 여러가지 Join의 차이점을 정확하게 알고 사용할 수 있게 되었습니다
 
-* 소스코드 깃허브 링크 **(주요 소스코드)**
+## 소스코드 깃허브 링크 **(주요 소스코드)**
 
 	* **[search.html](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/templates/search.html){:target="_blank"}**
 
@@ -72,7 +72,8 @@ comments: true
 	* **[searchMapper.xml](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/mapper/searchMapper.xml){:target="_blank"}**
 		* [Mapper 검색 쿼리 설명]({{site.url}}/project/2019/02/16/gehaquery/){:target="_blank"}
 
-* 기능 설명
+## 기능 설명
+
 	1. 검색 부분
 		* 날짜 - air datepicker plugin을 사용해서 사용자로부터 정확한 날짜 정보를 받을 수 있습니다
 		* 키워드 검색 - 키워드 입력후 Enter키를 눌렀을 때도 이벤트 발생합니다
@@ -88,13 +89,13 @@ comments: true
 		* Handlebars template을 이용해서 html을 주입합니다
 		* Bootstrap을 사용해서 반응형 UI로 만들었습니다. 화면이 줄어들었을 때 한 줄에 보이는 데이터의 갯수를 조절합니다 (3개 -> 2개 -> 1개)
 
-* 문제 -> 질문 -> 해결
+## 문제 -> 질문 -> 해결
 	* 날짜와 인원수를 동시에 검색하는 부분
 		* [구루비 - 예약사이트 날짜검색&인원검색 방법](http://www.gurubee.net/article/80746){:target="_blank"}
 	* 카카오 API에서 다른 오버레이를 클릭했을 때 기존 오버레이 삭제하는 부분
 		* [kakao devtalk - Ajax 검색 결과가 달라질 때 다중 마커 삭제 방법](https://devtalk.kakao.com/t/ajax/68718){:target="_blank"}
 
-* References
+### References
 
 	* [여기어때](https://www.goodchoice.kr/product/search/6){:target="_blank"}
 	* [우주](https://www.woozoo.kr/houses){:target="_blank"}
