@@ -6,7 +6,7 @@ tags: [프로젝트]
 comments: true
 ---
 
-### [홈페이지 링크](){:target="_blank"}
+### [홈페이지 링크](http://geha.tk/){:target="_blank"}
 
 ### 결과화면
 
@@ -40,7 +40,7 @@ comments: true
 	* **다음 지도 Web API**
 	* air datepicker
 	* Serialize Object
-* 개발 환경
+* OS & Tools
 	* Windows 10
 	* STS 3.x
 	* VSCODE
