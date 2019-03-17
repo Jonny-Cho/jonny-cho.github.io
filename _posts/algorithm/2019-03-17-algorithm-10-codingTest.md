@@ -57,6 +57,26 @@ public static int[] coin(int money){
 }
 ```
 
+* 개선해보자
+
+1. int형 배열을 선언하고 거스름돈의 단위를 넣은 다음
+1. 배열의 값을 하나씩 꺼내면서 money 를 값으로 나눈 값을 차례대로 출력하고
+1. money에 그 동전 단위로 나눈 나머지값으로 재설정해준다.
+
+```java
+public static int[] coin2(int money){
+	int[] coinUnit = {50000, 10000, 5000, 1000, 500, 100, 50, 10, 1};
+	int[] answer = new int[coinUnit.length];
+
+	for(int i=0; i<coinUnit.length; i++){
+		answer[i] = money / coinUnit[i];
+		money %= coinUnit[i];
+	}
+
+	return answer;
+}
+```
+
 ## 369 박수 친 횟수 세기
 
 * 13을 입력받으면 1부터 13까지 연속되는 숫자를 스트링으로 다 몰아넣고 그 중에서 3, 6, 9가 몇개인지 셈
@@ -156,7 +176,70 @@ public static String prog(String word){
 * 책을 무작위로 딱 펴서
 * 왼쪽 페이지 각 자리 숫자의 합, 곱
 * 오른쪽 페이지 각 자리 숫자의 합, 곱
-* 중에서 가장 큰숫자가 자신의 숫자
+* 중에서 가장 큰 숫자가 자신의 숫자
 * 두명이서 대결했을 때 A가 이기면 1, B가 이기면 2, 무승부는 0, 예외사항은 -1출력
 
 * 요거 풀다가 시간이 끝났는데 오늘 풀어봐야겠다.
+
+* 풀었음. 합, 곱을 다른 메서드로 빼야하는구만.
+
+```java
+public class Main {
+	public static void main(String[] args) {
+		System.out.println(bookGame(new int[]{97, 98}, new int[]{197,198})); // 0
+		System.out.println(bookGame(new int[]{131, 132}, new int[]{211,212})); // 1
+		System.out.println(bookGame(new int[]{99, 102}, new int[]{211,212})); // -1
+	}
+
+	public static int bookGame(int[] pobi, int[] crong){
+		int answer = 0;
+		int[] pobiNum = new int[4];
+		int[] crongNum = new int[4];
+
+		if(pobi[0] % 2 == 1 && pobi[0] + 1 == pobi[1] && crong[0] % 2 == 1 && crong[0] + 1 == crong[1]){
+			// 왼합, 왼곱, 오른합, 오른곱
+			pobiNum[0] = calBookSum(pobi[0]);
+			pobiNum[1] = calBookMul(pobi[0]);
+			pobiNum[2] = calBookSum(pobi[1]);
+			pobiNum[3] = calBookMul(pobi[1]);
+
+			crongNum[0] = calBookSum(crong[0]);
+			crongNum[1] = calBookMul(crong[0]);
+			crongNum[2] = calBookSum(crong[1]);
+			crongNum[3] = calBookMul(crong[1]);
+
+			Arrays.sort(pobiNum);
+			Arrays.sort(crongNum);
+
+			answer = Integer.compare(pobiNum[3], crongNum[3]);
+
+		} else {
+			answer = -1;
+		}
+
+		return answer;
+	}
+
+	public static int calBookSum(int pageNum){
+		int pageSum = 0;
+
+		while(pageNum != 0){
+			pageSum += pageNum % 10;
+			pageNum /= 10;
+		}
+
+		return pageSum;
+	}
+
+	public static int calBookMul(int pageNum){
+		int pageSum = 1;
+
+		while(pageNum != 0){
+			pageSum *= pageNum % 10;
+			pageNum /= 10;
+		}
+
+		return pageSum;
+	}
+}
+```
