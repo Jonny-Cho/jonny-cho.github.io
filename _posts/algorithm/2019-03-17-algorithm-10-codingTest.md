@@ -89,15 +89,15 @@ public static int numGame(int number){
 
 	// String += 변환후 3, 6, 9 숫자 카운팅
 	for(int i=1; i<=number; i++){
-			numberStr += String.valueOf(i);
+		numberStr += String.valueOf(i);
 	}
 
 	char[] numberChar = numberStr.toCharArray();
 
 	for(int i=0; i<numberChar.length; i++){
-			if(numberChar[i] == '3' || numberChar[i] == '6' || numberChar[i] == '9'){
-					answer++;
-			}
+		if(numberChar[i] == '3' || numberChar[i] == '6' || numberChar[i] == '9'){
+			answer++;
+		}
 	}
 
 	return answer;
