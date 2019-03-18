@@ -212,12 +212,12 @@ public class Main {
 			Arrays.sort(crongNum);
 
 			if(pobiNum[3] == crongNum[3]){
-                answer = 0;
-            } else if(pobiNum[3] > crongNum[3]){
-                answer = 1;
-            } else {
-                answer = 2;
-            }
+				answer = 0;
+			} else if(pobiNum[3] > crongNum[3]){
+				answer = 1;
+			} else {
+				answer = 2;
+			}
 
 		} else {
 			answer = -1;
