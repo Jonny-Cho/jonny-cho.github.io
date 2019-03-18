@@ -52,7 +52,7 @@ from guestHouse_tb gh
 	on gh.guestHouseCode = ghf.guestHouseCode
 	join
 		(select ghf.guestHouseCode, COUNT(ghf.facilityCode)
-		from guesthouse_has_facility_tb ghf
+		from guestHouse_has_facility_tb ghf
 		where ghf.facilityCode in (1, 3, 5, 7)
 		group by ghf.guestHouseCode
 		having COUNT(ghf.facilityCode) = 4 -- 편의시설 선택 갯수 html에서 가져올 수 있는지 확인
