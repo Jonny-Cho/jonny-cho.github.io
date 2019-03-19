@@ -22,6 +22,7 @@ select distinct gh.guestHouseCode, gh.guestHouseName, gh.address, gh.avgRating, 
 from guestHouse_tb gh
 	left join file_tb fi
 	on fi.guestHouseCode = gh.guestHouseCode
+	and fi.roomCode = 0
 	and fi.isMainImage = 1
 	join grade_tb gr
 	on gr.minRating <= gh.avgRating and gh.avgRating <= gr.maxRating
