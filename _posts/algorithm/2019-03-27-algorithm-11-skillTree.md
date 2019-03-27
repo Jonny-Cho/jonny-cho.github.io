@@ -48,34 +48,33 @@ skill | skill_trees | return
 ```java
 class Solution {
 	public static int avaliableSkillTree(String skill, String[] skill_trees){
-        
 		int answer = 0;
-        int[] indexSkill = new int[skill.length()];
+		int[] indexSkill = new int[skill.length()];
 
-        for(int i=0; i<skill_trees.length; i++){
-            boolean isValid = true;
+		for(int i=0; i<skill_trees.length; i++){
+		boolean isValid = true;
 
-            for(int j=0; j<skill.length(); j++){
-                if(skill_trees[i].indexOf(skill.charAt(j)) < 0){
-                    indexSkill[j] = 999;
-                } else {
-                    indexSkill[j] = skill_trees[i].indexOf(skill.charAt(j));
-                }
-            }
+		for(int j=0; j<skill.length(); j++){
+			if(skill_trees[i].indexOf(skill.charAt(j)) < 0){
+				indexSkill[j] = 999;
+			} else {
+				indexSkill[j] = skill_trees[i].indexOf(skill.charAt(j));
+			}
+		}
 
-            for(int j=0; j<indexSkill.length-1; j++){
-                if(indexSkill[j] > indexSkill[j+1]){
-                    isValid = false;
-                }
-            }
+		for(int j=0; j<indexSkill.length-1; j++){
+			if(indexSkill[j] > indexSkill[j+1]){
+				isValid = false;
+			}
+		}
 
-            if(isValid){
-                answer++;
-            }
+		if(isValid){
+			answer++;
+		}
 
-        }
+		}
 
-        return answer;
+		return answer;
     }
 }
 ```
