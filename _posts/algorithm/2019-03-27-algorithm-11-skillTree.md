@@ -79,6 +79,10 @@ class Solution {
 }
 ```
 
+### 비고
+
+* -1 을 999로 바꾸는 부분이 마음에 들지 않는다. 다음에 다시 풀어보기
+
 ### 참고
 
 * [프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/49993/solution_groups?language=java){:target="_blank"}
