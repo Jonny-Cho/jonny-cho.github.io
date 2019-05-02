@@ -44,6 +44,7 @@ nav:
     - { Java: '/blog/categories/#java' }
     - { Spring: '/blog/categories/#spring' }
     - { JavaScript: '/blog/categories/#js' }
+    - { React: '/blog/categories/#react' }
     - { SQL: '/blog/categories/#sql' }
     - { Server: '/blog/categories/#server' }
     - { Python: '/blog/categories/#python' }
@@ -51,7 +52,7 @@ nav:
     - { 알고리즘 문제풀이: '/blog/categories/#algorithm' }
     - { git: '/blog/categories/#git' }
     - { github pages: '/blog/categories/#githubpages' }
-    - { React: '/blog/categories/#react' }
+    - { etc: '/blog/categories/#etc' }
     # - { Tags: '/blog/tags/' }
   Tags:
     - '/blog/tags/'
