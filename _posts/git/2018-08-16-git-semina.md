@@ -2,7 +2,7 @@
 layout: post
 title: 마이크로소프트 Git Learning 세미나에 다녀왔다.
 category: git
-tags: [git]
+tags: [git, 컨퍼런스]
 comments: true
 ---
 
