@@ -37,16 +37,13 @@ participant | completion | return
 
 ```java
 class Solution {
-	public static int avaliableSkillTree(String skill, String[] skill_trees){
-       String answer = "";
+	public String marathon(String[] participant, String[] completion) {
+        String answer = "";
         int val;
         HashMap<String, Integer> hm = new HashMap<>();
         for(String p : participant) {
         	val = 1;
-        	if(hm.containsKey(p)) {
-        		val = hm.get(p);
-        		val++;
-        	}
+        	if(hm.containsKey(p)) val = hm.get(p) + 1;
         	hm.put(p, val);
         }
         
@@ -61,7 +58,7 @@ class Solution {
         }
         
         return answer;
-	}
+    }
 }
 ```
 
