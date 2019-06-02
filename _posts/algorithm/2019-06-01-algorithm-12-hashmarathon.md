@@ -38,26 +38,26 @@ participant | completion | return
 ```java
 class Solution {
 	public String marathon(String[] participant, String[] completion) {
-        String answer = "";
-        int val;
-        HashMap<String, Integer> hm = new HashMap<>();
-        for(String p : participant) {
-        	val = 1;
-        	if(hm.containsKey(p)) val = hm.get(p) + 1;
-        	hm.put(p, val);
-        }
-        
-        for(String c : completion) {
-        	val = hm.get(c);
-        	if(hm.containsKey(c)) val--;
-        	hm.put(c, val);
-        }
-        
-        for(String key : hm.keySet()) {
-        	if(hm.get(key) == 1) answer = key;
-        }
-        
-        return answer;
+		String answer = "";
+		int val;
+		HashMap<String, Integer> hm = new HashMap<>();
+		for(String p : participant) {
+			val = 1;
+			if(hm.containsKey(p)) val = hm.get(p) + 1;
+			hm.put(p, val);
+		}
+
+		for(String c : completion) {
+			val = hm.get(c);
+			if(hm.containsKey(c)) val--;
+			hm.put(c, val);
+		}
+
+		for(String key : hm.keySet()) {
+			if(hm.get(key) == 1) answer = key;
+		}
+
+		return answer;
     }
 }
 ```
