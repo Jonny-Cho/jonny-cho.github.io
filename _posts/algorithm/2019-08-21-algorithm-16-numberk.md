@@ -1,6 +1,6 @@
 ---
 layout: post
-title: LV2. K번째 수
+title: LV1. K번째 수
 category: algorithm
 tags: [algorithm]
 comments: true
