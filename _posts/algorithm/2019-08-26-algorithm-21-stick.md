@@ -32,7 +32,7 @@ class Solution{
 			if(arr[i].equals(")") && arr[i+1].equals(")")) {
 				startIndex = stackOpen.pop();
 				endIndex = i+1;
-				answer += countRazer(arr, startIndex, endIndex)+1;
+				answer += countRazer(arr, startIndex, endIndex);
 			}
 		}
 		
@@ -74,7 +74,7 @@ class Solution {
                 }
             }
         }
-        return answer;
+        return answer+1;
     }
 }
 ```
