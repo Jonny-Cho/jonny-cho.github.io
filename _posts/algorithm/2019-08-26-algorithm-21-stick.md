@@ -48,7 +48,7 @@ class Solution{
 			}
 		}
 		
-		return count;
+		return count+1;
 	}
 
 }
@@ -74,7 +74,7 @@ class Solution {
                 }
             }
         }
-        return answer+1;
+        return answer;
     }
 }
 ```
