@@ -1,6 +1,6 @@
 ---
 layout: post
-title: LV2. 카페트
+title: LV2. 카펫
 category: algorithm
 tags: [algorithm]
 comments: true
