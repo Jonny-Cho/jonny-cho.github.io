@@ -17,8 +17,8 @@ class Solution {
     public int[] solution(int brown, int red) {
         int[] answer;
         
-        int b = ((brown / 2) + 2); // 14
-        int c = brown + red; // 48
+        int b = ((brown / 2) + 2);
+        int c = brown + red;
         
         int discriminant = (int) Math.sqrt((b * b) - (4 * c));
         
