@@ -74,7 +74,7 @@ class Solution {
         
         // 체크를 위한 boolean 이차원 배열 만들기
 		boolean[][] board = new boolean[8][8];
-		
+
 		for(int k=0; k<positions.length; k++) {
 			int x = positions[k][0];
 			int y = positions[k][1];
@@ -101,6 +101,7 @@ class Solution {
 ```
 
 * 여러개의 비숍이 위치할 때 중복을 제거하는 로직 추가가 필요할 것 같다.
+* 이 문제에서는 boolean 배열 만들지 않아도 될 것 같다. 체스판의 위치가 필요한게 아니라 갯수만 리턴하면 되니까.
 
 ### 3번문제
 
