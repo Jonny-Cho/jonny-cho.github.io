@@ -73,9 +73,9 @@ class Solution {
         }
         
         // 체크를 위한 boolean 이차원 배열 만들기
-        boolean[][] board = new boolean[8][8];
-        
-        for(int k=0; k<positions.length; k++) {
+		boolean[][] board = new boolean[8][8];
+		
+		for(int k=0; k<positions.length; k++) {
 			int x = positions[k][0];
 			int y = positions[k][1];
 			for(int i=0; i<board.length; i++) {
@@ -133,4 +133,4 @@ class Solution {
 ```
 
 * 난이도가 높지 않았는데 시간내에 못풀어서 아쉬움이 크다.
-* 그래도 이 정도로 성장했구나 확인할 수 있었던 시간.
+* 그래도 이 정도로 성장했구나 확인할 수 있었던 시간이었다.
