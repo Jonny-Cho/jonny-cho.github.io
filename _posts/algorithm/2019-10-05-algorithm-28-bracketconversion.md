@@ -91,5 +91,5 @@ class Solution {
 ](https://www.youtube.com/watch?v=bIeqAlmNRrA&t=2003s){:target="_blank"} 에 나온대로 메서드를 최대한 나누려고 노력 지금은 깊이 2단계 까지는 보인다.
 * 개선할 것
   1. removeAndReverse 메서드를 앞과 뒤를 제거하는 것과 가운데 내용을 뒤집는 메서드로 쪼개는게 낫겠다.
-  2. '(' 과 ')'를 비교하는 내용이 많이 등장하는데 실수를 방지하기 위해서 isOpeningBracket, isClosingBracket등의 메서드로 만들어도 될 것 같다.
+  2. '('과 ')'를 비교하는 내용이 많이 등장하는데 실수를 방지하기 위해서 isOpeningBracket, isClosingBracket등의 메서드로 만들어도 될 것 같다.
   3. balancedBracket 메서드의 가장 밑 `return sb.toString();`은 논리적으로 실행될 수 없다. 균형잡힌 괄호의 index값을 리턴하게 하면 되려나... 고민해보자.
