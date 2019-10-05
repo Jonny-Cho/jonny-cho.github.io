@@ -93,3 +93,4 @@ class Solution {
   1. removeAndReverse 메서드를 앞과 뒤를 제거하는 것과 가운데 내용을 뒤집는 메서드로 쪼개는게 낫겠다.
   2. `'('` 과 `')'`를 비교하는 내용이 많이 등장하는데 실수를 방지하기 위해서 `isOpeningBracket()`, `isClosingBracket()` 메서드를 만들어도 되겠다.
   3. balancedBracket 메서드의 가장 밑 `return sb.toString();`은 논리적으로 실행될 수 없다. 균형잡힌 괄호의 index값을 리턴하게 하면 되려나... 고민해보자.
+  4. 깊이 2인 메서드 1로 줄여보기
