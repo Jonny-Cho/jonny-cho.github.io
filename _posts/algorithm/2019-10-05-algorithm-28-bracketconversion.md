@@ -94,3 +94,91 @@ class Solution {
   2. `'('` 과 `')'`를 비교하는 내용이 많이 등장하는데 실수를 방지하기 위해서 `isOpeningBracket()`, `isClosingBracket()` 메서드를 만들어도 되겠다.
   3. balancedBracket 메서드의 가장 밑 `return sb.toString();`은 논리적으로 실행될 수 없다. 균형잡힌 괄호의 index값을 리턴하게 하면 되려나... 고민해보자.
   4. 깊이 2인 메서드 1로 줄여보기
+
+## 개선한 코드
+
+```java
+class Solution {
+    public String solution(String p) {
+        if(rightBracket(p)) return p;
+        else return convertBracket(p);
+    }
+
+	private boolean rightBracket(String p) {
+		int tempInt = 0;
+		for(int i=0; i<p.length(); i++) {
+			if(tempInt < 0) return false;
+			if(isOpeningBracket(p.charAt(i))) tempInt++;
+			if(isClosingBracket(p.charAt(i))) tempInt--;
+		}
+		return true;
+	}
+
+	private String convertBracket(String p) {
+		if ("".equals(p)) return "";
+
+		String u = balancedBracket(p);
+		String v = p.substring(u.length());
+		
+		StringBuilder sb = new StringBuilder();
+		if(rightBracket(u)) {
+			sb.append(u);
+			sb.append(convertBracket(v));
+			return sb.toString();
+		}
+		else {
+			sb.append(openingBracket());
+			sb.append(convertBracket(v));
+			sb.append(closingBracket());
+			sb.append(removeAndReverse(u));
+			return sb.toString();
+		}
+	}
+
+	private String balancedBracket(String w) {
+		StringBuilder sb = new StringBuilder();
+		int tempInt = 0;
+		for(int i=0; i<w.length(); i++) {
+			char c = w.charAt(i);
+			if(isOpeningBracket(c)) tempInt ++;
+			if(isClosingBracket(c)) tempInt --;
+			sb.append(c);
+			if(i >= 1 && tempInt == 0) return sb.toString();
+		}
+		return "";
+	}
+	
+	private String removeAndReverse(String u) {
+		return reverse(removeEnds(u));
+	}
+	
+	private String removeEnds(String u) {
+		return u.substring(1, u.length()-1);
+	}
+
+	private String reverse(String center) {
+		StringBuilder sb = new StringBuilder();
+		for(int i=0; i<center.length(); i++) {
+			if(isOpeningBracket(center.charAt(i))) sb.append(closingBracket());
+			if(isClosingBracket(center.charAt(i))) sb.append(openingBracket());
+		}
+		return sb.toString();
+	}
+
+	private boolean isOpeningBracket(char c) {
+		return c == '(';
+	}
+	
+	private boolean isClosingBracket(char c) {
+		return c == ')';
+	}
+	
+	private String openingBracket() {
+		return "(";
+	}
+
+	private String closingBracket() {
+		return ")";
+	}
+}
+```
