@@ -69,7 +69,7 @@ package main
 
 import (
     "fmt"
-    //"log" // 책과 버전이 달라졌는지 log는 import하지 않는다. 뭐가 달라졌는지 확인해보자
+    "log"
     "net/http"
     "net/http/httputil"
 )
@@ -93,5 +93,21 @@ func main(){
 }
 ```
 
-![서버시작]({{site.url}}/_posts/http/2019-11-04-img/serverstart.png)
+![서버시작]({{site.url}}/assets/post-img/http/realworld1/serverstart.png)
+
+## curl 실행
+
+```bash
+# curl 실행
+curl --http1.0 http://localhost:18888/greeting
+
+# 서버 측 로그
+GET /greeting HTTP/1.0
+Host: localhost:18888
+Connection: close
+Accept: */*
+User-Agent: curl/7.54.0
+```
+
+![서버클라이언트]({{site.url}}/assets/post-img/http/realworld1/serverclient.png)
 
