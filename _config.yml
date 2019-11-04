@@ -44,9 +44,10 @@ nav:
     - { Java: '/blog/categories/#java' }
     - { Spring: '/blog/categories/#spring' }
     - { JavaScript: '/blog/categories/#js' }
-    - { Node: '/blog/categories/#Node' }
-    - { React: '/blog/categories/#react' }
+    # - { Node: '/blog/categories/#Node' }
+    # - { React: '/blog/categories/#react' }
     - { SQL: '/blog/categories/#sql' }
+    - { HTTP: '/blog/categories/#http' }
     - { Server: '/blog/categories/#server' }
     - { Python: '/blog/categories/#python' }
     - { Django: '/blog/categories/#django' }
