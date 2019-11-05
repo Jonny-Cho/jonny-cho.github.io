@@ -375,6 +375,6 @@ curl --http1.0 -x http://localhost:18888 -U user:pass http://example.com/hellowo
 ### References
 
 * Real World HTTP
-* https://www.zerocho.com/category/HTTP/post/5b594dd3c06fa2001b89feb9
-* https://adunhansa.tistory.com/256
-* https://medium.com/@bbirec/http-%EC%BA%90%EC%89%AC%EB%A1%9C-api-%EC%86%8D%EB%8F%84-%EC%98%AC%EB%A6%AC%EA%B8%B0-2effb1bfab12
+* HTTP 완벽가이드 조금
+* 그림으로 배우는 Http & Network
+* [알아둬야 할 HTTP 쿠키 & 캐시 헤더](https://www.zerocho.com/category/HTTP/post/5b594dd3c06fa2001b89feb9){:target="_blank"}
