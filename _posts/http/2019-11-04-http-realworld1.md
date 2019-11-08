@@ -32,7 +32,7 @@ comments: true
 * HTTP/1.0 (1996)
 * HTTP/1.1 (1997)
 * HTTP/2 (2005)
-* 현대 HTTP의 기능을 이해한다 그 이해를 돕기 위해 역사를 되돌아본다.
+* 현대 HTTP의 기능을 이해한다. 그 이해를 돕기 위해 역사를 되돌아본다.
 
 ---
 
@@ -44,7 +44,7 @@ comments: true
 ### 고유명사
 
 |이름|설명|
-|:---:|:---|
+|:---|:---|
 |IETF (The Internet Engineering Task Force) | RFC를 만든 단체|
 |RFC (Request For Comments) | IETF가 만든 규약 문서|
 |IANA (Internet Assigned Numbers Authority) | 포트 번호와 파일 타입등 웹에 관한 데이터베이스를 관리하는 단체 |
