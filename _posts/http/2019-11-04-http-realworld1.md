@@ -12,7 +12,7 @@ comments: true
 
 * HTTP 프로토콜 기초
 * HTTP 발전과정
-* 브라우저 내부에서 어떤 일이 일이너나느가
+* 브라우저 내부에서 어떤 일이 일어나는가
 * 서버와 브라우저가 어떻게 상호작용하는가
 
 * HTTP 기본요소
@@ -43,11 +43,13 @@ comments: true
 
 ### 고유명사
 
-IETF - The Internet Engineering Task Force - RFC를 만든 단체
-RFC - Request For Comments - IETF가 만든 규약 문서
-IANA - Internet Assigned Numbers Authority - 포트 번호와 파일 타입등 웹에 관한 데이터베이스를 관리하는 단체
-W3C - World Wide Web Consortium - 웹 관련 표준화를 하는 비영리 단체
-WHATWG - Web Hypertext Application Technology Working Group - 웹 관련 규격을 논의하는 단체
+|이름|설명|
+|:---:|:---|
+|IETF (The Internet Engineering Task Force) | RFC를 만든 단체|
+|RFC (Request For Comments) | IETF가 만든 규약 문서|
+|IANA (Internet Assigned Numbers Authority) | 포트 번호와 파일 타입등 웹에 관한 데이터베이스를 관리하는 단체 |
+|W3C (World Wide Web Consortium)| 웹 관련 표준화를 하는 비영리 단체 |
+|WHATWG (Web Hypertext Application Technology Working Group) | 웹 관련 규격을 논의하는 단체|
 
 ### 테스트 에코 서버 실행
 
