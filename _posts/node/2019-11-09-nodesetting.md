@@ -37,7 +37,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 * `nvm ls` 설치된 Node 버전 목록 확인
 * `nvm use node` 혹은 `nvm run node --version` 명령어를 사용하면 현재 사용하고 있는 node의 버전을 확인 할 수 있다.
 * `nvm which 12.13.0` 명령어로 node 설치경로를 확인할 수 있다.
-* `node-v`, `npm -v` node안에 npm이 포함되어 설치된다. 두 명령어로 설치된 버전을 확인하자.
+* `node -v`, `npm -v` node안에 npm이 포함되어 설치된다. 두 명령어로 설치된 버전을 확인하자.
 
 ### References
   * [mac에서 'node.js'를 완전히 삭제하는 방법](https://gomugom.github.io/how-to-remove-node-from-macos/){:target="_blank"}
