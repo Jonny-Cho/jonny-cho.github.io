@@ -45,8 +45,3 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
   * [처음 시작하는 Node.js 개발 2 npm](https://heropy.blog/2018/02/18/node-js-npm/){:target="_blank"}
   * [nvm 깃허브](https://github.com/nvm-sh/nvm){:target="_blank"}
   * [김정환블로그 - NVM으로 노드 버전 관리하기](http://jeonghwan-kim.github.io/2016/08/10/nvm.html){:target:="_blank"}
-  * 
-  * [YouTube - Express.js & Node.js Course for Beginners - Full Tutorial](https://www.youtube.com/watch?v=G8uL0lFFoN0){:target="_blank"}
-  * [expressjs.com](http://expressjs.com/){:target="_blank"}
-  * [NodeJS를 이용한 API 서버만들기 2](http://webframeworks.kr/tutorials/nodejs/api-server-by-nodejs-02/){:target="_blank"}
-  * [내 NPM 패키지(모듈) 배포하기](https://heropy.blog/2019/01/31/node-js-npm-module-publish/){:target="_blank"}
