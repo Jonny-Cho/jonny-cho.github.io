@@ -8,6 +8,7 @@ comments: true
 
 * node를 설치하는 여러가지 방법이 있는데 이 중 어떤 걸로 node를 설치하고 관리한건지 전혀 기억이 나지 않는다.
 * 이번에 다시 세팅할 때는 좀 적어놓자는 마음.
+* 삭제 -> 프로젝트 세팅 -> expressJS -> DB Connection -> NPM Deploy 순서로 따라가보면 될 듯하다.
 
 ## 삭제하기
 
@@ -18,7 +19,7 @@ comments: true
 
 * nvm 깃허브 설명이 제일 좋다. 다른 블로그의 경우 최신버전이 아닐 수 있으니 이곳을 참고하도록 하자.
 * [nvm 깃허브](https://github.com/nvm-sh/nvm){:target="_blank"}
-* 한글은 [김정환님 블로그](http://jeonghwan-kim.github.io/2016/08/10/nvm.html){:target:="_blank"}
+* 한글은 [김정환블로그 - NVM으로 노드 버전 관리하기](http://jeonghwan-kim.github.io/2016/08/10/nvm.html){:target:="_blank"}
 * `curl -o- https://` 로 시작하는 스크립트로 설치 (`brew install nvm`명령어를 사용하는 방법도 있다.)
 * 설치되면 `(~/.bash_profile, ~/.zshrc, ~/.profile, or ~/.bashrc)` 중 하나의 파일에 다음과 같은 스크립트가 추가된다. (나의 경우 `~/.bash_profile` 파일)  
 
@@ -32,20 +33,20 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 ## nvm으로 node 설치하기
 
 * 이제 `nvm ls-remote` 명령로 설치가능한 node 버전을 확인할 수 있다.
-* LTS(Long Time Support)버전을 설치한다. 현재 LTS는 12.13.0 `nvm install 12.13.0`. `nvm install --lts`명령어도 있네.
+* LTS(Long Term Support)버전을 설치한다. 현재 LTS는 12.13.0 `nvm install 12.13.0`. `nvm install --lts`명령어도 있네.
 * `nvm ls` 설치된 Node 버전 목록 확인
 * `nvm use node` 혹은 `nvm run node --version` 명령어를 사용하면 현재 사용하고 있는 node의 버전을 확인 할 수 있다.
 * `nvm which 12.13.0` 명령어로 node 설치경로를 확인할 수 있다.
 * `node-v`, `npm -v` node안에 npm이 포함되어 설치된다. 두 명령어로 설치된 버전을 확인하자.
 
-### 프로젝트 세팅
-
-* 원하는 작업폴더 안에서 시작한다
-* `npm init`
-* 여러가지 옵션을 설정하면 package.json파일이 생성된다.
-* 
-
-* References
+### References
+  * [mac에서 'node.js'를 완전히 삭제하는 방법](https://gomugom.github.io/how-to-remove-node-from-macos/){:target="_blank"}
   * [처음 시작하는 Node.js 개발 1 설치 및 버전관리](https://heropy.blog/2018/02/17/node-js-install/){:target="_blank"}
   * [처음 시작하는 Node.js 개발 2 npm](https://heropy.blog/2018/02/18/node-js-npm/){:target="_blank"}
+  * [nvm 깃허브](https://github.com/nvm-sh/nvm){:target="_blank"}
+  * [김정환블로그 - NVM으로 노드 버전 관리하기](http://jeonghwan-kim.github.io/2016/08/10/nvm.html){:target:="_blank"}
+  * 
+  * [YouTube - Express.js & Node.js Course for Beginners - Full Tutorial](https://www.youtube.com/watch?v=G8uL0lFFoN0){:target="_blank"}
+  * [expressjs.com](http://expressjs.com/){:target="_blank"}
+  * [NodeJS를 이용한 API 서버만들기 2](http://webframeworks.kr/tutorials/nodejs/api-server-by-nodejs-02/){:target="_blank"}
   * [내 NPM 패키지(모듈) 배포하기](https://heropy.blog/2019/01/31/node-js-npm-module-publish/){:target="_blank"}
