@@ -24,10 +24,10 @@ public class BracketConversion {
 }
 
 class Solution {
-    public String solution(String p) {
-        if(rightBracket(p)) return p;
-        else return convertBracket(p);
-    }
+	public String solution(String p) {
+			if(rightBracket(p)) return p;
+			else return convertBracket(p);
+	}
 
 	private boolean rightBracket(String p) {
 		int tempInt = 0;

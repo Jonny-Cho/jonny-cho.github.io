@@ -4,6 +4,7 @@ title: 노드 삭제 후 깔끔하게 프로젝트 세팅하기
 category: node
 tags: [node]
 comments: true
+published: false
 ---
 
 * node를 설치하는 여러가지 방법이 있는데 이 중 어떤 걸로 node를 설치하고 관리한건지 전혀 기억이 나지 않는다.
