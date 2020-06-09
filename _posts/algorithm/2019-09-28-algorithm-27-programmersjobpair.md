@@ -1,9 +1,10 @@
 ---
 layout: post
-title: 프로그래머스 잡페어 나의 답 (2019년 9월)
+title: 2019년 9월
 category: algorithm
 tags: [algorithm]
 comments: true
+published: false
 ---
 
 ### 1번문제
