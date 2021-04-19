@@ -52,7 +52,7 @@ Undertow 2.0 | 4.0
 
 [Comparing Embedded Servlet Containers in Spring Boot - Baeldung](https://www.baeldung.com/spring-boot-servlet-containers)
 
-![1%20Getting%20Started%20b4be12fa5c9e4e9db3e9969c41935d93/Untitled.png](1%20Getting%20Started%20b4be12fa5c9e4e9db3e9969c41935d93/Untitled.png)
+![톰캣 속도 비교]({{site.url}}/assets/post-img/spring/springboot/01/1.png)
 
 - 톰캣 설치 + war, 내장 톰캣 경험만 있는데, Undertow를 한번 써봐야겠다는 생각을 했습니다.
 - 여러분들은 어떤 WAS를 사용하시나요?
@@ -127,7 +127,7 @@ set-executionpolicy -s cu unrestricted
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('[https://get.scoop.sh](https://get.scoop.sh/)')
 ```
 
-![1%20Getting%20Started%20b4be12fa5c9e4e9db3e9969c41935d93/Untitled%201.png](1%20Getting%20Started%20b4be12fa5c9e4e9db3e9969c41935d93/Untitled%201.png)
+![powershell1]({{site.url}}/assets/post-img/spring/springboot/01/2.png)
 
 ```powershell
 scoop help
@@ -135,7 +135,7 @@ scoop bucket add extras
 scoop install springboot
 ```
 
-![1%20Getting%20Started%20b4be12fa5c9e4e9db3e9969c41935d93/Untitled%202.png](1%20Getting%20Started%20b4be12fa5c9e4e9db3e9969c41935d93/Untitled%202.png)
+![powershell2]({{site.url}}/assets/post-img/spring/springboot/01/3.png)
 
 Scoop installs spring to ~/scoop/apps/springboot/current/bin.
 
@@ -159,9 +159,9 @@ class ThisWillActuallyRun {
 spring run app.groovy
 ```
 
-![1%20Getting%20Started%20b4be12fa5c9e4e9db3e9969c41935d93/Untitled%203.png](1%20Getting%20Started%20b4be12fa5c9e4e9db3e9969c41935d93/Untitled%203.png)
+![powershell3]({{site.url}}/assets/post-img/spring/springboot/01/4.png)
 
-![1%20Getting%20Started%20b4be12fa5c9e4e9db3e9969c41935d93/Untitled%204.png](1%20Getting%20Started%20b4be12fa5c9e4e9db3e9969c41935d93/Untitled%204.png)
+![powershell4]({{site.url}}/assets/post-img/spring/springboot/01/3.png)
 
 ### 3.3. Upgrading from an Earlier Version of Spring Boot
 
