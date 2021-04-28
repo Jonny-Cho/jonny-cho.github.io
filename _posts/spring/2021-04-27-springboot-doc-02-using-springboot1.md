@@ -8,8 +8,6 @@ comments: true
 
 # 1. Getting Started
 
-###
-
 - what - **introduction** to Spring Boot with installation instructions
 - how - **building** your first Spring Boot application
 - why - discussing some core **principles**
