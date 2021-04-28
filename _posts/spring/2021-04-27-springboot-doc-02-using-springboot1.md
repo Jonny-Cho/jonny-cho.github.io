@@ -6,280 +6,154 @@ tags: [springboot, 스프링부트]
 comments: true
 ---
 
-# 1. Getting Started
+# 2. Using Spring Boot (1 / 2)
 
-- what - **introduction** to Spring Boot with installation instructions
-- how - **building** your first Spring Boot application
-- why - discussing some core **principles**
+### **2.1. Using the “default” Package**
 
-## 1. introduction to Spring Boot with installation instructions
+# 1. 빌드 시스템
 
-Spring Boot helps you to create **stand-alone**, **production-grade** Spring-based Applications that you can run.
+It is strongly recommended that you choose a build system that supports dependency management and that can consume artifacts published to the “Maven Central” repository. We would recommend that you choose Maven or Gradle. It is possible to get Spring Boot to work with other build systems (Ant, for example), but they are not particularly well supported.
 
-**We take an opinionated** view of the Spring platform and third-party libraries, so that you can get started with **minimum fuss**.
+종속성 관리를 지원하고 "Maven Central"저장소에 게시 된 아티팩트를 사용할 수있는 빌드 시스템을 선택하는 것이 좋습니다. Maven 또는 Gradle을 선택하는 것이 좋습니다. Spring Boot가 다른 빌드 시스템 (예 : Ant)과 함께 작동하도록 할 수 있지만 특별히 잘 지원되지는 않습니다.
 
-Most Spring Boot applications need **very little Spring configuration**.
+### 1.1. Dependency Management
 
-You can use Spring Boot to create Java applications that can be started by using java -jar or more traditional war deployments. We also provide a command line tool that runs “**spring scripts**”.
+Each release of Spring Boot provides a curated list of dependencies that it supports. In practice, you do not need to provide a version for any of these dependencies in your build configuration, as Spring Boot manages that for you. When you upgrade Spring Boot itself, these dependencies are upgraded as well in a consistent way.
 
-Our primary goals are:
+Spring Boot의 각 릴리스는 지원하는 선별 된 종속성 목록을 제공합니다. 실제로 Spring Boot에서 관리하므로 빌드 구성에서 이러한 종속성에 대한 버전을 제공 할 필요가 없습니다. Spring Boot 자체를 업그레이드하면 이러한 종속성도 일관된 방식으로 업그레이드됩니다.
 
-1. Provide a **radically faster and widely accessible** getting-started experience for all Spring development. 모든 스프링 개발환경을 위해 빠르고 광범위하게 접근가능한 스타트 경험을 제공한다. (기본설정이 있어서 빠르게 시작가능)
-2. Be opinionated out of the box but get out of the way **quickly** as requirements start to **diverge from the defaults**. 요구사항에 맞게 기본설정에서 빠르게 벗어날수 있다. (설정 커스터마이징이 쉽다.)
-3. Provide a range of **non-functional features** that are common to large classes of projects (such as embedded servers, security, metrics, health checks, and externalized configuration). 대규모 프로젝트 클래스 (예 : 임베디드 서버, 보안, 메트릭, 상태 확인 및 외부화 된 구성)에 공통되는 다양한 non-functional 기능을 제공합니다.
-4. Absolutely **no code generation** and no requirement for **XML configuration**. 코드생성 절대 없음. XML 설정이 필수 아님
+(물론 필요하다면 버전을 직접 지정할 수도 있습니다. - 버전 오버라이딩)
 
-## 2. System Requirements
+The curated list contains all the Spring modules that you can use with Spring Boot as well as a refined list of third party libraries. The list is available as a standard Bills of Materials (spring-boot-dependencies) that can be used with both Maven and Gradle.
 
-- java8 이상 (15까지 호환)
-- 스프링 5.3.4 이상
-- maven 3.3 이상
-- gradle 6.3 이상 (5.6도 지원은 함)
+큐레이팅 된 목록에는 Spring Boot와 함께 사용할 수있는 모든 Spring 모듈과 정제 된 타사 라이브러리 목록이 포함되어 있습니다. 이 목록은 Maven 및 Gradle 모두에서 사용할 수있는 표준 Bills of Materials(BOM - 상세내역서) (spring-boot-dependencies)으로 제공됩니다.
 
-## 2.1. Servlet Containers
+### 1.2. Maven
 
-Tomcat 9.0 | 4.0
+### 1.3. Gradle
 
-Jetty 9.4 | 3.1
+[Maven vs Gradle](https://bkim.tistory.com/13)
 
-Undertow 2.0 | 4.0
+[Gradle 설정 파일 및 기본 개념 - SLiPP](https://www.slipp.net/wiki/pages/viewpage.action?pageId=11632748)
 
-[내장 Tomcat과 외장 Tomcat의 간단한 비교 - zepinos](https://zepinos.tistory.com/51)
+[https://docs.gradle.org/current/userguide/tutorial_using_tasks.html](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html)
 
-[Spring Boot 공식 지원 내장 WAS 인 Undertow 을 씁시다 - zepinos](https://zepinos.tistory.com/35)
+### 1.4. Ant
 
-[Comparing Embedded Servlet Containers in Spring Boot - Baeldung](https://www.baeldung.com/spring-boot-servlet-containers)
+### 1.5. Starters
 
-![톰캣 속도 비교]({{site.url}}/assets/post-img/spring/springboot/01/1.png)
+Starters are a set of convenient dependency descriptors that you can include in your application. You get a one-stop shop for all the Spring and related technologies that you need without having to hunt through sample code and copy-paste loads of dependency descriptors. For example, if you want to get started using Spring and JPA for database access, include the `spring-boot-starter-data-jpa` dependency in your project.
 
-- 톰캣 설치 + war, 내장 톰캣 경험만 있는데, Undertow를 한번 써봐야겠다는 생각을 했습니다.
-- 여러분들은 어떤 WAS를 사용하시나요?
+The starters contain a lot of the dependencies that you need to get a project up and running quickly and with a consistent, supported set of managed transitive dependencies.
 
-## 3. Installing Spring Boot
+스타터는 애플리케이션에 포함 할 수있는 편리한 종속성 설명자 세트입니다. 샘플 코드를 검색하고 많은 종속성 설명자를 복사하여 붙여 넣을 필요없이 필요한 모든 Spring 및 관련 기술을 원 스톱으로 구매할 수 있습니다. 예를 들어 데이터베이스 액세스를 위해 Spring 및 JPA를 사용하기 시작하려면 프로젝트에 spring-boot-starter-data-jpa 종속성을 포함하십시오.
 
-- SDK v1.8 이상 필요
+스타터에는 프로젝트를 빠르게 시작하고 실행하는 데 필요한 많은 종속성과 일관되고 지원되는 관리되는 전이 종속성 집합이 포함되어 있습니다.
 
-### 3.1 Installation Instructions for the Java Developer
+What’s in a name
 
-You can use Spring Boot in the same way as any standard Java library. To do so, include the appropriate spring-boot-*.jar files on your classpath. **Spring Boot does not require any special tools integration, so you can use any IDE or text editor**. Also, there is nothing special about a Spring Boot application, so you can run and debug a Spring Boot application as you would any other Java program.
+All **official** starters follow a similar naming pattern; `spring-boot-starter-*`, where `*` is a particular type of application. This naming structure is intended to help when you need to find a starter. The Maven integration in many IDEs lets you search dependencies by name. For example, with the appropriate Eclipse or STS plugin installed, you can press `ctrl-space` in the POM editor and type “spring-boot-starter” for a complete list.
 
-Although you could copy Spring Boot jars, we generally recommend that you use a build tool that supports dependency management (such as Maven or Gradle).
+As explained in the “[Creating Your Own Starter](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-custom-starter)” section, third party starters should not start with `spring-boot`, as it is reserved for official Spring Boot artifacts. Rather, a third-party starter typically starts with the name of the project. For example, a third-party starter project called `thirdpartyproject` would typically be named `thirdpartyproject-spring-boot-starter`.
 
-- 왜 의존성 관리를 위한 빌드 툴 (Maven or Gradle)을 쓰는 것이 좋을까? → 2장
+모든 공식 스타터는 비슷한 이름 지정 패턴을 따릅니다. spring-boot-starter- *, 여기서 *는 특정 유형의 애플리케이션입니다. 이 이름 지정 구조는 스타터를 찾아야 할 때 도움을주기위한 것입니다. 많은 IDE의 Maven 통합을 통해 이름으로 종속성을 검색 할 수 있습니다. 예를 들어 적절한 Eclipse 또는 STS 플러그인이 설치된 상태에서 POM 편집기에서 Ctrl-space를 누르고 전체 목록을 보려면 "spring-boot-starter"를 입력 할 수 있습니다.
 
-### 3.1.1. Maven Installation
+“Creating Your Own Starter”섹션에서 설명했듯이 써드 파티 스타터는 공식 Spring Boot 아티팩트 용으로 예약되어 있으므로 spring-boot로 시작해서는 안됩니다. 오히려 타사 스타터는 일반적으로 프로젝트 이름으로 시작합니다. 예를 들어 thirdpartyproject라는 타사 시작 프로젝트의 이름은 일반적으로 thirdpartyproject-spring-boot-starter입니다.
 
-- 스프링부트는 Maven 3.3 이상과 호환됨.
+[Spring Boot application starters](https://www.notion.so/2565a5a5b0384a2f8e5f1e3b48f227e7)
 
-Spring Boot dependencies use the `org.springframework.boot` `groupId`. Typically, your Maven POM file **inherits** from the `spring-boot-starter-parent` project and declares dependencies to one or more [“Starters”](https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-starter). Spring Boot also provides an optional [Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins.html#build-tool-plugins-maven-plugin) to create executable jars.
+## 2. 코드 구성하기
 
-More details on getting started with Spring Boot and Maven can be found in the [Getting Started section](https://docs.spring.io/spring-boot/docs/2.4.4/maven-plugin/reference/htmlsingle/#getting-started) of the Maven plugin’s reference guide.
+Spring Boot는 작동하는 데 특정 코드 레이아웃이 필요하지 않습니다. 그러나 도움이되는 몇 가지 모범 사례가 있습니다.
 
-Spring Boot 종속성은 org.springframework.boot groupId를 사용합니다. 일반적으로 Maven POM 파일은 spring-boot-starter-parent 프로젝트에서 상속되며 하나 이상의 "스타터"에 대한 종속성을 선언합니다. Spring Boot는 실행 가능한 jar를 생성하기위한 선택적 Maven 플러그인도 제공합니다.
+### 2.1. Using the “default” Package
 
-### 3.1.2. Gradle Installation
+클래스에 패키지 선언이 포함되지 않은 경우 "기본 패키지"에있는 것으로 간주됩니다. "기본 패키지"의 사용은 일반적으로 권장되지 않으며 피해야합니다. 모든 jar의 모든 클래스를 읽으므로 @ComponentScan, @ConfigurationPropertiesScan, @EntityScan 또는 @SpringBootApplication 주석을 사용하는 Spring Boot 애플리케이션에 특정 문제가 발생할 수 있습니다.
 
-- 그래이들 6.3 이상 호환
-- 5.6.x도 지원은하지만 deprecated
+> 자바의 권장 패키지 이름 지정 규칙을 따르고 reversed 도메인 이름 (예 : com.example.project)을 사용하는 것이 좋습니다.
 
-Spring Boot dependencies can be declared by using the org.springframework.boot group. Typically, your project declares dependencies to one or more “Starters”. Spring Boot provides a useful Gradle plugin that can be used to simplify dependency declarations and to create executable jars.
+### 2.2. Locating the Main Application Class
 
-Spring Boot 종속성은 org.springframework.boot 그룹을 사용하여 선언 할 수 있습니다. 일반적으로 프로젝트는 하나 이상의 "스타터"에 대한 종속성을 선언합니다. Spring Boot는 종속성 선언을 단순화하고 실행 가능한 jar를 만드는 데 사용할 수있는 유용한 Gradle 플러그인을 제공합니다.
-
-[https://jisooo.tistory.com/entry/Spring-빌드-관리-도구-Maven과-Gradle-비교하기](https://jisooo.tistory.com/entry/Spring-%EB%B9%8C%EB%93%9C-%EA%B4%80%EB%A6%AC-%EB%8F%84%EA%B5%AC-Maven%EA%B3%BC-Gradle-%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B0)
-
-### 3.2. Installing the Spring Boot CLI
-
-The Spring Boot CLI (Command Line Interface) is a **command line tool that you can use to quickly prototype with Spring**. It lets you run Groovy scripts, which means that you have a familiar Java-like syntax without so much boilerplate code.
-
-You do not need to use the CLI to work with Spring Boot, but it is definitely the **quickest way to get a Spring application off the ground.**
-
-### 3.2.1. Manual Installation
-
-### 3.2.2. Installation with SDKMAN!
-
-### 3.2.3. OSX Homebrew Installation
-
-### 3.2.4. MacPorts Installation
-
-### 3.2.5. Command-line Completion
-
-### 3.2.6. Windows Scoop Installation
-
-If you are on a Windows and use Scoop, you can install the Spring Boot CLI by using the following commands:
+일반적으로 다른 클래스 위에있는 루트 패키지에서 기본 애플리케이션 클래스를 찾는 것이 좋습니다. @SpringBootApplication 주석은 종종 기본 클래스에 배치되며 특정 항목에 대한 기본 "검색 패키지"를 암시 적으로 정의합니다. 예를 들어 JPA 애플리케이션을 작성하는 경우 @SpringBootApplication 주석이 달린 클래스의 패키지가 @Entity 항목을 검색하는 데 사용됩니다. 루트 패키지를 사용하면 component scan을 프로젝트에만 적용 할 수도 있습니다.
 
 ```
-> scoop bucket add extras
-> scoop install springboot
+com
+ +- example
+     +- myapplication
+         +- Application.java
+         |
+         +- customer
+         |   +- Customer.java
+         |   +- CustomerController.java
+         |   +- CustomerService.java
+         |   +- CustomerRepository.java
+         |
+         +- order
+             +- Order.java
+             +- OrderController.java
+             +- OrderService.java
+             +- OrderRepository.java
 ```
-
-윈도우에 scoop 설치하기
-
-powershell
-
-- 실행 규칙 변경
-- scoop 다운로드
-
-```powershell
-set-executionpolicy -s cu unrestricted
-Invoke-Expression (New-Object System.Net.WebClient).DownloadString('[https://get.scoop.sh](https://get.scoop.sh/)')
-```
-
-![powershell1]({{site.url}}/assets/post-img/spring/springboot/01/2.png)
-
-```powershell
-scoop help
-scoop bucket add extras
-scoop install springboot
-```
-
-![powershell2]({{site.url}}/assets/post-img/spring/springboot/01/3.png)
-
-Scoop installs spring to ~/scoop/apps/springboot/current/bin.
-
-3.2.7. Quick-start Spring CLI Example
-
-- 아무 폴더에 app.groovy 파일을 만들고 다음 코드 작성
-
-```groovy
-@RestController
-class ThisWillActuallyRun {
-
-    @RequestMapping("/")
-    String home() {
-        "Hello World!"
-    }
-
-}
-```
-
-```powershell
-spring run app.groovy
-```
-
-![powershell3]({{site.url}}/assets/post-img/spring/springboot/01/4.png)
-
-![powershell4]({{site.url}}/assets/post-img/spring/springboot/01/3.png)
-
-### 3.3. Upgrading from an Earlier Version of Spring Boot
-
-## 4. Developing Your First Spring Boot Application
-
-### 4.1. Creating the POM
-
-### 4.2. Adding Classpath Dependencies
-
-Spring Boot provides a number of “Starters” that let you add jars to your classpath. Our applications for smoke tests use the spring-boot-starter-parent in the parent section of the POM. The spring-boot-starter-parent is a special starter that provides useful Maven defaults. It also provides a dependency-management section so that **you can omit version tags for “blessed” dependencies**.
-
-- 어떤 특별한 의존성들은 버전 태그를 생략해도 된다.  spring-boot-starter-parent가 default version을 가지고 있기 때문!
-
-### 4.3. Writing the Code
 
 ```java
-import org.springframework.boot.*;
-import org.springframework.boot.autoconfigure.*;
-import org.springframework.web.bind.annotation.*;
+package com.example.myapplication;
 
-@RestController
-@EnableAutoConfiguration
-public class Example {
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-    @RequestMapping("/")
-    String home() {
-        return "Hello World!";
-    }
+@SpringBootApplication
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Example.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }
 ```
 
-### 4.3.1. The @RestController and @RequestMapping Annotations
+## 3. 설정 클래스
 
-The first annotation on our Example class is @RestController. This is known as a stereotype annotation. It provides hints for people reading the code and for Spring that the class plays a specific role. **In this case, our class is a web @Controller, so Spring considers it when handling incoming web requests.**
+Spring Boot는 Java 기반 구성을 선호합니다. XML 소스와 함께 SpringApplication을 사용할 수 있지만 일반적으로 기본 소스가 단일 @Configuration 클래스 인 것이 좋습니다. 일반적으로 기본 메서드를 정의하는 클래스는 기본 @Configuration으로 좋은 후보입니다.
 
-The @RequestMapping annotation provides “routing” information. It tells Spring that any HTTP request with the / path should be mapped to the home method. **The @RestController annotation tells Spring to render the resulting string directly back to the caller.**
+### 3.1. Importing Additional Configuration Classes
 
-### 4.3.2. The @EnableAutoConfiguration Annotation
+모든 @Configuration을 단일 클래스에 넣을 필요는 없습니다. @Import 주석을 사용하여 추가 구성 클래스를 가져올 수 있습니다. 또는 @ComponentScan을 사용하여 @Configuration 클래스를 포함한 모든 Spring 구성 요소를 자동으로 선택할 수 있습니다.
 
-The second class-level annotation is @EnableAutoConfiguration. **This annotation tells Spring Boot to “guess” how you want to configure Spring, based on the jar dependencies that you have added**. Since spring-boot-starter-web added Tomcat and Spring MVC, the auto-configuration **assumes** that you are developing a web application and sets up Spring accordingly.
+### 3.2. Importing XML Configuration
 
-두 번째 클래스 수준 주석은 @EnableAutoConfiguration입니다. 이 주석은 추가 한 jar 종속성에 따라 Spring을 구성하는 방법을 "추측"하도록 Spring Boot에 지시합니다. spring-boot-starter-web은 Tomcat과 Spring MVC를 추가했기 때문에 자동 구성은 웹 애플리케이션을 개발 중이라고 가정하고 그에 따라 Spring을 설정합니다.
+XML 기반 구성을 반드시 사용해야하는 경우 @Configuration 클래스로 시작하는 것이 좋습니다. 그런 다음 @ImportResource 주석을 사용하여 XML 구성 파일을로드 할 수 있습니다.
 
-Starters and Auto-configuration
+## 4. 자동 설정 (Auto-configuration)
 
-Auto-configuration is designed to work well with “Starters”, but the two concepts are not directly tied. **You are free to pick and choose jar dependencies outside of the starters**. Spring Boot still does its best to auto-configure your application.
+Spring Boot 자동 구성은 추가 한 jar 종속성을 기반으로 Spring 애플리케이션을 자동으로 구성하려고합니다. 예를 들어 HSQLDB가 클래스 경로에 있고 데이터베이스 연결 빈을 수동으로 구성하지 않은 경우 Spring Boot는 메모리 내 데이터베이스를 자동 구성합니다.
 
-스타터 및 자동 구성
-자동 구성은 "스타터"와 잘 작동하도록 설계되었지만 두 개념이 직접적으로 연결되어 있지는 않습니다. **스타터 외부에서 jar 종속성을 자유롭게 선택하고 선택할 수 있습니다**. Spring Boot는 여전히 애플리케이션을 자동 구성하기 위해 최선을 다합니다.
+@Configuration 클래스 중 하나에 @EnableAutoConfiguration 또는 @SpringBootApplication 주석을 추가하여 자동 구성에 옵트 인해야합니다.
 
-### 4.3.3. The “main” Method
+@SpringBootApplication 또는 @EnableAutoConfiguration 주석을 하나만 추가해야합니다. 일반적으로 기본 @Configuration 클래스에만 둘 중 하나를 추가하는 것이 좋습니다.
 
-The final part of our application is the main method. This is a **standard method that follows the Java convention** for an application entry point. **Our main method delegates to Spring Boot’s SpringApplication class by calling run**. SpringApplication bootstraps our application, starting Spring, which, in turn, starts the auto-configured Tomcat web server. We need to pass Example.class as an argument to the run method to tell SpringApplication which is the primary Spring component. The args array is also passed through to expose any command-line arguments.
+### 4.1. Gradually Replacing Auto-configuration
 
-우리 응용 프로그램의 마지막 부분은 main method입니다. 이것은 애플리케이션 진입 점에 대한 Java 규칙을 따르는 표준 방법입니다. 우리의 main method는 **run을 호출하여 Spring Boot의 SpringApplication 클래스에 위임합니다.** SpringApplication은 자동 구성 Tomcat 웹 서버를 시작하는 Spring을 시작하여 애플리케이션을 부트 스트랩합니다. Example.class를 run 메소드에 대한 인수로 전달하여 SpringApplication에 기본 Spring 컴포넌트를 알려야합니다. args 배열도 전달되어 command-line arguments를 노출합니다.
+자동 구성은 비 침습적(non-invasive)입니다. 언제든지 자동 구성의 특정 부분을 대체하기 위해 고유 한 구성을 정의 할 수 있습니다. 예를 들어, 고유 한 DataSource bean을 추가하면 기본 임베디드 데이터베이스 지원이 취소됩니다.
 
-### 4.4. Running the Example
+현재 적용되는 자동 구성과 그 이유를 확인해야하는 경우 --debug 스위치를 사용하여 애플리케이션을 시작합니다. 이렇게하면 선택한 코어 로거에 대한 디버그 로그가 활성화되고 콘솔에 조건 보고서가 기록됩니다.
 
-At this point, your application should work. Since you used the spring-boot-starter-parent POM, you have a useful run goal that you can use to start the application. Type mvn spring-boot:run from the root project directory to start the application. You should see output similar to the following:
+### 4.2. Disabling Specific Auto-configuration Classes
 
-`$ mvn spring-boot:run`
-
-### 4.5. Creating an Executable Jar
-
-We finish our example by creating a completely self-contained executable jar file that we could run in production. Executable jars (sometimes called “fat jars”) are archives containing your compiled classes along with all of the jar dependencies that your code needs to run.
-
-우리는 프로덕션에서 실행할 수있는 완전히 독립적으로 실행 가능한 jar 파일을 생성하여 예제를 마칩니다. 실행 가능한 jar ( "fat jar"라고도 함)는 코드를 실행하는 데 필요한 모든 jar 종속성과 함께 컴파일 된 클래스를 포함합니다.
-
-Executable jars and Java
-
-**Java does not provide a standard way to load nested jar files** (jar files that are themselves contained within a jar). This can be problematic if you are looking to distribute a self-contained application.
-
-To solve this problem, many developers use **“uber” jars**. An uber jar packages all the classes from all the application’s dependencies into a single archive. The problem with this approach is that it becomes hard to see which libraries are in your application. It can also be problematic if the same filename is used (but with different content) in multiple jars.
-
-Spring Boot takes a [different approach](https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-executable-jar-format.html#executable-jar) and lets you actually nest jars directly.
-
-실행 가능한 jar 및 Java
-Java는 중첩 된 jar 파일 (jar 내에 포함 된 jar 파일)을로드하는 표준 방법을 제공하지 않습니다. 자체 포함 된 응용 프로그램을 배포하려는 경우 문제가 될 수 있습니다.
-
-이 문제를 해결하기 위해 많은 개발자가 **"uber"jar**를 사용합니다. uber jar는 모든 애플리케이션 종속성의 모든 클래스를 단일 아카이브로 패키징합니다. 이 접근 방식의 문제점은 애플리케이션에 어떤 라이브러리가 있는지 확인하기가 어렵다는 것입니다. 여러 jar에서 동일한 파일 이름을 사용하는 경우 (그러나 다른 내용으로) 문제가 될 수도 있습니다.
-
-Spring Boot는 다른 접근 방식을 취하며 실제로 jar를 직접 중첩 할 수 있습니다.
-
-```
-fat jars - self-contained executable jar
-uber jars - a single archive packaging all the classes from all the application’s dependencies
-```
+원하지 않는 특정 자동 구성 클래스가 적용되고있는 경우 @SpringBootApplication의 exclude 속성을 사용하여 다음 예와 같이 비활성화 할 수 있습니다.
 
 ```java
-$ mvn package
+import org.springframework.boot.autoconfigure.*;
+import org.springframework.boot.autoconfigure.jdbc.*;
+
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
+public class MyApplication {
+}
 ```
 
-If you look in the `target` directory, you should see `myproject-0.0.1-SNAPSHOT.jar`. The file should be around 10 MB in size. If you want to peek inside, you can use jar tvf, as follows:
+클래스가 클래스 경로에없는 경우 주석의 excludeName 속성을 사용하고 대신 완전한 이름을 지정할 수 있습니다. @SpringBootApplication 대신 @EnableAutoConfiguration을 사용하려는 경우 exclude 및 excludeName도 사용할 수 있습니다. 마지막으로 spring.autoconfigure.exclude 속성을 사용하여 제외 할 자동 구성 클래스 목록을 제어 할 수도 있습니다.
 
-```java
-$ jar tvf target/myproject-0.0.1-SNAPSHOT.jar
-```
+You can define exclusions both at the annotation level and by using the property.
 
-You should also see a much smaller file named `myproject-0.0.1-SNAPSHOT.jar.original` in the target directory. This is the **original jar file that Maven created before it was repackaged by Spring Boot.**
+annotation level과 property를 사용하여 제외를 정의 할 수 있습니다.
 
-To run that application, use the `java -jar` command, as follows:
-
-```java
-$ java -jar target/myproject-0.0.1-SNAPSHOT.jar
-```
-
-메이븐을 이용해 스프링부트 프로젝트를 실행하는 방법
-
-```
-1. 루트 프로젝트 디렉터리에서 `mvn spring-boot:run` 명령어로 시작
-2. `mvn package` 명령어로 jar파일 생성 후 java -jar 명령어로 jar를 실행 `java -jar target/myproject-0.0.1-SNAPSHOT.jar`
-```
-
-## 5. What to Read Next
-
-Hopefully, this section provided some of the Spring Boot basics and got you on your way to writing your own applications. If you are a task-oriented type of developer, you might want to jump over to [spring.io](https://spring.io/) and check out some of the [getting started](https://spring.io/guides/) guides that solve specific “How do I do that with Spring?” problems. We also have Spring Boot-specific “[How-to](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto)” reference documentation.
-
-Otherwise, the next logical step is to read *[using-spring-boot.html](https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot)*. If you are really impatient, you could also jump ahead and read about *[Spring Boot features](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features)*.
+> 자동 구성 클래스는 public이지만 공용 API로 간주되는 클래스의 유일한 aspect는 자동 구성을 비활성화하는 데 사용할 수있는 클래스의 이름입니다. 중첩 된 구성 클래스 또는 빈(bean) 메서드와 같은 클래스의 실제 내용은 내부 전용이므로 직접 사용하지 않는 것이 좋습니다.
