@@ -197,7 +197,7 @@ done
 
 ![19.png]({{site.url}}/assets/post-img/devops/0517/19.png)
 
-Build History에 새로운 빌드가 생긴다면 성공이다.
+Build History에 새로운 빌드가 생긴다면 성공입니다.
 
 ### 마무리
 
