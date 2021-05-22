@@ -167,9 +167,6 @@ hook을 설정하려는 repository/hooks 경로로 접근합니다.
 
 ```shell
 #!/bin/bash
-
-echo "post-receive ------------"
-
 while read oldrev newrev refname
 do
 	branch=$(git rev-parse --symbolic --abbrev-ref $refname)
