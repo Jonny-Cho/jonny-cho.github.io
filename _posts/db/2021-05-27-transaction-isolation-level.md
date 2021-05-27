@@ -49,7 +49,7 @@ ACID
 
 ### (참고 1) READ COMMITTED와 REPEATABLE READ의 성능 비교
 
-* 실제 온라인 서비스 상황에서는 의도적인 경우가 아니라면 REPEATABLE READ의 발생 가능성이 거의 없다.
+* 실제 온라인 서비스 상황에서는 의도적인 경우가 아니라면 NON REPEATABLE READ의 발생 가능성이 거의 없다.
 * 의도적으로 REPEATABLE READ를 발생시키는 대표적인 예
   * 하나의 트랜잭션을 열어 그 트랜잭션에서 모든 테이블의 데이터를 SELECT한 후, 그대로 계속 놔두면 Undo 영역이 계속 커져서 시스템 테이블스페이스의 I/O가 유발되는 경우
 * Real MySQL에 제시된 벤치마크 결과에 따르면
