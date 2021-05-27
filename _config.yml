@@ -3,7 +3,7 @@ title: '개발의숲'
 tagline: '개발의숲'
 description: 'A Jekyll theme adapted from <a href="http://lanyon.getpoole.com/" target="_blank">Lanyon</a>. Made by <a href="http://codinfox.github.io" target="_blank">@codinfox</a>.'
 baseurl: ""
-url: http://jonny-cho.github.io 
+url: http://jonny-cho.github.io
 logo: '/public/logo.png'
 
 # Site configurations
@@ -15,7 +15,7 @@ kramdown:
 excerpt_separator: "<!-- more -->"
 sass:
   style: compressed
-  sass_dir: _scss    
+  sass_dir: _scss
 paginate: 5
 paginate_path: '/blog/page:num'
 permalink: pretty
@@ -35,9 +35,9 @@ author:
 
 # Navigation (2nd level links supported)
 nav:
-  All Posts:           
+  All Posts:
     - '/blog/'
-  Categories:           
+  Categories:
     - '/'
     # - { Categories All: '/blog/categories/' }
     - { 개발일기: '/blog/categories/#dev' }
@@ -46,7 +46,7 @@ nav:
     - { JavaScript: '/blog/categories/#js' }
     # - { Node: '/blog/categories/#Node' }
     # - { React: '/blog/categories/#react' }
-    - { SQL: '/blog/categories/#sql' }
+    - { DB: '/blog/categories/#db' }
     - { HTTP: '/blog/categories/#http' }
     - { Server: '/blog/categories/#server' }
     - { Python: '/blog/categories/#python' }
