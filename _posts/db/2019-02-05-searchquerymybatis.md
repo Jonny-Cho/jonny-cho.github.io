@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MYSQL - 프로젝트 검색 쿼리 마이바티스로 변경
-category: sql
+category: db
 tags: [SQL, 프로젝트]
 comments: true
 ---
@@ -19,12 +19,12 @@ public class SearchCriteria {
 	private int minprice;
 	private int maxprice;
 	private List<String> gender;
-	
+
 	private int trip;
 	private int gourmet;
 	private int shopping;
 	private int business;
-	
+
 	private List<Integer> facilities;
 }
 ```

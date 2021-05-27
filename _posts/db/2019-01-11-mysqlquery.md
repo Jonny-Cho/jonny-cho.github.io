@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MYSQL - 날짜&인원을 동시에 검색하는 경우 문제해결 (게스트하우스 프로젝트)
-category: sql
+category: db
 tags: [SQL, 프로젝트, 문제해결]
 comments: true
 ---
@@ -39,8 +39,8 @@ comments: true
 -- 샘플 테이블 만들기
 CREATE TABLE guest_tb
 (
-    `guestHouseCode`  INT            NOT NULL    AUTO_INCREMENT, 
-    `guestHouseName`  VARCHAR(45)    NULL, 
+    `guestHouseCode`  INT            NOT NULL    AUTO_INCREMENT,
+    `guestHouseName`  VARCHAR(45)    NULL,
     PRIMARY KEY (guestHouseCode)
 );
 
@@ -48,8 +48,8 @@ CREATE TABLE guest_tb
 -- member_tb Table Create SQL
 CREATE TABLE member_tb
 (
-    `membercode`  INT            NOT NULL    AUTO_INCREMENT, 
-    `id`          VARCHAR(45)    NULL, 
+    `membercode`  INT            NOT NULL    AUTO_INCREMENT,
+    `id`          VARCHAR(45)    NULL,
     PRIMARY KEY (membercode)
 );
 
@@ -57,10 +57,10 @@ CREATE TABLE member_tb
 -- room_tb Table Create SQL
 CREATE TABLE room_tb
 (
-    `roomCode`        INT            NOT NULL    AUTO_INCREMENT, 
-    `guestHouseCode`  INT            NULL, 
-    `roomName`        VARCHAR(45)    NULL, 
-    `capacity`        INT            NULL, 
+    `roomCode`        INT            NOT NULL    AUTO_INCREMENT,
+    `guestHouseCode`  INT            NULL,
+    `roomName`        VARCHAR(45)    NULL,
+    `capacity`        INT            NULL,
     PRIMARY KEY (roomCode)
 );
 
@@ -71,13 +71,13 @@ ALTER TABLE room_tb ADD CONSTRAINT FK_room_tb_guestHouseCode_guest_tb_guestHouse
 -- booking_tb Table Create SQL
 CREATE TABLE booking_tb
 (
-    `bookingCode`    INT            NOT NULL    AUTO_INCREMENT, 
-    `memberCode`     INT            NULL, 
-    `booker`         VARCHAR(45)    NULL, 
-    `bookingNumber`  INT            NULL, 
-    `roomCode`       INT            NULL, 
-    `bookingStart`   DATE           NULL, 
-    `bookingEnd`     DATE           NULL, 
+    `bookingCode`    INT            NOT NULL    AUTO_INCREMENT,
+    `memberCode`     INT            NULL,
+    `booker`         VARCHAR(45)    NULL,
+    `bookingNumber`  INT            NULL,
+    `roomCode`       INT            NULL,
+    `bookingStart`   DATE           NULL,
+    `bookingEnd`     DATE           NULL,
     PRIMARY KEY (bookingCode)
 );
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MYSQL - 프로젝트 검색 쿼리 완성
-category: sql
+category: db
 tags: [SQL, 프로젝트]
 comments: true
 ---
@@ -65,7 +65,7 @@ from guestHouse_tb gh
 		(select t.roomCode, count(t.d) "countdate"
 		from
 		(select b.roomCode, a.d
-		from 
+		from
 			(select d
 			from date_t
 			where d between '2019-01-01' and '2019-01-03'
@@ -104,7 +104,7 @@ order by gh.guestHouseCode
 	* 사실 완전한 완성은 아니다.
 	* 키워드 검색이 들어 있지는 않기 때문인데, 여러가지 고려사항이 남아있다.
 		* 예를들어 키워드 검색에 강남을 입력 했을 때 [우주](https://www.woozoo.kr/houses){:target="_blank"} 처럼
-		* 지도가 강남으로 포커스되고 
+		* 지도가 강남으로 포커스되고
 		* 그 지도안에 들어있는 모든 게스트하우스를 밑에 나타내게 하고 싶었던 것인데
 		* 위의 쿼리문에 추가할 경우 DB로 날려서 새로고침 되어야 하기 때문
 		* 애초에 우주와 여기어때를 둘 다 참고해서 UI가 섞인게 원인

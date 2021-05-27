@@ -1,7 +1,7 @@
 ---
 layout: post
 title: (참고) 오라클 SQL 세팅하기(SQL developer + Oracle DB 11g Express)
-category: sql
+category: db
 tags: [SQL]
 comments: true
 ---
@@ -44,7 +44,7 @@ User created.
 > conn system/1234 -- system계정으로 연결
 Connected.
 
-> GRANT connect, resource TO student; 
+> GRANT connect, resource TO student;
 Connected.
 -- system계정으로 student계정에게 connect, resource 권한을 준다
 
