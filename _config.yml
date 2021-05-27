@@ -40,13 +40,14 @@ nav:
   Categories:
     - '/'
     # - { Categories All: '/blog/categories/' }
-    - { 개발일기: '/blog/categories/#dev' }
+#    - { 개발일기: '/blog/categories/#dev' }
     - { Java: '/blog/categories/#java' }
     - { Spring: '/blog/categories/#spring' }
+    - { DB: '/blog/categories/#db' }
+    - { Devops: '/blog/categories/#devops' }
     - { JavaScript: '/blog/categories/#js' }
     # - { Node: '/blog/categories/#Node' }
     # - { React: '/blog/categories/#react' }
-    - { DB: '/blog/categories/#db' }
     - { HTTP: '/blog/categories/#http' }
     - { Server: '/blog/categories/#server' }
     - { Python: '/blog/categories/#python' }
