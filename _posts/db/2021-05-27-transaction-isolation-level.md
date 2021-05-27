@@ -47,6 +47,20 @@ ACID
 * PHANTOM READ
   * 반복 조회시 결과 집합이 달라지는 것
 
+### (참고 1) READ COMMITTED와 REPEATABLE READ의 성능 비교
+
+* 실제 온라인 서비스 상황에서는 의도적인 경우가 아니라면 REPEATABLE READ의 발생 가능성이 거의 없다.
+* 의도적으로 REPEATABLE READ를 발생시키는 대표적인 예
+  * 하나의 트랜잭션을 열어 그 트랜잭션에서 모든 테이블의 데이터를 SELECT한 후, 그대로 계속 놔두면 Undo 영역이 계속 커져서 시스템 테이블스페이스의 I/O가 유발되는 경우
+* Real MySQL에 제시된 벤치마크 결과에 따르면
+* 1G, 30GB 크기의 테이블에서는 REPEATABLE READ가 2% 정도 높은 성능을 보임
+* 100GB 크기의 테이블에서는 READ COMMITTED가 7% 정도 높은 성능을 보임
+
+### (참고 2) JPA를 사용할 때의 트랜잭션 격리레벨
+
+* Jpa의 영속성 컨텍스트(1차 캐시)를 적절히 활용하면 DB 트랜잭션이 READ COMMITTED 격리 수준이어도 애플리케이션 레벨에서 REPEATABLE READ가 가능하다.
+* 만약 일부 로직에 더 높은 격리 수준이 필요하면 낙관적 락이나 비관적 락을 사용하면 된다.
+
 ## 4. 낙관적 락(Optimistic Locking)과 비관적 락(pessimistic Locking)
 
 1. 낙관적 락
