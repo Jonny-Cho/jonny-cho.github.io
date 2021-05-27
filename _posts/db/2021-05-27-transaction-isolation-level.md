@@ -89,6 +89,14 @@ ACID
    * REQUIRES_NEW - 각각의 트랜잭션이 롤백되더라도 서로 영향을 주지 않는다.
    * NESTED - 중첩 트랜잭션 내부에서 롤백 발생시 해당 중첩 트랜잭션의 시작 지점까지만 롤백 된다. 중첩 트랜잭션은 부모 트랜잭션이 커밋될 때 같이 커밋된다.
 
+### (참고) 고객 주문 + 주문 내역을 기록해주는 기능을 개발한다면?
+
+* 중요한 일(주문 내역), 중요하지 않은 일(로그)을 별개의 트랜잭션으로 관리
+* 주문이 실패하면 로그도 기록되지 않아야 하지만, 주문이 성공했는데 로그 실패 때문에 전체 롤백이 되면 안된다.
+* 부모 트랜잭션의 커밋, 롤백 -> 중첩 트랜잭션에 영향을 줌
+* 중첩된 트랜잭션의 커밋, 롤백 -> 부모 트랜잭션에 영향을 주지 않음
+* 주문은 부모 트랜잭션으로 설정하고, 로그는 중첩 트랜잭션으로 구현
+
 ### 참고자료
 
 * Real MySQL
@@ -96,3 +104,4 @@ ACID
 * [10분 테코톡 - 예지니어스의 트랜잭션](https://youtu.be/e9PC0sroCzc){:target="_blank"}
 * [프로그래밍 초식 : DB 트랜잭션 조금 이해하기 02 격리](https://youtu.be/poyjLx-LOEU){:target="_blank"}
 * [Spring 트랜잭션의 전파 설정별 동작](https://deveric.tistory.com/86){:target="_blank"}
+* [트랜잭션 전파 속성 ( propagation ), 롤백 예외](https://happyer16.tistory.com/entry/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EC%A0%84%ED%8C%8C-%EC%86%8D%EC%84%B1-propagation-%EB%A1%A4%EB%B0%B1-%EC%98%88%EC%99%B8){:target="_blank"}
