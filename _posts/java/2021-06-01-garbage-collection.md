@@ -13,9 +13,10 @@ JVM의 Heap 영역에서 사용하지 않는 객체를 삭제하는 프로세스
 ### (참고) JVM의 메모리 구조
 
 1. 메소드 영역
-   * 클래스 멤버 변수의 이름, 데이터 타입, 접근 제어자 정보같은 필드 정보와 메소드의 이름, 리턴 타입, 파라미터, 접근 제어자 정보같은 메소드 정보, Type정보(Interface인지 class인지), Constant Pool(상수 풀 : 문자 상수, 타입, 필드, 객체 참조가 저장됨), static 변수, final class 변수등이 생성되는 영역.
+   * 클래스 멤버 변수의 이름, 데이터 타입, 접근 제어자 정보같은 필드 정보와 메소드의 이름, 리턴 타입, 파라미터, 접근 제어자 정보같은 메소드 정보, Type정보(Interface인지 class인지), Runtime Constant Pool(문자 상수, 타입, 필드, 객체 참조가 저장됨), static 변수, final class 변수등이 생성되는 영역.
 1. 힙 영역
-   * new 키워드로 생성된 객체와 배열이 생성되는 영역.
+   * new 키워드로 생성된 객체와 배열이 저장되는 영역.
+   * String constant pool : 문자열 리터럴을 저장하는 공간 (String str = "abc" 에서 "abc" 부분)
    * 메소드 영역에 로드된 클래스만 생성이 가능하고 Garbage Collector가 참조되지 않는 메모리를 확인하고 제거하는 영역.
 1. 스택 영역
    * 지역 변수, 파라미터, 리턴 값, 연산에 사용되는 임시 값등이 생성되는 영역.
@@ -69,7 +70,7 @@ GC Roots
 1. 그 다음 Minor GC가 일어났을 때는, Eden영역과 Survivor0 영역을 모두 mark하고 살아남은 객체들은 Survivor1 영역으로 복사하고, Eden 영역과, Survivor0 영역의 데이터를 삭제한다. 복사가 될 때는 해당 객체의 Age값이 증가된다.
 ![Copying Referenced Objects](https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/gcslides/Slide8.png)
 
-1. 특정 age에 도달한 객체들은 Old generation 영역으로 옮겨진다. Young generation에서 Old generation으로 옮겨지는 현상은 promotion 이라한다.
+1. 특정 age에 도달한 객체들은 Old generation 영역으로 옮겨진다. Young generation에서 Old generation으로 옮겨지는 현상을 promotion 이라한다.
 ![promotion](https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/gcslides/Slide7.png)
 
 1. Old generation 영역에도 데이터가 가득차면 Major GC가 발생한다.
