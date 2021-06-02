@@ -13,7 +13,7 @@ JVM의 Heap 영역에서 사용하지 않는 객체를 삭제하는 프로세스
 ### (참고) JVM의 메모리 구조
 
 1. 메소드 영역
-   * 클래스 멤버 변수의 이름, 데이터 타입, 접근 제어자 정보같은 필드 정보와 메소드의 이름, 리턴 타입, 파라미터, 접근 제어자 정보같은 메소드 정보, Type정보(Interface인지 class인지), Runtime Constant Pool(문자 상수, 타입, 필드, 객체 참조가 저장됨), static 변수, final class 변수등이 생성되는 영역.
+   * 클래스 멤버 변수의 이름, 데이터 타입, 접근 제어자 정보같은 필드 정보와 메소드의 이름, 리턴 타입, 파라미터, 접근 제어자 정보같은 메소드 정보, Type정보(Interface인지 class인지), Runtime Constant Pool(문자 상수, 타입, 필드에 대한 레퍼런스가 저장됨), static 변수, final class 변수등이 생성되는 영역.
 1. 힙 영역
    * new 키워드로 생성된 객체와 배열이 저장되는 영역.
    * String constant pool : 문자열 리터럴을 저장하는 공간 (String str = "abc" 에서 "abc" 부분)
