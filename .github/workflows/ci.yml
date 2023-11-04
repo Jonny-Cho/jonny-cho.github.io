@@ -17,10 +17,10 @@ jobs:
               node-version-file: '.nvmrc'
               cache: npm
 
-          - name: Git Config
+          - name: Set Git User
             run: |
-              git config --local user.name "Jonny-Cho"
-              git config --local user.email "andante2183@gmail.com"
+              git config user.name "Jonny-Cho"
+              git config user.email "andante2183@gmail.com"
 
           - name: Run deploy
             run: |
