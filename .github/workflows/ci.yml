@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - '**/README.md'
 
 jobs:
     deploy:
@@ -13,6 +11,10 @@ jobs:
         steps:
           - name: Checkout
             uses: actions/checkout@v3
+            with:
+              run: |
+                git config user.name github-actions
+                git config user.email github-actions@github.com
 
           - name: GithubPages Deploy
             uses: enriikke/gatsby-gh-pages-action@v2.2.1
