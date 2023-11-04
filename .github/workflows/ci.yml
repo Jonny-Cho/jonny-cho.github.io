@@ -12,5 +12,8 @@ jobs:
           - uses: actions/setup-node@v3
             with:
               node-version-file: '.nvmrc'
-          - run: npm ci
-          - run: npm run deploy
+          - run: |
+              git config --global user.name "Jonny-Cho"
+              git config --global user.email "andante2183@gmail.com"
+              npm ci
+              npm run deploy
