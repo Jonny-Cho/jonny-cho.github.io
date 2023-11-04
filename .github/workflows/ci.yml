@@ -17,8 +17,15 @@ jobs:
             with:
               node-version-file: '.nvmrc'
               cache: npm
-          - name: GithubPages Deploy
-            uses: enriikke/gatsby-gh-pages-action@v2
-            with:
-              access-token: ${{ secrets.GITHUB_TOKEN }}
-              deploy-branch: gh-pages
+
+          - name: Set Git User
+            run: |
+              git config user.name "Jonny-Cho"
+              git config user.email "andante2183@gmail.com"
+
+          - name: Run deploy
+            run: |
+              npm ci
+              npm run deploy
+            env:
+              NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
