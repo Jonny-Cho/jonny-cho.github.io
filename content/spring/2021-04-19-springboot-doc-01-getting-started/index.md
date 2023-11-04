@@ -124,7 +124,7 @@ set-executionpolicy -s cu unrestricted
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('[https://get.scoop.sh](https://get.scoop.sh/)')
 ```
 
-![powershell1]({{site.url}}/assets/post-img/spring/springboot/01/2.png)
+![powershell1](2.png)
 
 ```powershell
 scoop help
@@ -132,7 +132,7 @@ scoop bucket add extras
 scoop install springboot
 ```
 
-![powershell2]({{site.url}}/assets/post-img/spring/springboot/01/3.png)
+![powershell2](3.png)
 
 Scoop installs spring to ~/scoop/apps/springboot/current/bin.
 
@@ -156,9 +156,9 @@ class ThisWillActuallyRun {
 spring run app.groovy
 ```
 
-![powershell3]({{site.url}}/assets/post-img/spring/springboot/01/4.png)
+![powershell3](4.png)
 
-![powershell4]({{site.url}}/assets/post-img/spring/springboot/01/3.png)
+![powershell4](3.png)
 
 ### 3.3. Upgrading from an Earlier Version of Spring Boot
 

@@ -94,7 +94,7 @@ func main(){
 }
 ```
 
-![서버시작]({{site.url}}/assets/post-img/http/realworld1/serverstart.png)
+![서버시작](serverstart.png)
 
 ## curl 실행
 
@@ -110,7 +110,7 @@ Accept: */*
 User-Agent: curl/7.54.0
 ```
 
-![서버클라이언트]({{site.url}}/assets/post-img/http/realworld1/serverclient.png)
+![서버클라이언트](serverclient.png)
 
 * 웹사이트의 페이지를 서버에 요청
 * 그 응답으로 웹사이트의 내용을 받아온다.

@@ -89,7 +89,7 @@ order by gh.guestHouseCode
 
 * 출력된 데이터
 
-![searchresult.png]({{site.url}}/assets/post-img/sql/searchresult.png)
+![searchresult.png](searchresult.png)
 
 ### 이후에 할 일
 

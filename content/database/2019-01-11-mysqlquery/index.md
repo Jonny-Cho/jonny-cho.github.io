@@ -9,11 +9,11 @@ tags: [database]
 
 * 스토리보드 확인
 
-![방찾기-스토리보드]({{site.url}}/assets/post-img/sql/storyboard.jpg)
+![방찾기-스토리보드](storyboard.jpg)
 
 * 작성중인 ERD 확인
 
-![ERD]({{site.url}}/assets/post-img/sql/erd.png)
+![ERD](erd.png)
 
 * Input
     1. 날짜&인원을 선택하고 검색버튼을 누른다

@@ -27,7 +27,7 @@ tags: [springbatch, 스프링배치]
 2. 처리(processing) : 원하는 방식으로 데이터 가공/처리
 3. 쓰기(write) : 수정된 데이터를 다시 저장소(데이터베이스)에 저장
 
-![1]({{site.url}}/assets/post-img/spring/springbatch/1.png)
+![1](1.png)
 
 ### Job
 
@@ -35,7 +35,7 @@ tags: [springbatch, 스프링배치]
 - 스프링 배치에서 Job 객체는 여러 Step 인스턴스를 포함하는 컨테이너
 - JobBuilderFactory로 Job을 만들 수 있다
 
-![2]({{site.url}}/assets/post-img/spring/springbatch/2.png)
+![2](2.png)
 
 ### Step
 
@@ -43,33 +43,33 @@ tags: [springbatch, 스프링배치]
 - 모든 Job에는 1개 이상의 Step이 있어야 한다.
 - StepBuilderFactory로 Step을 만들 수 있다
 
-![3]({{site.url}}/assets/post-img/spring/springbatch/3.png)
+![3](3.png)
 
 ### ItemReader
 
 - ItemReader는 Step의 대상이 되는 배치 데이터를 읽어오는 인터페이스. File, Xml Db등 여러 타입의 데이터를 읽어올 수 있다.
 
-![4]({{site.url}}/assets/post-img/spring/springbatch/4.png)
+![4](4.png)
 
 ### ItemProcessor (Optional)
 
 - ItemReader로 읽어 온 배치 데이터를 변환하는 역할
 - 비즈니스 로직의 분리 : ItemWriter는 저장 수행하고, ItemProcessor는 로직 처리만 수행해 역할을 명확하게 분리
 
-![5]({{site.url}}/assets/post-img/spring/springbatch/5.png)
+![5](5.png)
 
 ### ItemWriter
 
 - ItemWriter는 배치 데이터를 저장. 일반적으로 DB에 저장
 - ItemWriter도 ItemReader와 비슷한 방식으로 구현. 제네릭으로 원하는 타입을 받고 write() 메서드는 List를 사용해서 저장한 타입의 리스트를 매개변수로 받는다.
 
-![6]({{site.url}}/assets/post-img/spring/springbatch/6.png)
+![6](6.png)
 
 - Entity로 등록된 객체라면 ItemWriter를 구현한 JpaItemWriter클래스를 사용하여 편리하게 처리할 수 있다.
 
-![7]({{site.url}}/assets/post-img/spring/springbatch/7.png)
+![7](7.png)
 
-![8]({{site.url}}/assets/post-img/spring/springbatch/8.png)
+![8](8.png)
 
 ## 스프링 배치의 메타 데이터
 
@@ -80,7 +80,7 @@ tags: [springbatch, 스프링배치]
 
 ### BATCH_JOB_INSTANCE
 
-![9]({{site.url}}/assets/post-img/spring/springbatch/9.png)
+![9](9.png)
 
 - 하나의 Job 실행 단위
 - 동일한 Job이 Job Parameter가 달라지면 그때마다 생성되며, 동일한 Job Parameter는 여러개 존재할 수 없다.
@@ -90,21 +90,21 @@ tags: [springbatch, 스프링배치]
 - JOB_INSTANCE (부모) - JOB_EXECUTION (자식)
 - 부모 JOB_INSTANCE가 성공/실패했던 모든 내역을 가지고 있다
 
-![10]({{site.url}}/assets/post-img/spring/springbatch/10.png)
+![10](10.png)
 
 - status : Job또는 Step의 실행 결과를 기록. BatchStatus Enum에서 확인 가능
 
-![11]({{site.url}}/assets/post-img/spring/springbatch/11.png)
+![11](11.png)
 
 - exit_code : Job또는 Step의 실행 후 상태. ExitStatus 클래스에서 확인가능 (Enum 아님)
 
-![12]({{site.url}}/assets/post-img/spring/springbatch/12.png)
+![12](12.png)
 
 ### BATCH_JOB_EXECUTION_PARAM
 
 - BATCH_JOB_EXECUTION 테이블이 생성될 때 입력 받은 Job Parameter 확인가능
 
-![13]({{site.url}}/assets/post-img/spring/springbatch/13.png)
+![13](13.png)
 
 ### BATCH_STEP_EXECUTION
 
@@ -116,9 +116,9 @@ tags: [springbatch, 스프링배치]
 - @Value("#{jobParameters[파라미터명]}")
 - JobParameter를 사용하려면 배치 스코프를 @JobScope나 @StepScope로 반드시 조정해야한다 (일반 singleton Bean으로 생성할 경우 'jobParameters' cannot be found 에러가 발생)
 
-![14]({{site.url}}/assets/post-img/spring/springbatch/14.png)
+![14](14.png)
 
-![15]({{site.url}}/assets/post-img/spring/springbatch/15.png)
+![15](15.png)
 
 ### JobScope & StepScope
 
@@ -134,7 +134,7 @@ tags: [springbatch, 스프링배치]
 - Chunk 단위로 트랜잭션
 - 중간에 실패할 경우엔 해당 Chunk 만큼만 롤백이 되고, 이전에 커밋된 트랜잭션 범위까지는 반영됨
 
-![16]({{site.url}}/assets/post-img/spring/springbatch/16.png)
+![16](16.png)
 
 ### Page Size vs Chunk Size
 
@@ -149,7 +149,7 @@ tags: [springbatch, 스프링배치]
 
 ### 적정한 Chunk SIze?
 
-![17]({{site.url}}/assets/post-img/spring/springbatch/17.png)
+![17](17.png)
 
 - Chunk Size를 아주 크게 하면 그 배치는 빨리 수행될 수 있지만
 - 다른 배치들이 성능상 영향을 받을 수 있고
