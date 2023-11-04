@@ -115,7 +115,7 @@ Minor GC가 Major GC에 비해 빈번히 작동해서 메모리의 부담이 적
    * compact 진행
 
 ### 참고자료
-* [Java Garbage Collection Basics](https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html){:target="_blank"}
-* [가비지 컬렉션 과정 - Generational Garbage Collection](https://d2.naver.com/helloworld/1329){:target="_blank"}
-* [10분 테코톡 - 엘리의 GC](https://youtu.be/Fe3TVCEJhzo){:target="_blank"}
-* [JVM 구조와 자바 런타임 메모리 구조](https://jeong-pro.tistory.com/148){:target="_blank"}
+* <a href="https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html" target="_blank">Java Garbage Collection Basics</a>
+* <a href="https://d2.naver.com/helloworld/1329" target="_blank">가비지 컬렉션 과정 - Generational Garbage Collection</a>
+* <a href="https://youtu.be/Fe3TVCEJhzo" target="_blank">10분 테코톡 - 엘리의 GC</a>
+* <a href="https://jeong-pro.tistory.com/148" target="_blank">JVM 구조와 자바 런타임 메모리 구조</a>

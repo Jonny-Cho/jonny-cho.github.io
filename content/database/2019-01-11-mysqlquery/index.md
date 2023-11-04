@@ -27,10 +27,10 @@ tags: [database]
 
 ## 해결
 
-* [구루비 질문내용과 마농님의 답변 참고](http://www.gurubee.net/article/80746){:target="_blank"}
+* <a href="http://www.gurubee.net/article/80746" target="_blank">구루비 질문내용과 마농님의 답변 참고</a>
 
 * 해결방법
-    1. [달력 테이블 만들기 참고](http://nekomimi.tistory.com/722){:target="_blank"}
+    1. <a href="http://nekomimi.tistory.com/722" target="_blank">달력 테이블 만들기 참고</a>
     2. 샘플 테이블, 데이터 넣기 (회원, 게스트하우스, 방, 예약정보 테이블)
     3. Oracle 답변을 MySQL로 수정
 

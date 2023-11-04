@@ -13,7 +13,7 @@ tags: [linux]
 
 ## MySQL 5.7 설치 <a id="1"></a>
 
-[정광섭님 블로그 - CentOS에 MySQL 5.7 설치하기](https://www.lesstif.com/pages/viewpage.action?pageId=24445108){:target="_blank"}
+<a href="https://www.lesstif.com/pages/viewpage.action?pageId=24445108" target="_blank">정광섭님 블로그 - CentOS에 MySQL 5.7 설치하기</a>
 
 ### 모든 패키지가 포함된 bundle 다운로드
 
@@ -43,7 +43,7 @@ tags: [linux]
 
 ## UTF-8 (한글) 설정 <a id="2"></a>
 
-[Confluence-MySQL 기본 인코딩을 UTF8 로 변경](http://wincloud.link/pages/viewpage.action?pageId=9469960){:target="_blank"}
+<a href="http://wincloud.link/pages/viewpage.action?pageId=9469960" target="_blank">Confluence-MySQL 기본 인코딩을 UTF8 로 변경</a>
 
 ### /etc/my.cnf 파일 수정
 

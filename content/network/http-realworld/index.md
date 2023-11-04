@@ -378,4 +378,4 @@ curl --http1.0 -x http://localhost:18888 -U user:pass http://example.com/hellowo
 * Real World HTTP
 * HTTP 완벽가이드 조금
 * 그림으로 배우는 Http & Network
-* [알아둬야 할 HTTP 쿠키 & 캐시 헤더](https://www.zerocho.com/category/HTTP/post/5b594dd3c06fa2001b89feb9){:target="_blank"}
+* <a href="https://www.zerocho.com/category/HTTP/post/5b594dd3c06fa2001b89feb9" target="_blank">알아둬야 할 HTTP 쿠키 & 캐시 헤더</a>

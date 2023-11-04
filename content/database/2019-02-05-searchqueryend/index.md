@@ -102,7 +102,7 @@ order by gh.guestHouseCode
 2. 선택
 	* 사실 완전한 완성은 아니다.
 	* 키워드 검색이 들어 있지는 않기 때문인데, 여러가지 고려사항이 남아있다.
-		* 예를들어 키워드 검색에 강남을 입력 했을 때 [우주](https://www.woozoo.kr/houses){:target="_blank"} 처럼
+		* 예를들어 키워드 검색에 강남을 입력 했을 때 <a href="https://www.woozoo.kr/houses" target="_blank">우주</a> 처럼
 		* 지도가 강남으로 포커스되고
 		* 그 지도안에 들어있는 모든 게스트하우스를 밑에 나타내게 하고 싶었던 것인데
 		* 위의 쿼리문에 추가할 경우 DB로 날려서 새로고침 되어야 하기 때문

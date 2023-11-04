@@ -5,7 +5,7 @@ category: project
 tags: [프로젝트]
 ---
 
-### [홈페이지 링크](http://geha.tk/){:target="_blank"}
+### <a href="http://geha.tk/" target="_blank">홈페이지 링크</a>
 
 ### 결과화면
 
@@ -56,20 +56,20 @@ tags: [프로젝트]
 
 ## 소스코드 깃허브 링크 **(주요 소스코드)**
 
-* **[search.html](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/templates/search.html){:target="_blank"}**
+* **<a href="https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/templates/search.html" target="_blank">search.html</a>**
 
-* [search.css](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/static/css/search.css){:target="_blank"}
+* <a href="https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/static/css/search.css" target="_blank">search.css</a>
 
-* **[SearchController.java](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/java/com/bit/geha/controller/SearchController.java){:target="_blank"}**
+* **<a href="https://github.com/geha-pjt/geha-pjt/blob/master/src/main/java/com/bit/geha/controller/SearchController.java" target="_blank">SearchController.java</a>**
 
-* [SearchDao.java](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/java/com/bit/geha/dao/SearchDao.java){:target="_blank"}
+* <a href="https://github.com/geha-pjt/geha-pjt/blob/master/src/main/java/com/bit/geha/dao/SearchDao.java" target="_blank">SearchDao.java</a>
 
-* [SearchCriteria.java](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/java/com/bit/geha/criteria/SearchCriteria.java){:target="_blank"}
+* <a href="https://github.com/geha-pjt/geha-pjt/blob/master/src/main/java/com/bit/geha/criteria/SearchCriteria.java" target="_blank">SearchCriteria.java</a>
 
-* [SearchDto.java](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/java/com/bit/geha/dto/SearchDto.java){:target="_blank"}
+* <a href="https://github.com/geha-pjt/geha-pjt/blob/master/src/main/java/com/bit/geha/dto/SearchDto.java" target="_blank">SearchDto.java</a>
 
-* **[searchMapper.xml](https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/mapper/searchMapper.xml){:target="_blank"}**
-	* [Mapper 검색 쿼리 설명]({{site.url}}/project/2019/02/16/gehaquery/){:target="_blank"}
+* **<a href="https://github.com/geha-pjt/geha-pjt/blob/master/src/main/resources/mapper/searchMapper.xml" target="_blank">searchMapper.xml</a>**
+	* <a href="{{site.url}}/project/2019/02/16/gehaquery/" target="_blank">Mapper 검색 쿼리 설명</a>
 
 ## 기능 설명
 
@@ -91,20 +91,20 @@ tags: [프로젝트]
 ## 문제 -> 질문 -> 해결
 
 * 날짜와 인원수를 동시에 검색하는 부분
-	* [구루비 - 예약사이트 날짜검색&인원검색 방법](http://www.gurubee.net/article/80746){:target="_blank"}
+	* <a href="http://www.gurubee.net/article/80746" target="_blank">구루비 - 예약사이트 날짜검색&인원검색 방법</a>
 * 카카오 API에서 다른 오버레이를 클릭했을 때 기존 오버레이 삭제하는 부분
-	* [kakao devtalk - Ajax 검색 결과가 달라질 때 다중 마커 삭제 방법](https://devtalk.kakao.com/t/ajax/68718){:target="_blank"}
+	* <a href="https://devtalk.kakao.com/t/ajax/68718" target="_blank">kakao devtalk - Ajax 검색 결과가 달라질 때 다중 마커 삭제 방법</a>
 
 ### References
 
-* [여기어때](https://www.goodchoice.kr/product/search/6){:target="_blank"}
-* [우주](https://www.woozoo.kr/houses){:target="_blank"}
-* [다음 지도 API](http://apis.map.daum.net/web/){:target="_blank"}
-* [구루비](http://www.gurubee.net/){:target="_blank"}
+* <a href="https://www.goodchoice.kr/product/search/6" target="_blank">여기어때</a>
+* <a href="https://www.woozoo.kr/houses" target="_blank">우주</a>
+* <a href="http://apis.map.daum.net/web/" target="_blank">다음 지도 API</a>
+* <a href="http://www.gurubee.net/" target="_blank">구루비</a>
 * 코드로 배우는 스프링 웹 프로젝트 - 구멍가게 코딩단 - 남가람북스
-* [jQuery UI - Slider](https://jqueryui.com/slider/#range){:target="_blank"}
-* [jQuery Serialize Object](https://github.com/macek/jquery-serialize-object){:target="_blank"}
-* [Air Datepicker](http://t1m0n.name/air-datepicker/docs/){:target="_blank"}
-* [Kakao Oven](https://ovenapp.io/){:target="_blank"}
-* [AQueryTool](http://aquerytool.com/){:target="_blank"}
-* [AUI Project](http://www.auiproject.com/){:target="_blank"}
+* <a href="https://jqueryui.com/slider/#range" target="_blank">jQuery UI - Slider</a>
+* <a href="https://github.com/macek/jquery-serialize-object" target="_blank">jQuery Serialize Object</a>
+* <a href="http://t1m0n.name/air-datepicker/docs/" target="_blank">Air Datepicker</a>
+* <a href="https://ovenapp.io/" target="_blank">Kakao Oven</a>
+* <a href="http://aquerytool.com/" target="_blank">AQueryTool</a>
+* <a href="http://www.auiproject.com/" target="_blank">AUI Project</a>

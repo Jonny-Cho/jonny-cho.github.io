@@ -105,8 +105,8 @@ class Solution {
 ### 3번문제
 
 * 남은 30분동안 못 풀고 끝났는데 dp를 공부하고나서 다시 푸니까 너무 빨리 풀려버림... 아쉽다
-* dp공부는 이 블로그를 참고 [KHAN(광혁) - 백준 2579번 계단오르기](https://kwanghyuk.tistory.com/4){:target="_blank"}
-* 문제는 이 문제를 1차원 배열로 줄여놓은 것 [백준 9465번 - 스티커](https://www.acmicpc.net/problem/9465){:target="_blank"}
+* dp공부는 이 블로그를 참고 <a href="https://kwanghyuk.tistory.com/4" target="_blank">KHAN(광혁) - 백준 2579번 계단오르기</a>
+* 문제는 이 문제를 1차원 배열로 줄여놓은 것 <a href="https://www.acmicpc.net/problem/9465" target="_blank">백준 9465번 - 스티커</a>
 
 ```java
 public class Test3 {

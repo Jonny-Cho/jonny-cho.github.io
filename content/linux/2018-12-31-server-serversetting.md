@@ -18,7 +18,7 @@ tags: [linux]
 ## CentOS 설치 <a id="1"></a>
 
 1. USB 만들기
-    * [wikidocs 리눅스 개발 놀이터 만들기 - 설치 USB 만들기](https://wikidocs.net/16269){:target="_blank"}
+    * <a href="https://wikidocs.net/16269" target="_blank">wikidocs 리눅스 개발 놀이터 만들기 - 설치 USB 만들기</a>
 
 2. CentOS usb 부팅
     1. BIOS Configuration 들어가기(메인보드마다 다른데 삼성은 F2)
@@ -53,12 +53,12 @@ tags: [linux]
 
 1. 의존성 설치
     * wget 설치
-    * 참고 [victolee 블로그](https://victorydntmd.tistory.com/224){:target="_blank"}
+    * 참고 <a href="https://victorydntmd.tistory.com/224" target="_blank">victolee 블로그</a>
     * yum install -y wget
     * 이미 설치된 경우 - already installed and latest version
 2. 톰캣 다운로드
     1. 다운로드
-        * [톰캣 다운로드 홈페이지](https://tomcat.apache.org/download-80.cgi){:target="_blank"}
+        * <a href="https://tomcat.apache.org/download-80.cgi" target="_blank">톰캣 다운로드 홈페이지</a>
         * core - tar.gz - copy link location
         * cd /usr
         * `wget http://mirror.navercorp.com/apache/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz`
@@ -66,7 +66,7 @@ tags: [linux]
         
 ## JDK 설치 <a id="3"></a>
 
-* [오라클 jdk](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html){:target="_blank"}
+* <a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">오라클 jdk</a>
 * linux x64 -> rpm 파일 링크 복사 하지말고 클릭해서 다운로드
 * /usr/ 경로로 파일옮김
 * rpm -ivh xxx.rpm 파일 압축해제

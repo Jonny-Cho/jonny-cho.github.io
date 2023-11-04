@@ -103,7 +103,7 @@ tags: [이력서, 세미나]
 * 요약. 잘된 이력서의 기본 파트만 기억하면 될 것 같다
     1. 회사에서 원하는 기술과 경험을 가지기 위해서
     1. 관련된 프로젝트를 만들고(논문쓰듯 깊은 수준으로)
-        * 참고 [ErRabbit](https://github.com/soleaf/ErRabbit/blob/master/readme_kr.md){:target="_blank"}
+        * 참고 <a href="https://github.com/soleaf/ErRabbit/blob/master/readme_kr.md" target="_blank">ErRabbit</a>
     1. Github에 기록해놓고
     1. 오픈소스 프로젝트도 해보고
     1. PDF로 만들고

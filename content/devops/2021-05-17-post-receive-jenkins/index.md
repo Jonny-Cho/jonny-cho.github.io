@@ -144,7 +144,7 @@ Git은 어떤 이벤트가 생겼을 때 자동으로 특정 스크립트를 실
 
 훅은 크게 클라이언트 훅과 서버 훅으로 나뉘는 데요. 깃의 local과 remote로 생각하시면 편합니다.
 자세한 설명은 아래 링크로 대신하겠습니다.
-[Git Hooks - git-scm.com](https://git-scm.com/book/ko/v2/Git%EB%A7%9E%EC%B6%A4-Git-Hooks){:target="_blank"}
+<a href="https://git-scm.com/book/ko/v2/Git%EB%A7%9E%EC%B6%A4-Git-Hooks" target="_blank">Git Hooks - git-scm.com</a>
 
 많은 훅 중에서 저희가 사용하고 싶은건 post-receive입니다. remote repository의 특정 브랜치에 누군가 push했을 때! 젠킨스 빌드를 하고 싶기 때문이죠.
 update 스크립트는 각 브랜치마다 한 번씩 실행되기 때문에 지금 상황에서는 적합하지 않습니다.

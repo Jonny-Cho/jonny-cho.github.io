@@ -17,7 +17,7 @@ tags: [springboot, 스프링부트, MySQL]
 
 ## springboot 프로젝트 생성
 
-* [Spring Initializr](https://start.spring.io/){:target="_blank"}
+* <a href="https://start.spring.io/" target="_blank">Spring Initializr</a>
 
 	* Maven Project
 	* Java

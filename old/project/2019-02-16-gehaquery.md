@@ -16,7 +16,7 @@ tags: [프로젝트]
 
 * 그 중에서 날짜와 인원을 동시에 검색하는 경우는 어떤식으로 접근해야 하는지 전혀 감이 오지 않아서 데이터베이스 커뮤니티인 구루비에 질문을 올려서 힌트를 얻었습니다.
 
-* [MYSQL - 날짜&인원을 동시에 검색하는 경우 문제해결 (게스트하우스 프로젝트)]({{site.url}}/sql/2019/01/11/mysqlquery/){:target="_blank"}
+* <a href="{{site.url}}/sql/2019/01/11/mysqlquery/" target="_blank">MYSQL - 날짜&인원을 동시에 검색하는 경우 문제해결 (게스트하우스 프로젝트)</a>
 
 ## searchMapper.xml
 

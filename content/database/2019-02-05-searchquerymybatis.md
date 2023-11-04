@@ -136,4 +136,4 @@ order by gh.guestHouseCode
 
 ### 참고자료
 
-* [mybatis.org - 동적SQL if, foreach, bind](http://www.mybatis.org/mybatis-3/ko/dynamic-sql.html){:target="_blank"}
+* <a href="http://www.mybatis.org/mybatis-3/ko/dynamic-sql.html" target="_blank">mybatis.org - 동적SQL if, foreach, bind</a>

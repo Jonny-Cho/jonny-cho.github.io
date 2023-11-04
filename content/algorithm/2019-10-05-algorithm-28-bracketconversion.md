@@ -7,7 +7,7 @@ tags: [algorithm]
 
 ## 문제 설명 및 제한 조건
 
-* [링크참고 - 프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/60058?language=java){:target="_blank"}
+* <a href="https://programmers.co.kr/learn/courses/30/lessons/60058?language=java" target="_blank">링크참고 - 프로그래머스</a>
 
 ```java
 public class BracketConversion {

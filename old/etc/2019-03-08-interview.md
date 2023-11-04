@@ -37,16 +37,16 @@ published: false
 
 1. HttpServlet의 init(), service(), destroy()메서드의 호출시점과 HttpServlet 객체의 생명주기에 대해 설명
 
-	* [Servlet의 동작 과정 및 생명주기](https://hackersstudy.tistory.com/72){:target="_blank"}
+	* <a href="https://hackersstudy.tistory.com/72" target="_blank">Servlet의 동작 과정 및 생명주기</a>
 
-	* [[JSP/Servlet] Servlet 생명주기 ( Life Cycle )](https://victorydntmd.tistory.com/154){:target="_blank"}
+	* <a href="https://victorydntmd.tistory.com/154" target="_blank">[JSP/Servlet] Servlet 생명주기 ( Life Cycle )</a>
 
 2. HttpServletRequest클래스와 HttpServletResponse클래스의 역할은?
 
 3. 웹브라우저에서 웹어플리케이션서버를 통해 JSP파일을 호출하였을 때 Servlet Container내에서의 처리과정
 
 	* 추가) WAS와 웹 서버의 차이
-		* [WAS 와 웹 서버 차이 (WAS,Web Server) 그리고 아파치, 톰캣](https://jeong-pro.tistory.com/84){:target="_blank"}
+		* <a href="https://jeong-pro.tistory.com/84" target="_blank">WAS 와 웹 서버 차이 (WAS,Web Server) 그리고 아파치, 톰캣</a>
 
 4. JSP에 내장되어 있는 속성변수(pageContext, request, session, application)들의 참조범위
 
@@ -133,7 +133,7 @@ published: false
 
 8. Function객체가 가지고있는 prototype 프로퍼티의 역할
 	
-	* [[Javascript] 프로토타입 이해하기](https://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67){:target="_blank"}
+	* <a href="https://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67" target="_blank">[Javascript] 프로토타입 이해하기</a>
 
 	* 자바스크립트는 클래스 대신 프로토타입이 존재
 
@@ -141,8 +141,8 @@ published: false
 
 10. Javascript의 call 메서드와 apply 메서드의 사용법에 대해 코드 예를 보여 설명
 
-	* [유튜브 - 자바스크립트 this? 간단히 핵심만 파악하기](https://youtu.be/PAr92molMHU){:target="_blank"}
-	* [Zerocho - 함수의 메소드와 arguments](https://www.zerocho.com/category/JavaScript/post/57433645a48729787807c3fd){:target="_blank"}
+	* <a href="https://youtu.be/PAr92molMHU" target="_blank">유튜브 - 자바스크립트 this? 간단히 핵심만 파악하기</a>
+	* <a href="https://www.zerocho.com/category/JavaScript/post/57433645a48729787807c3fd" target="_blank">Zerocho - 함수의 메소드와 arguments</a>
 
 11. 네트워크상에서 전송되는 데이터를 XML형식으로 표현하는 것과 JSON형식으로 표현하는 것의 장단점
 

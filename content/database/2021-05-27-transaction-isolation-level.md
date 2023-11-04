@@ -100,7 +100,7 @@ ACID
 
 * Real MySQL
 * 자바 ORM 표준 JPA 프로그래밍
-* [10분 테코톡 - 예지니어스의 트랜잭션](https://youtu.be/e9PC0sroCzc){:target="_blank"}
-* [프로그래밍 초식 : DB 트랜잭션 조금 이해하기 02 격리](https://youtu.be/poyjLx-LOEU){:target="_blank"}
-* [Spring 트랜잭션의 전파 설정별 동작](https://deveric.tistory.com/86){:target="_blank"}
-* [트랜잭션 전파 속성 ( propagation ), 롤백 예외](https://happyer16.tistory.com/entry/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EC%A0%84%ED%8C%8C-%EC%86%8D%EC%84%B1-propagation-%EB%A1%A4%EB%B0%B1-%EC%98%88%EC%99%B8){:target="_blank"}
+* <a href="https://youtu.be/e9PC0sroCzc" target="_blank">10분 테코톡 - 예지니어스의 트랜잭션</a>
+* <a href="https://youtu.be/poyjLx-LOEU" target="_blank">프로그래밍 초식 : DB 트랜잭션 조금 이해하기 02 격리</a>
+* <a href="https://deveric.tistory.com/86" target="_blank">Spring 트랜잭션의 전파 설정별 동작</a>
+* <a href="https://happyer16.tistory.com/entry/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EC%A0%84%ED%8C%8C-%EC%86%8D%EC%84%B1-propagation-%EB%A1%A4%EB%B0%B1-%EC%98%88%EC%99%B8" target="_blank">트랜잭션 전파 속성 ( propagation ), 롤백 예외</a>
