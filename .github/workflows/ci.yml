@@ -19,8 +19,8 @@ jobs:
 
           - name: Set Git User
             run: |
-              git config user.name "Jonny-Cho"
               git config user.email "andante2183@gmail.com"
+              git config user.name "Jonny-Cho"
 
           - name: Run deploy
             run: |
