@@ -1,0 +1,3 @@
+User-agent: *
+Sitemap: https://jonny-cho.github.io/sitemap/sitemap-index.xml
+Host: https://jonny-cho.github.io
