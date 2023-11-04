@@ -84,43 +84,216 @@
 <li>처리(processing) : 원하는 방식으로 데이터 가공/처리</li>
 <li>쓰기(write) : 수정된 데이터를 다시 저장소(데이터베이스)에 저장</li>
 </ol>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/1.png" alt="1"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 62.22222222222222%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABIUlEQVQoz4WT2wqDMBBE/f+/E/ogPtZrK6LWu7ZuOQsJqUQaCAnZzezsTBLIaRzHofPz+dg9042fc92c4P1+y+v1kr7vZV1X3T8eD133fbeXu66TeZ5/gHxkLOAwDDKOo7RtK8/nU8+2bdMkYkVRSF3XWtQM7i7LopO9MnQrkNw0jZRlqYAwIhmwLMskz3ONkwd7ugrDUG63m2UfuPRJPDNEy2maFJg4FzljEKd4VVVWnsAVGtpohYaspmWYUABgAH36WQ3P7hl3ATfsaTdNU0mSRAv5HLYuu2C+yhQw7cKY/ZXDXsBzRQDNU8IQXoLRFvfv97syt6bIxXABMQrhAURPDEASgOM4liiKrFF/AVlpk8umbd/P+mn5H+jVl/O5/AVBS60X0uMaDwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="1"
+        title="1"
+        src="/static/efff023e351119afe54c68f8bf0db8a0/37523/1.png"
+        srcset="/static/efff023e351119afe54c68f8bf0db8a0/e9ff0/1.png 180w,
+/static/efff023e351119afe54c68f8bf0db8a0/f21e7/1.png 360w,
+/static/efff023e351119afe54c68f8bf0db8a0/37523/1.png 720w,
+/static/efff023e351119afe54c68f8bf0db8a0/302a4/1.png 1080w,
+/static/efff023e351119afe54c68f8bf0db8a0/2cefc/1.png 1400w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <h3 id="job" style="position:relative;"><a href="#job" aria-label="job permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Job</h3>
 <ul>
 <li>Job은 배치 처리 과정을 하나의 단위로 만들어 포현한 객체</li>
 <li>스프링 배치에서 Job 객체는 여러 Step 인스턴스를 포함하는 컨테이너</li>
 <li>JobBuilderFactory로 Job을 만들 수 있다</li>
 </ul>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/2.png" alt="2"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 606px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 62.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACUklEQVQ4y22T6W7cNhRG9TpBbXEnJUqilpHk2Ry3KNAs4xhIi6INXBtO2vc/hTRZ2/w4uBcE+IGXh8zKKrHbRvY7i/caaxXe6bV3TqOU+i5Syu+uZ6GsORwrbq4dx73j5rljHDRto0i1QgqBFPlXCJSUaKVWlJJIea5rYJonpq5g6i19Mmw6R9UNNMNM1Q7UbU/TDzT9Zq1V26Gs40LkXEhJ/k2oIiubhLeW1/qSk815ZQUnr7iNgduq4DYWnMqC14XnlXecQuClNfxiDSctmWXO5VehWVE1WGN58pf8nSSPleChvOBhSHzY7Xi6mnicNvy16fkj1jymkfu6410z8E/V8MIqnn28giU0K6sGZSx10Nx0lqvaMkfFPI4cjjcru/2R/f7I0G2Y0hVTe8W23zN3W/o0UvjwWdIaaKzDGkX0mmA1hVswBGco/GI/EHyJcx6zYC1aG5TSazVafxn5HGjxRpEKs540BU3l9dpXXlH6gqZsKX1JKJZgd7a9mJVyPd0n01k79ShtaRrN0BuE0uRKI5c70V+QSiIWq0IgxNKf32L+H9NZ3XYY62mj5jAY+lRzlyK/9SW/j5G75HmTAi9TwU9Bc60Fz63k2giORvCzkXRKfA7NyjrhvOcyF6upKWo+pJqHbuK+H3k/77nvNjxtt7wbWn6tzcrbynAXNX8GxUHm/LCMLCVZbNo10JjzN9PWcdju+XGeGWPBJpb0wTMUBX0IVFIShSBKQSUFpRTffr26aQihYJxa6ibivaeMFaGMGOfQzp3Nfqw2hP+x7PnEv3zxs+WD4/aZAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="2"
+        title="2"
+        src="/static/32c78ded7a45f6426899457e5d2e0c40/4d4a2/2.png"
+        srcset="/static/32c78ded7a45f6426899457e5d2e0c40/e9ff0/2.png 180w,
+/static/32c78ded7a45f6426899457e5d2e0c40/f21e7/2.png 360w,
+/static/32c78ded7a45f6426899457e5d2e0c40/4d4a2/2.png 606w"
+        sizes="(max-width: 606px) 100vw, 606px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <h3 id="step" style="position:relative;"><a href="#step" aria-label="step permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step</h3>
 <ul>
 <li>Step은 실직적인 배치 처리를 정의하고 제어 하는데 필요한 모든 정보가 있는 도메인 객체. Job을 처리하는 실질적인 단위</li>
 <li>모든 Job에는 1개 이상의 Step이 있어야 한다.</li>
 <li>StepBuilderFactory로 Step을 만들 수 있다</li>
 </ul>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/3.png" alt="3"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 673px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 88.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAAsTAAALEwEAmpwYAAACqklEQVQ4y3WU6W7bRhRG9T6tuM3GWcgZkqKozU5sJ21R9P1f4xQcyU4iKz8+XGAIHN7lu3fTusg4eV5fNF0QONfgXZ2lVUVRlJTlD1VVRV3XH/FeG9cl0hB4PivOB8XTSRNjS9dZnDNobdDmFrWhaZpfAPfgTTeOdH1gWDMzDcFKbIiELmJdwIcuK3Q9LgTqpqYottdsH0A3PkSEMoi6YucFyTaktmIYJ6bdnmHcEYeR4HqSn4h+JIWJYEMG3bdg47uI0i2trDknydLddLxwfn7heH7mcLowTjNTvzCnI7t0YOpnfOtpPmW4Ak2LbCq6tsHpa+m21XjXErzHuZCllEarFq0MSmqMuvb0IVA0FUGvwDpHK2ucrNCiwWqPMx6lDUJKyrLIkLL6PPVN2k1o67BtzWGW1I1AiAalGpRukLK5DmK1zc1CVVld9cBCOUNtLErUeSi76JiHyMsy8rof+LJLnKaR6D3aSIxVKCPRRtEI8dk2V2CbPzR1RW8Vh+XM3/sz3+YTb/OR1/nA92UhOoNqVQZn4F3/rsYOV+DVsGt5ki4mOmuQ5RZZFciyQJUldVl9lFw+KHmNmxATurU0oskqi4LttuCPbcmfRZW1LUqK1XMPVu3dix9DidOYh+JtzctJYa2lC445tczJMvaGobd57e4BP4M+MryWbPPDapddb3jrAv+NA/8OiX9i5K++5y0lTlbwHDRPQXPxiidnSN5jnfvo58Z36TaUmrKqUEpyPl447E88Xb5mnfcXvpy+suxmYvCkEIje5ck7a6lvB+OWYZ+B7w9SKaZ5Ybcc2B/PLKcL83Jk2h/o4pB/unryXe8n7Zdd/gEs86k6XZ7ZL8d8INYdjmmkbe1vb+DP/cwZmtYihEQIkXuxQqUQ+UwVRXFbtfIh7P7A/g8MHFCiPYGglgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="3"
+        title="3"
+        src="/static/3f15a68d0604f702038531174c0af8df/c391c/3.png"
+        srcset="/static/3f15a68d0604f702038531174c0af8df/e9ff0/3.png 180w,
+/static/3f15a68d0604f702038531174c0af8df/f21e7/3.png 360w,
+/static/3f15a68d0604f702038531174c0af8df/c391c/3.png 673w"
+        sizes="(max-width: 673px) 100vw, 673px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <h3 id="itemreader" style="position:relative;"><a href="#itemreader" aria-label="itemreader permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ItemReader</h3>
 <ul>
 <li>ItemReader는 Step의 대상이 되는 배치 데이터를 읽어오는 인터페이스. File, Xml Db등 여러 타입의 데이터를 읽어올 수 있다.</li>
 </ul>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/4.png" alt="4"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 629px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 67.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACFklEQVQ4y32T6W7UQBCE93EQCuvbnsse3+dmYZMsRwCBArz/I3zIs9mQkMCPksctTVV1V8+mqCpUboiigLmNKXSKVBprUrpKUhUZZZ5S5IowivF9D9/3nyEIAvfdmLwkE4owCBBRQJ8ndJVlanveTRNL1zM3HUPbU1Y1KhcUlcZYRV5qdK4p8gJjDGEYsjFFiZD6pBAEeJ6HrWqGtuPQj1xPC4du4lCPHPuZ2VqUUmitkVK6sxDiweVG55bsnnB1Gfg+tm6Yx4nraea423M9LxzGiatppjPGib7UtmtZF+WJ8F5hRdP2jMslTT/Q9CNV01KUFUmauS6C/2Cj1xlKRRRFhGHkVDIhXTCr4+3WOznyvCei/yQ0tkRq437SLCTwPbYXr07YvsZzuMDzfbaez8XW480j/N3+pu4adGHIsoTjZUZZlsjxJ3r8gR3vsNMvbPceawxdIblsDXOtWBrN3OVoY0jSlDiOSZKETe5SVq4g4pCu0HTzDYflyNerb9ze3PFp/4Evlwvf3058nlo+Dg23Q82SC+LkRLaObIVbmzUUZ9ml7FHanL6t6Brj0FSGprbU1pILg0qkQxpnz1M+E56HuhbrdmDZH9jtbxj7PcOwQ+sCmSmUNGiZIzLlcL7zJ5QXCNtuYJx3VFWNVIJUxMRphDAJiYjc2Q98PG/75Nk9Whv9MIPT2giUWmvhfStnsZdX5bHD330NsjJkwQlIAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="4"
+        title="4"
+        src="/static/142401d58ec403a53f9cd6e6cec00921/63a68/4.png"
+        srcset="/static/142401d58ec403a53f9cd6e6cec00921/e9ff0/4.png 180w,
+/static/142401d58ec403a53f9cd6e6cec00921/f21e7/4.png 360w,
+/static/142401d58ec403a53f9cd6e6cec00921/63a68/4.png 629w"
+        sizes="(max-width: 629px) 100vw, 629px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <h3 id="itemprocessor-optional" style="position:relative;"><a href="#itemprocessor-optional" aria-label="itemprocessor optional permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ItemProcessor (Optional)</h3>
 <ul>
 <li>ItemReader로 읽어 온 배치 데이터를 변환하는 역할</li>
 <li>비즈니스 로직의 분리 : ItemWriter는 저장 수행하고, ItemProcessor는 로직 처리만 수행해 역할을 명확하게 분리</li>
 </ul>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/5.png" alt="5"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 12.222222222222221%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAdUlEQVQI1x3KQQ6DMAwAwT6JQuwEO8EkoFKp/3/PVnCYw0r7ijFIkgmb+YTQ+6AfJ73v7L0T++B7Br8ruA7nHMFqjoiQUkJU0Zwfy7Lw8haIZqZpJqc3VgTNhSIzXiteG23bMHdKKZhXatswM8q6Pn0/N1XlD0/ZQ2gRNCVLAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="5"
+        title="5"
+        src="/static/016a789425db700f2ccba837cf451955/37523/5.png"
+        srcset="/static/016a789425db700f2ccba837cf451955/e9ff0/5.png 180w,
+/static/016a789425db700f2ccba837cf451955/f21e7/5.png 360w,
+/static/016a789425db700f2ccba837cf451955/37523/5.png 720w,
+/static/016a789425db700f2ccba837cf451955/a016c/5.png 762w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <h3 id="itemwriter" style="position:relative;"><a href="#itemwriter" aria-label="itemwriter permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ItemWriter</h3>
 <ul>
 <li>ItemWriter는 배치 데이터를 저장. 일반적으로 DB에 저장</li>
 <li>ItemWriter도 ItemReader와 비슷한 방식으로 구현. 제네릭으로 원하는 타입을 받고 write() 메서드는 List를 사용해서 저장한 타입의 리스트를 매개변수로 받는다.</li>
 </ul>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/6.png" alt="6"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 548px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 32.22222222222222%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6klEQVQY04WP247CIBRF+0O2wAG05daKTpzEzP//zTJg6mjmYR5WCDmczdpDKhunJWKdQymFtUIOJ87njXq9kEsmhMCyLMQYyDlRSqaUQoyRUlZSSh3vPUPMK3NIOO+ZWqBoLsFwiY7b/YftXJnnBe9PLCFhxDKOY+dwODCOE9P0pAkNzbAFNkOtFErrjreaNVdu33fq9UreEvWrEktgjkeOR8e6VbyzPUhr3fk1dP41cM5hRDBaELGIFYxpCwojGrEGEdMrGmM+A3fDVvkZZjvt0V/0x32v2fb2cwipvCpb617D91//493wAV/pwzAmy1m0AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="6"
+        title="6"
+        src="/static/96e2dd0c4e8726e7e7276561d8b52766/a58fe/6.png"
+        srcset="/static/96e2dd0c4e8726e7e7276561d8b52766/e9ff0/6.png 180w,
+/static/96e2dd0c4e8726e7e7276561d8b52766/f21e7/6.png 360w,
+/static/96e2dd0c4e8726e7e7276561d8b52766/a58fe/6.png 548w"
+        sizes="(max-width: 548px) 100vw, 548px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <ul>
 <li>Entity로 등록된 객체라면 ItemWriter를 구현한 JpaItemWriter클래스를 사용하여 편리하게 처리할 수 있다.</li>
 </ul>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/7.png" alt="7"></p>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/8.png" alt="8"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 663px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 20%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA3ElEQVQY0y2PSY6DMAAE8yFsMHhJjLGNs0BYMhPN/79So6AcSt3qQ0l9iuOIjwNd2/C7apzt0MZincMYc3TTKbxT9E7hTItSLUJIhKioqupIKSV1XXPqQ8I6j1IKrxVTuvBcVrbXm3nZmJaN5Tnzs8/8vXf2bSWESDwbci6U64OUC30I6K7j1A8Je/bUTXNI51tmmmbu08L0XLk/ZsZyI5c7abwRcyH4SOojY7yShkIaRpxzNE3zEWbc2aPaFq01F11jTcfFB3wfsNYhpTgQQiA/SIk4+G5SUH8v/wNblYaGW759hAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="7"
+        title="7"
+        src="/static/a30a5404080171168acf15fc8b5856d6/0786c/7.png"
+        srcset="/static/a30a5404080171168acf15fc8b5856d6/e9ff0/7.png 180w,
+/static/a30a5404080171168acf15fc8b5856d6/f21e7/7.png 360w,
+/static/a30a5404080171168acf15fc8b5856d6/0786c/7.png 663w"
+        sizes="(max-width: 663px) 100vw, 663px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 63.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB7ElEQVQ4y42T0Y7dIAxE7xc1gA3YBhKSu6tqpf7/r+QtU0H2Vu3DrvpwBCRhNGM7j7X3s0g8u8Tzo9j50+TcJJ5HkfPXczvfq53b1s+t76fkfBLRtzy0rsgccBijt4JtXVHLhmb3qmpIWZBSQuIA7x2c+5qHWL0i02VCl2m6stiVc7wi+8s5dzm3XMvy41qWZXI/+5ohiBgJVhhrF/RdsHVBXRWlVagpUsoQNWRR5DycMlIUpJjBHCGik5HikfUWVGNYSSgtT6xmaFNIyYgpgpknRAQKAUQMCowQaIoOxrvbIRM0E1pJWIegDnGF1QJJjBwzYkzTZWT+voZaGvIQa4xS0nSpliDC0CLImuC9/28eVhtyIuyrom8Ve6votaGKopQCUQUnQswMYrr3cbj0cP5mCA13U3BEDkQITAgxIjDfkEcIDkQexGHCHBDC5+W/eIndY1MquhI+joijFfRa0U2wSkKTDCUP5fAHCR7Ze2Tn5mreIc7Z9HNGZ2Qjj60Z3t+e2PcD+9ZQSsW67TCrsxlqgwIrBaU2SFZILrCYkYLH8oo8mpK8n/V6Hh3H2zv68ZyXxx+SVUFxlCSAYgCle8+ZESKBnAOP2KOWry5bCNjMZjM2K1AiJOcQl2WS3DLP/7IgOgcd3zmH5VPwNzKFppaRcihrAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="8"
+        title="8"
+        src="/static/bc15d8446dad5524ec2bcf9caa2edcdd/37523/8.png"
+        srcset="/static/bc15d8446dad5524ec2bcf9caa2edcdd/e9ff0/8.png 180w,
+/static/bc15d8446dad5524ec2bcf9caa2edcdd/f21e7/8.png 360w,
+/static/bc15d8446dad5524ec2bcf9caa2edcdd/37523/8.png 720w,
+/static/bc15d8446dad5524ec2bcf9caa2edcdd/302a4/8.png 1080w,
+/static/bc15d8446dad5524ec2bcf9caa2edcdd/0d40b/8.png 1175w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <h2 id="스프링-배치의-메타-데이터" style="position:relative;"><a href="#%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B0%B0%EC%B9%98%EC%9D%98-%EB%A9%94%ED%83%80-%EB%8D%B0%EC%9D%B4%ED%84%B0" aria-label="스프링 배치의 메타 데이터 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>스프링 배치의 메타 데이터</h2>
 <ul>
 <li>이전에 실행한 Job</li>
@@ -129,7 +302,28 @@
 <li>어떤 Job에 어떤 Step들이 있었고, Step들 중 성공한 Step과 실패한 Step들은 어떤것들이 있는지등</li>
 </ul>
 <h3 id="batch_job_instance" style="position:relative;"><a href="#batch_job_instance" aria-label="batch_job_instance permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BATCH_JOB_INSTANCE</h3>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/9.png" alt="9"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 658px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsTAAALEwEAmpwYAAACLElEQVQ4y62S227aQBRF/f9/1T6ENAUb38YGg8HYGAL4xtU3vCoGklRtH1IplpbOPrM1Z/aMrKjaC4NBj+fnbzw/f6c/6NEfPKGqPUzbZrneci4bjpea0ydQXD9ms01YrjbMg4h4vZU6il8Jwpj9saRqOsr6+imUU9nxlZ+S7iug43q9Puge3Puu6/4LJTtUX5swOTQ0LZR1R9Ui3+sO7293qVou1fVB+xvXP2hRgsDDcYaMxyam2Wc0MqQWQsO2NZZLnzRZkiQRu23IbhdJZH+r7/ruKdHCR1NHWKaPZY4Qlo2meghL0HtS+fHDIvBNFrMhrrD4+WLhuQbhXCecm4Rzg8XMYLNyORZzlDx7pSxL6rqiaRqyLKWua/I8wzRNLMvCdV3W6zVBMEdVVTRNwzBMDMPAtm2pF8GEY7FASZMV5/OZqroPTZKd1FmaYOhDbNtiMvHouitRtGAw6KMPNRxHSM+yDDnYnwpO+wVKlq5lwqapaduGPEulvic0cByH6XRC2zSsVzHCtnGEQIhbMh1dH6LrOmHgcSoeA5umlf9c27bkeS5rURTv1/V9X/pxvJQHCCGkd7vuvXdYxQHHIkBJthGbzYrDPqWuTmTZhqo8kmcbHGEw8RxmM096q3iBeKyNXAvHMfHGAm/skOxCDnmAsnudMpuobNdj9tn8wUzW8yHktL9TpDOZ4G3tVs/7D/827LZHiUOHZWhyOS7lws144+OA+V/9v7gl/AWCzWeZrPoTJgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="9"
+        title="9"
+        src="/static/8b9f64e698b2ef22e5949fc80168ba80/889a4/9.png"
+        srcset="/static/8b9f64e698b2ef22e5949fc80168ba80/e9ff0/9.png 180w,
+/static/8b9f64e698b2ef22e5949fc80168ba80/f21e7/9.png 360w,
+/static/8b9f64e698b2ef22e5949fc80168ba80/889a4/9.png 658w"
+        sizes="(max-width: 658px) 100vw, 658px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <ul>
 <li>하나의 Job 실행 단위</li>
 <li>동일한 Job이 Job Parameter가 달라지면 그때마다 생성되며, 동일한 Job Parameter는 여러개 존재할 수 없다.</li>
@@ -139,20 +333,114 @@
 <li>JOB_INSTANCE (부모) - JOB_EXECUTION (자식)</li>
 <li>부모 JOB_INSTANCE가 성공/실패했던 모든 내역을 가지고 있다</li>
 </ul>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/10.png" alt="10"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 70.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAABxklEQVQ4y5WTC4+iMBSF+f8/zaj4Apz1RQsIim+xvFrO5l7EHbOTmUyTk9tA+Xrac7HS4wmXywmX6xVVbaANoE3zLv2U+UmAlZc1jNHQxqDW7fyfTFuBVm/v3tdokq5hSSEgRIDNnwUiGUAICSHWEGLDVcoN/A8H69kUwpfYbkOk+wB70i5AEgvsd5KfnU8JLF0XaABopWCqCkVRQCmFPM+h1INrlqYoDim2UYTpdArPc+G6LjzXxXq9xvl8htatW0vXJZqmYSjpu5EkCQaDARzHwWg0wmQywWKxQBzHuN/vvOYFJDqDG/Oad5V2p0EfEtDzPIaNx2MG2/YQy+USWZZ1QHwC/i961wH7/f7L4XA4hG3bPCf3t9vtK4etyzfg02ESxwyh+yN3VAlOMFrHRy4LxS1T3q6oKZBcsfXH4/GsGW5hABUFCKVg0Gw2g+PMMJ/P+aiHw4GDrKrq90cmhwTsQlmtVjgej6jr+nMoPwG/DqUTtZLv+wz9dcrdHRKoc0nBSCm5Hy2tW4edm+8GAXu9HjsiMLml1KkX6QegjV+hVNkduio5CIqfGrWrqfCxX3xgF0jIIEAURQjDEGma8v2VZfky9BfeFikzDGU8XAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="10"
+        title="10"
+        src="/static/6d7237225a09070d0b05c28f3e4ac7b4/37523/10.png"
+        srcset="/static/6d7237225a09070d0b05c28f3e4ac7b4/e9ff0/10.png 180w,
+/static/6d7237225a09070d0b05c28f3e4ac7b4/f21e7/10.png 360w,
+/static/6d7237225a09070d0b05c28f3e4ac7b4/37523/10.png 720w,
+/static/6d7237225a09070d0b05c28f3e4ac7b4/302a4/10.png 1080w,
+/static/6d7237225a09070d0b05c28f3e4ac7b4/07a9c/10.png 1440w,
+/static/6d7237225a09070d0b05c28f3e4ac7b4/18c33/10.png 1775w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <ul>
 <li>status : Job또는 Step의 실행 결과를 기록. BatchStatus Enum에서 확인 가능</li>
 </ul>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/11.png" alt="11"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 52.222222222222214%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB50lEQVQoz23P6W7UMBiF4bkZaCZ74j12tslspQst0BZKhVSJ+7+FF8Uj8Qd+PDqybB9/3jSVQVYtomgQbUcrxyjNNFeJ+OvjVfsfzT82WWFJMkFWK9JCkhYiZl4p8kqT15q0VGS1jtJKXZSSbSHZ5pfza0csLEtLuhXI3mGWgAhdpEaP7D1y9LS+o+k6xOBp1v3RUzlL4x1y7mKuD1wlLZu6cuSZRA8ddgnI0GF2ge48oKeAHHxk9n0U11OI5WoXUEugdpbaWpJUsqkqS5EJdOhwS4hpp3CxXug9dulxhwG7ls49/eHEcnvDcDyix8svskqTbNfC0rBNRRxbjB2iv3xNziFq+oDY9TFX7dSj5wF16jHnEXOYaeaBTDo+ppqNaD192rCXmkUbFmWYW81iLTtlGVvDzjgmYZiVY1SWs3PsVcMkGxYtCNIQUolaJ5TK85a3/K4D3wvDj1zzVnW85JrX0vGSK35WIeZrFXjONS+F47XUvKsp5i858N4Ebq8qNt6NzK3imxU8OcHjMPH1/MCX0wNP+yPP13c8nh65293waTzzeX/L9XDk/vDA/f7MZAdGM2ErS10aNl73GOkx0uGkxZgBoweMGdF6ipSeEGqkaXuUmRHK4/yEtD1JKUkqw4e8JSk1fwCEjEq7y0tT1QAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="11"
+        title="11"
+        src="/static/e679f34e3ad4478f009a8f9ce28624c9/37523/11.png"
+        srcset="/static/e679f34e3ad4478f009a8f9ce28624c9/e9ff0/11.png 180w,
+/static/e679f34e3ad4478f009a8f9ce28624c9/f21e7/11.png 360w,
+/static/e679f34e3ad4478f009a8f9ce28624c9/37523/11.png 720w,
+/static/e679f34e3ad4478f009a8f9ce28624c9/302a4/11.png 1080w,
+/static/e679f34e3ad4478f009a8f9ce28624c9/07a9c/11.png 1440w,
+/static/e679f34e3ad4478f009a8f9ce28624c9/d3deb/11.png 1758w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <ul>
 <li>exit_code : Job또는 Step의 실행 후 상태. ExitStatus 클래스에서 확인가능 (Enum 아님)</li>
 </ul>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/12.png" alt="12"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 102.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEXklEQVQ4y1XT2W7cRhaAYb5IEBvq5lpk7UU2t25JsT2OZhRM3IpkS/Iqy5ZjB5kJcjfPyCci8AeiBhjMxYezFOrUxUFFXhqM0GhZo+2IlBt8qRZSNmgzoHW/9K3fok2PsePSFyIQx/L/RCthSbQnlo64tMTSsq48q9ITV464uq/tcn4f18KwKgyxNEt+kGoOEk2cqEVkU0XnHUMbaK0jCEMo9AOh8QvzkBcalyl8rqnL+1xi1tUiWYZqoo+rNa+TlNdxytU65TopuKoaLsuaq6zmTdFzscq5yhRXsuWVCFykmvNEcZYJLqTk7eOEai1ZpYZoKw1PlOFYGo6q+2g5lu5/lOOoshxJy5FyHFaWw8osdqXmSBnGQlMUjlw4okIG9NBhtj121+OOhiVXXYfZ9dj7ejegt/2DXY8cOtSuo2xbcteQVIE0sySZJSqqgB27hen/6/5C16GHh8G675GbDtX3mO2A3LTL47JryWxNLAKr3JNkjqjLFcfBsVOWsTCMwjKWjkFYBuEYhacXjq5wDKVnqCyjNBzawJEN9JWnzQw+NaS5J7qLY26TdHETp9xmghvZcCM3vM8CH7KGt6nlJi34IDd8awY+lJp3peajNlxWkjel5GotyItAFLRnsJ5Oe1rl2WjPRlo20rFRjo12Dz0dqJWn1Y5jb/BZQYgzQi5xhUMUgUw0ROdlxUunubCaM6U4t4azsGHvN+xtwy+u5WcT2BvDWd3yIrT80zW8bBpOSsNPUnKqHCeJIhc10W2e8y4XvE0LXqcFb7KS6zJwXXouU8dV6nmZaC7TkqsycCkC55nlunL8kpX8nJfsheIyKRFlQ6RDi+t7bNdjNj2m7dFNi6pbdNstG5VNRxk6qtBimhrft5ihJ6sb8rAhEW75joVqiP6mHKdDw9/bmpMmcNLW/Ng1PG8bnncNT2zgWHp+UIEftOeJrHimS55qybaUdPJ+u5Ikq4iziuhfRcadENwVBZ+Kgs9lxa3tFjdly/vc8lFIvtQDN7bjnZDcWccnb3mZZ5w9WpMkJeu0Yp0IorFuOG43HDYNh/WDnQ/sXGBX14vRNxzVjtEHntaWp7XicBNwQlBqy1oFklyxTgXRS624qC3nwXLmLOe152zTsW869uFhq3vv2dcbXrQj503gVa35h5I8URXPhaDNKg5yRbxOiP7IM37Lc75lOV/TnK+Z4NfKLe4yw+dU8yUtuCs036TjfZxx/XjF5aMDXq1WfE1Tnq1zHheKTBgi2w9zONzOfjfObjvObjfOduhn2/ezHYfZbse56sdZj+MsGj9/L8X8vczn76p8TqtqTpWdv8vlHKdijnM1R6fGsO89+yHwovO86AM/hcCpDZy6wInxPFWGZ0vUDEnCNssZk5R+taJfxTQHK9breBH9p4inP8ts+lNk0x9FOv27FNNvrp1+r/vp17Ke7vJm+pSk0xdRTZ91M91WdrrJy+lDWkzX8cH0vkymz48eT8kqmVbrdPoLdFCvFFEKJKgAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="12"
+        title="12"
+        src="/static/00758caba6a5030d4e77acd4177e3eb6/37523/12.png"
+        srcset="/static/00758caba6a5030d4e77acd4177e3eb6/e9ff0/12.png 180w,
+/static/00758caba6a5030d4e77acd4177e3eb6/f21e7/12.png 360w,
+/static/00758caba6a5030d4e77acd4177e3eb6/37523/12.png 720w,
+/static/00758caba6a5030d4e77acd4177e3eb6/302a4/12.png 1080w,
+/static/00758caba6a5030d4e77acd4177e3eb6/07a9c/12.png 1440w,
+/static/00758caba6a5030d4e77acd4177e3eb6/6568d/12.png 1660w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <h3 id="batch_job_execution_param" style="position:relative;"><a href="#batch_job_execution_param" aria-label="batch_job_execution_param permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BATCH_JOB_EXECUTION_PARAM</h3>
 <ul>
 <li>BATCH_JOB_EXECUTION 테이블이 생성될 때 입력 받은 Job Parameter 확인가능</li>
 </ul>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/13.png" alt="13"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB5klEQVQoz42S626jMBBGef8n221zvxFIAQOBaLNcDAQIYDgr3KpaqX9i6fjzjO3xjDXGZvvOcvWL9ead9eaN3X7F2b4Q/0nIZEX5aKnqJ+WLGFIW/E1S7veENMv1Okmzb1upCTWCGqeXMHhpTC9jzNM0jaCZfvJ9+LVhjMAwgZp1/GL68n1pP0KvJrrhk0FN2v6fYfxUY79aMLNbvGGZB06nPeZ2xW65YL9cELoXbqHL7RaRJFdNFAXcbgFRFBLHgSYMP32G9XuNs9ziLlaYmzXW0cR6X2AfLVzzjG97eLst5skmEBaBMPHFFeF5OB+CaxjhCx9fRMRXH2NQ6rt+0zIRzgfO6UheFjRto/13X3A4HDTb7RalBopCkqaJ/t+qKhlHRde1GE1d83y2dM8WT7jEc+qugywkVVnQd0+SQCCEh+8LXNehbRukzMiylK57UhZSx6jrEqPrOh19VArXc4kCH2GdkWVJ09RzD5BFIc6cufOBbVsMw0BZFuR5pjvk8XiglKJ7Nhh13egSZizLwncc3MOeLE2opET1PXfXwTybnM9nTqcjfd9TyLnkVCczB58fadsaw/dOyDTkUd7I0wCZ+CTekTyykfGFIr6QXy3yNNT7WeLzKGLK/EqRX/W9UkZaqyLiHyrxjpYJ+4wiAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="13"
+        title="13"
+        src="/static/6d471cc35aef23c23e00e6037702908d/37523/13.png"
+        srcset="/static/6d471cc35aef23c23e00e6037702908d/e9ff0/13.png 180w,
+/static/6d471cc35aef23c23e00e6037702908d/f21e7/13.png 360w,
+/static/6d471cc35aef23c23e00e6037702908d/37523/13.png 720w,
+/static/6d471cc35aef23c23e00e6037702908d/c1c45/13.png 824w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <h3 id="batch_step_execution" style="position:relative;"><a href="#batch_step_execution" aria-label="batch_step_execution permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BATCH_STEP_EXECUTION</h3>
 <ul>
 <li>Job에 JobExecution Job실행 정보가 있다면 Step에는 StepExecution이라는 Step 실행 정보를 담는 객체가 있다. (거의 비슷)</li>
@@ -163,8 +451,51 @@
 <li>@Value(”#{jobParameters[파라미터명]}“)</li>
 <li>JobParameter를 사용하려면 배치 스코프를 @JobScope나 @StepScope로 반드시 조정해야한다 (일반 singleton Bean으로 생성할 경우 ‘jobParameters’ cannot be found 에러가 발생)</li>
 </ul>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/14.png" alt="14"></p>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/15.png" alt="15"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 30%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAklEQVQY022QzW7DIBAG80QBh10WYxv/4Tq11L7/20xVJ0oPzWHEZXaQvktZFkSNYxe2GlEJmN6IekPFoxqwZMRkpNbouvZ8JTSnK6qoRmI0RAKXbpjQaCTxrCWxLTNHXTm2lboUPvbK/fvO/rWzf1aOY2Wt4/lpa0pqMzl35K4ntZFLXybUDOc84dZQhpl5uVPGmX4odENPmQtlKoQgXK8O5xzO+wfOvfDeP4PRaJ6CibDXylwXhqlnnArTPBJNyCmzlI0+96ffNM0/LsM4E83O+u8epQxkU8wSlhJRDdN0yv48eh96Bcs4kVKizYaq0ubuHDiEGyEEgjx4jP+HiLzlBxE3xdQQt6j6AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="14"
+        title="14"
+        src="/static/771061f64f78b30fccc5011fc61046a6/37523/14.png"
+        srcset="/static/771061f64f78b30fccc5011fc61046a6/e9ff0/14.png 180w,
+/static/771061f64f78b30fccc5011fc61046a6/f21e7/14.png 360w,
+/static/771061f64f78b30fccc5011fc61046a6/37523/14.png 720w,
+/static/771061f64f78b30fccc5011fc61046a6/d26aa/14.png 839w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 714px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABfElEQVQoz42SWXLEIAxEfbeJF8BsEgaPncpSlftfoVMSnmR+UpWPNovhqZE0+Jhh1gCuDfv5+qNADJ/oUobzAeNsdJ1LRaSC2a4ImXSeeNN/Q8yMNWbdKG1HaXdYHzEZi9FYzNZhCRtMPrGkHZNdFSQaF4vJuJ+1zAfZFAk9UUEQRzHrOlyKtMEFwmg65GU2f0qBLkQFiNN4QcWl81EjL25Vx7dxxm1a9OJf4MGmgvb2Bc8HJuuxhoSQGV6UGGaNCrc+wYWs0ude0GctzmOQj+RPIJIDcSCAkItC5bmBio4q3rSI05W/Z7mQMEg0KlWhj0hSiEdRdM/8uuggi9l5dfSQBFGHMqGtaQ7FmVyKXFDvR9dx4mgNH7XiozW814rPfccrEXwmbS9tHS76SgVKX4lLKYYkVn5QbaCtguqOxgUnM45ScDDjLBuOlLQ/BSpjB19A3lp/9tWsUu1+sB9eM3Wlxyh73CFPDiVtgybT90oKqLeJh/FB8/Jv+a5vhrKj+VgmC5AAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="15"
+        title="15"
+        src="/static/9f1b1dbcc239e91b46b6757ecb4a1d94/d67ca/15.png"
+        srcset="/static/9f1b1dbcc239e91b46b6757ecb4a1d94/e9ff0/15.png 180w,
+/static/9f1b1dbcc239e91b46b6757ecb4a1d94/f21e7/15.png 360w,
+/static/9f1b1dbcc239e91b46b6757ecb4a1d94/d67ca/15.png 714w"
+        sizes="(max-width: 714px) 100vw, 714px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <h3 id="jobscope--stepscope" style="position:relative;"><a href="#jobscope--stepscope" aria-label="jobscope  stepscope permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JobScope &#x26; StepScope</h3>
 <ul>
 <li>Job, Step의 실행시점에 해당 컴포넌트를 Spring Bean으로 생성한다</li>
@@ -185,7 +516,31 @@
 <li>Chunk 단위로 트랜잭션</li>
 <li>중간에 실패할 경우엔 해당 Chunk 만큼만 롤백이 되고, 이전에 커밋된 트랜잭션 범위까지는 반영됨</li>
 </ul>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/16.png" alt="16"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 62.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAABZUlEQVQ4y42SC4vCQAyE+///nGDRKxYRacVuBW199OEr8gWmLHIHF1jazGZnJ7NJLIqu62yxWNhsNrOyLB3bbDaWpqmv3W7nWB2CzedzWy6XfiaO5HA4GOtyudg4DBZCsLIorWkaez6fdjwenaiqKmva1rHz+exYqIL1fe/Y/X631+tlSZZlfntRFDYMgz0eD7/1/X57kZSDc3AcR/+CQUDwBaMmIdlut5b9ZLbf7x1EAeTcfjqd7Hq9Os4lIrndbl6jYM8JpYhNyW7b1kloC/Xk8UGpRq2Cc06IVBVpA1UokCr85EL+/0VIokJytSKMHAKsWK/XtlqtLM/zyeNfCRXkePfdHq+NatpHcV3XE6G8nTz8bjk2WwpljWohjxVOjwIBGyQsfOFBNFt8yTUu1HCGuYUUIuFOKFXyMZ5DYZrDb4yFBfJ0Iozjr5Zjnwl81nDLPyekLS21rJERpjmNMXkoItnzAXFv9IXBE9hrAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="16"
+        title="16"
+        src="/static/6e3e73c85f01b171d2e914e45dc2b4fe/37523/16.png"
+        srcset="/static/6e3e73c85f01b171d2e914e45dc2b4fe/e9ff0/16.png 180w,
+/static/6e3e73c85f01b171d2e914e45dc2b4fe/f21e7/16.png 360w,
+/static/6e3e73c85f01b171d2e914e45dc2b4fe/37523/16.png 720w,
+/static/6e3e73c85f01b171d2e914e45dc2b4fe/302a4/16.png 1080w,
+/static/6e3e73c85f01b171d2e914e45dc2b4fe/07a9c/16.png 1440w,
+/static/6e3e73c85f01b171d2e914e45dc2b4fe/bfe41/16.png 2082w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <h3 id="page-size-vs-chunk-size" style="position:relative;"><a href="#page-size-vs-chunk-size" aria-label="page size vs chunk size permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Page Size vs Chunk Size</h3>
 <ul>
 <li>Chunk Size: 한번에 처리될 트랜잭션 단위</li>
@@ -198,7 +553,29 @@
 <li>PageSize와 ChunkSize는 일치시키는 편이 좋다</li>
 </ul>
 <h3 id="적정한-chunk-size" style="position:relative;"><a href="#%EC%A0%81%EC%A0%95%ED%95%9C-chunk-size" aria-label="적정한 chunk size permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>적정한 Chunk SIze?</h3>
-<p><img src="%7B%7Bsite.url%7D%7D/assets/post-img/spring/springbatch/17.png" alt="17"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 110.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAAAsTAAALEwEAmpwYAAADEUlEQVQ4y41Ua4+jOBDM//9bJ+3nkTbJzkwC4f20AWMD5lmn7kyiTDJ3WqTCBtvl7naVd2oYcUwraNMjywWErJGXEqWsUZQVsrxEVSvYccZgRwx2egGNqdagUS1287JC0087QsgK/WCxLCvmeWFM84x5WbBtwLquPPYTaA7N3wEb6Om6DuezgyiOEccJsixHmmXI8hxRFKOqKmzbiv97tm3Djl70UISlEChLwURJmjJpUZQQUkIbwxHeFr7iiXCwFkVZQkqJuq4hhGRyWVXQWsNay+1jNDf8GGHf9zg7Li6eB8/34TguPM+HUoo3oI0k1bjvGc+pvhCO4zVlwQsl8jy/RiglR0up50XBZYiTBG3bwhiDcZy+RXwnNF0Hx3X5YD4+PxnHP+84nc5w3QuSJOXapmmGMIp4QzrIaXoivIVNaYRhiCRJEAQhwjBCEIZ8wnEco+K0q6/Uqb4l6rp5rSERZVmCaZr5pO04choEFvJgr3qcZozTxC1p87GlObc1OyFK/Pr1DztF1ApNa1ApzW2tNGTTorcT5hWYlg12WmDZHVeH9MOIumnR6o7dck9ZK4OTm8NzA1xOn/AdF1VRQNc1oxECrZSYh+E/ZPN0KDpNcNnv4R0O8I5HhB/v/J2cTzBFDpUmPGdVzd85RSuFwHUR+T48x4Hvugz3dMLn8Q/eD0f8fnvDx/sH/CBk2bRas4NIPiT6eZ4fhD0MSNIMUZwgzXJeRDLxggCC3NJ1aJS6EzCZ1tw3puP2GyHpqSgK1iKBJOP7AfwgYAnRpUEaZGs2DbQ27KKmUSwniviFkJxBTiFPkzNoA3IP3TjUJ6co1WIYBpYKSY6iW5blp9vGMgmR5l9EREy2I1B0PE7/v2xIIAeR1yn96VsN+wEB1UsIJh/6nq1FUXDfmOv3179bn9qOasiHsjx4Oc/h7Pe4HA9wD3uUgQ8ZRSh8D/H5DBmGyC4XVFEEEQb8v/A85J53H7OifEi5qVGnCeosRZOlmNoWi9GYaWfdPkE/4Pv3nXCeDKaxexApnm7jR7ze1IR1A/4FzAuW9ObwuIIAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="17"
+        title="17"
+        src="/static/c5fd3bbf3738457e7ed825aee700ef3e/37523/17.png"
+        srcset="/static/c5fd3bbf3738457e7ed825aee700ef3e/e9ff0/17.png 180w,
+/static/c5fd3bbf3738457e7ed825aee700ef3e/f21e7/17.png 360w,
+/static/c5fd3bbf3738457e7ed825aee700ef3e/37523/17.png 720w,
+/static/c5fd3bbf3738457e7ed825aee700ef3e/ae694/17.png 850w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <ul>
 <li>Chunk Size를 아주 크게 하면 그 배치는 빨리 수행될 수 있지만</li>
 <li>다른 배치들이 성능상 영향을 받을 수 있고</li>
