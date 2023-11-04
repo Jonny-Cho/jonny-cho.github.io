@@ -28,14 +28,3 @@ jobs:
               access-token: ${{ secrets.GITHUB_TOKEN }}
               deploy-branch: gh-pages
               skip-publish: false
-
-#          - name: Setup Node
-#            uses: actions/setup-node@v3
-#            with:
-#              node-version-file: '.nvmrc'
-#              cache: npm
-#
-#          - name: Run deploy
-#            run: |
-#              npm ci
-#              npm run deploy
