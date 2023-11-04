@@ -26,5 +26,5 @@ jobs:
             uses: enriikke/gatsby-gh-pages-action@v2.2.1
             with:
               access-token: ${{ secrets.GITHUB_TOKEN }}
-              deploy-branch: gh-pages
+              deploy-branch: main
               skip-publish: false
