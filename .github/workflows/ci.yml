@@ -11,10 +11,6 @@ jobs:
         steps:
           - name: Checkout
             uses: actions/checkout@v3
-            with:
-              run: |
-                git config user.name github-actions
-                git config user.email github-actions@github.com
 
           - name: Set Git User
             run: |
@@ -23,8 +19,7 @@ jobs:
               git config init.defaultBranch "main"
 
           - name: GithubPages Deploy
-            uses: enriikke/gatsby-gh-pages-action@v2.2.1
+            uses: enriikke/gatsby-gh-pages-action@v2
             with:
               access-token: ${{ secrets.GITHUB_TOKEN }}
-              deploy-branch: main
-              skip-publish: false
+              deploy-branch: gh-pages
