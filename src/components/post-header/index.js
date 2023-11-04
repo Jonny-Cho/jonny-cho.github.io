@@ -18,9 +18,13 @@ function PostHeader({ post }) {
 
       <h1 className="title">{post.title}</h1>
       <div className="info">
-        <div className="author">
-          posted by <strong>{post.author}</strong>,
-        </div>{' '}
+        {
+            /*
+            <div className="author">
+              posted by <strong>{post.author}</strong>,
+            </div>{' '}
+            */
+        }
         {post.date}
       </div>
     </header>

@@ -38,8 +38,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         categories
-        author
-        emoji
       }
       fields {
         slug
@@ -53,8 +51,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         categories
-        author
-        emoji
       }
       fields {
         slug
@@ -68,8 +64,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         categories
-        author
-        emoji
       }
       fields {
         slug
