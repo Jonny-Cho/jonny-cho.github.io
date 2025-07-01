@@ -5,7 +5,7 @@
 <div align="center">
 
 [![Blog](https://img.shields.io/badge/Blog-jonny--cho.github.io-blue?style=flat-square&logo=github)](https://jonny-cho.github.io/)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FJonny-Cho%2Fjonny-cho.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visits&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/Jonny-Cho/jonny-cho.github.io&count_bg=79C83D&title_bg=555555&icon=&icon_color=E7E7E7&title=visits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 </div>
 
