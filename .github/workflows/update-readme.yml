@@ -18,7 +18,7 @@ jobs:
     - name: Update README with latest posts
       uses: gautamkrishnar/blog-post-workflow@v1
       with:
-        feed_list: "https://jonny-cho.github.io/index.xml"
+        feed_list: "https://jonny-cho.github.io/rss.xml"
         max_post_count: 5
         readme_path: "./README.md"
         gh_token: ${{ secrets.GITHUB_TOKEN }}
