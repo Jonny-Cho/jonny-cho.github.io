@@ -2,13 +2,6 @@
     <a href="https://jonny-cho.github.io/" target="_blank">🚀 삽질코딩 블로그</a>
 </h1>
 
-<div align="center">
-
-[![Blog](https://img.shields.io/badge/Blog-jonny--cho.github.io-blue?style=flat-square&logo=github)](https://jonny-cho.github.io/)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/Jonny-Cho/jonny-cho.github.io&count_bg=79C83D&title_bg=555555&icon=&icon_color=E7E7E7&title=visits&edge_flat=false)](https://hits.seeyoufarm.com)
-
-</div>
-
 ## 👨‍💻 About Me
 
 안녕하세요! 백엔드 개발자 Jonny입니다.  
