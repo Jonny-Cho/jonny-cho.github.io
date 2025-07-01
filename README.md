@@ -27,10 +27,10 @@
 ## 📝 Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [Docker Compose로 로컬 개발환경 구축하기 - 개발 생산성 혁신 가이드](https://jonny-cho.github.i/devops/2025-07-01-docker-compose-development-environment/)
 - [Kotlin + Spring Boot 백엔드 비동기 프로그래밍 완전 가이드](https://jonny-cho.github.i/kotlin/2025-07-01-kotlin-spring-async-programming/)
 - [GitHub Actions로 Spring Boot CI/CD 파이프라인 구축](https://jonny-cho.github.i/devops/2025-07-01-github-actions-spring-boot-cicd/)
 - [SpringBatch 간단 정리](https://jonny-cho.github.i/spring/2021-07-14-springbatch/)
 - [가비지 컬렉션&lpar;GC&rpar;의 원리와 종류](https://jonny-cho.github.i/java/2021-06-01-garbage-collection/)
-- [트랜잭션 격리레벨, 락, 전파타입 정리](https://jonny-cho.github.i/database/2021-05-27-transaction-isolation-level/)
 <!-- BLOG-POST-LIST:END -->
 
