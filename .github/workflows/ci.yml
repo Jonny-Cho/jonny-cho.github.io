@@ -28,9 +28,14 @@ jobs:
               git config user.name "Jonny-Cho"
               git config user.email "andante2183@gmail.com"
 
-          - name: Run deploy
-            run: |
-              npm ci
-              npm run deploy
-            env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          - name: Install dependencies
+            run: npm ci
+
+          - name: Build
+            run: npx gatsby clean && npx gatsby build
+
+          - name: Deploy to GitHub Pages
+            uses: peaceiris/actions-gh-pages@v3
+            with:
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              publish_dir: ./public
