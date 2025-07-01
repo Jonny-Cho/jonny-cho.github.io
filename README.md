@@ -1,3 +1,43 @@
 <h1 align="center">
-    <a href="https://jonny-cho.github.io/" target="_blank">삽질코딩 블로그</a>
+    <a href="https://jonny-cho.github.io/" target="_blank">🚀 삽질코딩 블로그</a>
 </h1>
+
+<div align="center">
+
+[![Blog](https://img.shields.io/badge/Blog-jonny--cho.github.io-blue?style=flat-square&logo=github)](https://jonny-cho.github.io/)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FJonny-Cho%2Fjonny-cho.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visits&edge_flat=false)](https://hits.seeyoufarm.com)
+
+</div>
+
+## 👨‍💻 About Me
+
+안녕하세요! 백엔드 개발자 Jonny입니다.  
+개발하면서 겪는 다양한 문제들과 해결 과정, 새로 배운 기술들을 정리하고 공유합니다.
+
+- 🔧 **주력 기술**: Kotlin, Java, Spring Boot
+- 🌱 **관심 분야**: 백엔드 아키텍처, DevOps, 성능 최적화
+
+## 🛠 Tech Stack
+
+### Languages & Frameworks
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=spring-boot&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+
+### Database & Tools
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
+
+## 📝 Latest Blog Posts
+
+<!-- BLOG-POST-LIST:START -->
+- [GitHub Actions로 Spring Boot CI/CD 파이프라인 구축](https://jonny-cho.github.io/devops/2025-07-01-github-actions-spring-boot-cicd/)
+- [Kotlin + Spring Boot 백엔드 비동기 프로그래밍](https://jonny-cho.github.io/kotlin/2025-07-01-kotlin-spring-async-programming/)
+- [Spring Batch 완벽 가이드](https://jonny-cho.github.io/spring/2021-07-14-springbatch/)
+- [Garbage Collection 이해하기](https://jonny-cho.github.io/java/2021-06-01-garbage-collection/)
+- [트랜잭션 격리 수준](https://jonny-cho.github.io/database/2021-05-27-transaction-isolation-level/)
+<!-- BLOG-POST-LIST:END -->
+

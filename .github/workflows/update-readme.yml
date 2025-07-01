@@ -1,0 +1,25 @@
+name: Update README with latest blog posts
+
+on:
+  push:
+    paths: ['content/**/*.md']
+  schedule:
+    - cron: '0 0 * * *' # 매일 자정 실행
+  workflow_dispatch: # 수동 실행 가능
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Update README with latest posts
+      uses: gautamkrishnar/blog-post-workflow@v1
+      with:
+        feed_list: "https://jonny-cho.github.io/index.xml"
+        max_post_count: 5
+        readme_path: "./README.md"
+        gh_token: ${{ secrets.GITHUB_TOKEN }}
+        comment_tag_name: "BLOG-POST-LIST"
