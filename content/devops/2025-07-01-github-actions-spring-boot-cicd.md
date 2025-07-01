@@ -1,7 +1,7 @@
 ---
 title: 'GitHub Actions로 Spring Boot CI/CD 파이프라인 구축'
 date: 2025-07-01 12:00:00
-category: 'devops'
+categories: 'devops'
 draft: false
 tags: ['GitHub Actions', 'CI/CD', 'Spring Boot', 'DevOps', 'Docker', 'AWS']
 ---
