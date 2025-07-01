@@ -27,10 +27,10 @@
 ## 📝 Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [Kotlin + Spring Boot 백엔드 비동기 프로그래밍 완전 가이드](https://jonny-cho.github.io/kotlin/2025-07-01-kotlin-spring-async-programming/)
 - [GitHub Actions로 Spring Boot CI/CD 파이프라인 구축](https://jonny-cho.github.io/devops/2025-07-01-github-actions-spring-boot-cicd/)
-- [Kotlin + Spring Boot 백엔드 비동기 프로그래밍](https://jonny-cho.github.io/kotlin/2025-07-01-kotlin-spring-async-programming/)
-- [Spring Batch 완벽 가이드](https://jonny-cho.github.io/spring/2021-07-14-springbatch/)
-- [Garbage Collection 이해하기](https://jonny-cho.github.io/java/2021-06-01-garbage-collection/)
-- [트랜잭션 격리 수준](https://jonny-cho.github.io/database/2021-05-27-transaction-isolation-level/)
+- [SpringBatch 간단 정리](https://jonny-cho.github.io/spring/2021-07-14-springbatch/)
+- [가비지 컬렉션&lpar;GC&rpar;의 원리와 종류](https://jonny-cho.github.io/java/2021-06-01-garbage-collection/)
+- [트랜잭션 격리레벨, 락, 전파타입 정리](https://jonny-cho.github.io/database/2021-05-27-transaction-isolation-level/)
 <!-- BLOG-POST-LIST:END -->
 
