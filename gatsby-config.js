@@ -146,8 +146,8 @@ module.exports = {
                   title: node.frontmatter.title,
                   description: node.excerpt,
                   date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl.slice(0, -1) + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl.slice(0, -1) + node.fields.slug,
+                  url: site.siteMetadata.siteUrl.replace(/\/$/, '') + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl.replace(/\/$/, '') + node.fields.slug,
                   custom_elements: [{ "content:encoded": node.html }],
                 };
               });
