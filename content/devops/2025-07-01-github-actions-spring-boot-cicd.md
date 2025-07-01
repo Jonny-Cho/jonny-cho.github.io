@@ -37,7 +37,11 @@ my-spring-app/
 ├── src/
 │   ├── main/
 │   └── test/
-├── pom.xml (또는 build.gradle)
+├── build.gradle.kts
+├── gradle/
+│   └── wrapper/
+├── gradlew
+├── gradlew.bat
 ├── Dockerfile
 └── .github/
     └── workflows/
@@ -46,8 +50,8 @@ my-spring-app/
 
 ### 필요한 도구들
 
-- Java 17 이상
-- Maven 또는 Gradle
+- Java 21 이상
+- Gradle 8.x
 - Docker
 - GitHub 계정
 
@@ -98,28 +102,30 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
     
-    - name: Set up JDK 17
+    - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
     
-    - name: Cache Maven dependencies
+    - name: Cache Gradle dependencies
       uses: actions/cache@v3
       with:
-        path: ~/.m2
-        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-        restore-keys: ${{ runner.os }}-m2
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: ${{ runner.os }}-gradle-
     
     - name: Run tests
-      run: mvn clean test
+      run: ./gradlew clean test
     
     - name: Generate test report
       uses: dorny/test-reporter@v1
       if: success() || failure()
       with:
-        name: Maven Tests
-        path: target/surefire-reports/*.xml
+        name: Gradle Tests
+        path: build/test-results/test/*.xml
         reporter: java-junit
 ```
 
@@ -133,10 +139,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
     
-    - name: Set up JDK 17
+    - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
     
     - name: Cache Maven dependencies
@@ -146,15 +152,15 @@ jobs:
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
     
     - name: Run SpotBugs
-      run: mvn spotbugs:check
+      run: ./gradlew spotbugsMain
     
     - name: Generate test coverage
-      run: mvn jacoco:report
+      run: ./gradlew jacocoTestReport
     
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
       with:
-        file: target/site/jacoco/jacoco.xml
+        file: build/reports/jacoco/test/jacocoTestReport.xml
 ```
 
 ### 4.3 멀티 환경 테스트
@@ -164,7 +170,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [17, 21]
+        java: [21, 22]
     
     steps:
     - name: Checkout code
@@ -177,7 +183,7 @@ jobs:
         distribution: 'temurin'
     
     - name: Run tests with JDK ${{ matrix.java }}
-      run: mvn clean test
+      run: ./gradlew clean test
 ```
 
 ## 5. CD (Continuous Deployment) 파이프라인 구축
@@ -187,15 +193,23 @@ jobs:
 먼저 `Dockerfile`을 생성합니다:
 
 ```dockerfile
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:21-jre-jammy
 
 WORKDIR /app
 
-COPY target/*.jar app.jar
+# 비루트 사용자 생성 (보안상 이점)
+RUN addgroup --system --gid 1001 spring
+RUN adduser --system --uid 1001 --gid 1001 spring
+
+COPY build/libs/*.jar app.jar
+
+RUN chown spring:spring app.jar
+
+USER spring:spring
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
 ```
 
 GitHub Actions 워크플로우에 Docker 빌드 추가:
@@ -210,27 +224,27 @@ GitHub Actions 워크플로우에 Docker 빌드 추가:
     - name: Checkout code
       uses: actions/checkout@v4
     
-    - name: Set up JDK 17
+    - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
     
-    - name: Build with Maven
-      run: mvn clean package -DskipTests
+    - name: Build with Gradle
+      run: ./gradlew clean build -x test
     
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
+      uses: docker/setup-buildx-action@v4
     
     - name: Login to GitHub Container Registry
-      uses: docker/login-action@v3
+      uses: docker/login-action@v4
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Build and push Docker image
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v6
       with:
         context: .
         push: true
@@ -289,7 +303,7 @@ GitHub Actions 워크플로우에 Docker 빌드 추가:
 ```yaml
     - name: Notify Slack on success
       if: success()
-      uses: 8398a7/action-slack@v3
+      uses: 8398a7/action-slack@v4
       with:
         status: success
         channel: '#deployments'
@@ -299,7 +313,7 @@ GitHub Actions 워크플로우에 Docker 빌드 추가:
     
     - name: Notify Slack on failure
       if: failure()
-      uses: 8398a7/action-slack@v3
+      uses: 8398a7/action-slack@v4
       with:
         status: failure
         channel: '#deployments'
@@ -320,8 +334,8 @@ on:
     branches: [ main ]
 
 env:
-  JAVA_VERSION: '17'
-  MAVEN_OPTS: '-Xmx1024m'
+  JAVA_VERSION: '21'
+  GRADLE_OPTS: '-Xmx1024m'
 
 jobs:
   test:
@@ -336,17 +350,17 @@ jobs:
       with:
         java-version: ${{ env.JAVA_VERSION }}
         distribution: 'temurin'
-        cache: maven
+        cache: gradle
     
     - name: Run tests
-      run: mvn clean test
+      run: ./gradlew clean test
     
     - name: Generate test report
       uses: dorny/test-reporter@v1
       if: success() || failure()
       with:
-        name: Maven Tests
-        path: target/surefire-reports/*.xml
+        name: Gradle Tests
+        path: build/test-results/test/*.xml
         reporter: java-junit
 
   build-and-deploy:
@@ -363,10 +377,10 @@ jobs:
       with:
         java-version: ${{ env.JAVA_VERSION }}
         distribution: 'temurin'
-        cache: maven
+        cache: gradle
     
     - name: Build application
-      run: mvn clean package -DskipTests
+      run: ./gradlew clean build -x test
     
     - name: Build Docker image
       run: |
@@ -374,7 +388,7 @@ jobs:
         docker tag my-spring-app:${{ github.sha }} my-spring-app:latest
     
     - name: Login to Container Registry
-      uses: docker/login-action@v3
+      uses: docker/login-action@v4
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
@@ -398,13 +412,13 @@ jobs:
 **1. 메모리 부족 오류**
 ```yaml
 env:
-  MAVEN_OPTS: '-Xmx2048m -XX:MaxPermSize=512m'
+  GRADLE_OPTS: '-Xmx2048m -XX:MaxMetaspaceSize=512m'
 ```
 
 **2. 캐싱 문제**
 ```yaml
-- name: Clear Maven cache
-  run: rm -rf ~/.m2/repository
+- name: Clear Gradle cache
+  run: rm -rf ~/.gradle/caches
 ```
 
 **3. 권한 문제**
@@ -416,16 +430,18 @@ env:
 ### 빌드 시간 최적화
 
 ```yaml
-- name: Cache Maven dependencies
+- name: Cache Gradle dependencies
   uses: actions/cache@v3
   with:
-    path: ~/.m2
-    key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+    path: |
+      ~/.gradle/caches
+      ~/.gradle/wrapper
+    key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
     restore-keys: |
-      ${{ runner.os }}-m2-
+      ${{ runner.os }}-gradle-
 
 - name: Parallel build
-  run: mvn -T 1C clean package
+  run: ./gradlew clean build --parallel
 ```
 
 ## 9. 보안 고려사항
