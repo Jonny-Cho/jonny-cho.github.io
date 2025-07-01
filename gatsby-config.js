@@ -141,14 +141,15 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
-                });
+              return allMarkdownRemark.nodes.map(node => {
+                return {
+                  title: node.frontmatter.title,
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl.slice(0, -1) + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl.slice(0, -1) + node.fields.slug,
+                  custom_elements: [{ "content:encoded": node.html }],
+                };
               });
             },
             query: `
@@ -157,15 +158,13 @@ module.exports = {
                   sort: { order: DESC, fields: [frontmatter___date] },
                   filter: { frontmatter: { draft: { ne: true } } }
                 ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields { slug }
-                      frontmatter {
-                        title
-                        date
-                      }
+                  nodes {
+                    excerpt
+                    html
+                    fields { slug }
+                    frontmatter {
+                      title
+                      date
                     }
                   }
                 }
