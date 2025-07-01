@@ -16,9 +16,9 @@ tags: ['GitHub Actions', 'CI/CD', 'Spring Boot', 'DevOps', 'Docker', 'AWS']
 
 ### CI/CD란?
 
-**CI (Continuous Integration)**는 코드 변경사항을 지속적으로 통합하고 자동으로 빌드, 테스트하는 프로세스입니다.
+**CI (Continuous Integration)** 는 코드 변경사항을 지속적으로 통합하고 자동으로 빌드, 테스트하는 프로세스입니다.
 
-**CD (Continuous Deployment/Delivery)**는 검증된 코드를 자동으로 운영 환경에 배포하는 프로세스입니다.
+**CD (Continuous Deployment/Delivery)** 는 검증된 코드를 자동으로 운영 환경에 배포하는 프로세스입니다.
 
 ### GitHub Actions의 장점
 
