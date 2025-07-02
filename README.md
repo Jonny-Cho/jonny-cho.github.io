@@ -27,10 +27,10 @@
 ## 📝 Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [Git Worktree 완벽 가이드 - 효율적인 멀티 브랜치 워크플로우 구축하기](https://jonny-cho.github.io/git/2025-07-02-git-worktree-complete-guide/)
 - [Docker Compose로 로컬 개발환경 구축하기 - 개발 생산성 혁신 가이드](https://jonny-cho.github.io/devops/2025-07-01-docker-compose-development-environment/)
 - [Kotlin + Spring Boot 백엔드 비동기 프로그래밍 완전 가이드](https://jonny-cho.github.io/kotlin/2025-07-01-kotlin-spring-async-programming/)
 - [GitHub Actions로 Spring Boot CI/CD 파이프라인 구축](https://jonny-cho.github.io/devops/2025-07-01-github-actions-spring-boot-cicd/)
 - [SpringBatch 간단 정리](https://jonny-cho.github.io/spring/2021-07-14-springbatch/)
-- [가비지 컬렉션&lpar;GC&rpar;의 원리와 종류](https://jonny-cho.github.io/java/2021-06-01-garbage-collection/)
 <!-- BLOG-POST-LIST:END -->
 
