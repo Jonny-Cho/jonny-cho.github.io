@@ -8,3 +8,7 @@ $content-image-max-height: 560px;
 $screen-sm-min: 576px;
 $screen-md-min: 768px;
 $screen-lg-min: 1080px;
+
+:root {
+  --screen-lg-min: #{$screen-lg-min};
+}
