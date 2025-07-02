@@ -1,0 +1,33 @@
+name: PR Check
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+      
+      - name: Build
+        run: npm run build:ci
+      
+      - name: Check for build artifacts
+        run: |
+          if [ ! -d "public" ]; then
+            echo "Build failed: public directory not found"
+            exit 1
+          fi
+          echo "Build successful: public directory created"
