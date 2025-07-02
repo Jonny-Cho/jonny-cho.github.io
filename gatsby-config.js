@@ -120,7 +120,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-theme-material-ui`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-advanced-sitemap`,
     {
