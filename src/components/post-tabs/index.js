@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Tabs, Tab } from '@mui/material';
+import { Select, MenuItem, FormControl, InputLabel, Box } from '@mui/material';
 import PostCardColumn from '../post-card-column';
 import './style.scss';
 
@@ -9,20 +9,36 @@ function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton }) {
     return posts.filter((post) => post.categories.includes(tabs[tabIndex]));
   }, [posts, tabs, tabIndex]);
 
+  const handleSelectChange = (event) => {
+    const newIndex = event.target.value;
+    onChange(event, newIndex);
+  };
+
   return (
     <div className="post-tabs-wrapper">
-      <div className="post-tabs">
-        <Tabs
-          className="mui-tabs"
-          value={tabIndex}
-          onChange={onChange}
-          variant="scrollable"
-          scrollButtons="desktop"
-        >
-          {tabs.map((title, index) => (
-            <Tab label={title} key={index} />
-          ))}
-        </Tabs>
+      <div className="post-category-selector">
+        <FormControl className="category-select-form">
+          <InputLabel id="category-select-label">카테고리</InputLabel>
+          <Select
+            labelId="category-select-label"
+            id="category-select"
+            value={tabIndex}
+            label="카테고리"
+            onChange={handleSelectChange}
+            className="category-select"
+          >
+            {tabs.map((title, index) => (
+              <MenuItem key={index} value={index} className="category-menu-item">
+                <Box display="flex" alignItems="center" gap={1}>
+                  <span>{title}</span>
+                  <span className="post-count">
+                    ({title === 'All' ? posts.length : posts.filter(post => post.categories.includes(title)).length})
+                  </span>
+                </Box>
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </div>
       <PostCardColumn
         posts={showMoreButton ? tabPosts.slice(0, 4) : tabPosts}
