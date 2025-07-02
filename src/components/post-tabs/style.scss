@@ -9,54 +9,107 @@
   top: 0px;
   width: 100%;
 
-  .post-tabs {
+  .post-category-selector {
     display: flex;
     justify-content: center;
-    height: 40px;
     width: 100%;
     max-width: $content-max-width + 40px;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
 
-    .mui-tabs {
-      .MuiTab-root {
-        height: 40px;
-        min-height: auto;
-        min-width: auto;
-        padding: 10px 12px;
+    .category-select-form {
+      min-width: 200px;
+      max-width: 300px;
+      width: 100%;
+
+      .MuiInputLabel-root {
         font-family: $font-family;
         color: var(--tab-text-color);
         font-weight: 500;
-        font-size: 17px;
-        transition: all 200ms ease;
-
-        :hover {
+        
+        &.Mui-focused {
           color: var(--tab-hover-text-color);
-          transition: all 200ms ease;
         }
       }
 
-      .Mui-selected {
-        background-color: var(--tab-selected-background-color);
-        color: var(--tab-hover-text-color);
+      .category-select {
+        font-family: $font-family;
+        color: var(--tab-text-color);
         border-radius: 8px;
-        font-weight: 600;
-        transition: all 200ms ease;
-      }
+        
+        .MuiOutlinedInput-notchedOutline {
+          border-color: var(--tab-text-color);
+          opacity: 0.3;
+        }
+        
+        &:hover .MuiOutlinedInput-notchedOutline {
+          border-color: var(--tab-hover-text-color);
+          opacity: 0.7;
+        }
+        
+        &.Mui-focused .MuiOutlinedInput-notchedOutline {
+          border-color: var(--tab-hover-text-color);
+        }
 
-      .MuiTabScrollButton-root {
-        height: 40px;
-        width: 20px;
-      }
+        .MuiSelect-select {
+          padding: 12px 14px;
+          font-size: 16px;
+          font-weight: 500;
+        }
 
-      .MuiTabs-scrollable {
-        height: 40px;
-      }
-
-      .MuiTabs-indicator {
-        display: none;
+        .MuiSvgIcon-root {
+          color: var(--tab-text-color);
+        }
       }
     }
   }
 
+  .category-menu-item {
+    font-family: $font-family;
+    color: var(--tab-text-color);
+    
+    &:hover {
+      background-color: var(--tab-selected-background-color);
+      color: var(--tab-hover-text-color);
+    }
+    
+    &.Mui-selected {
+      background-color: var(--tab-selected-background-color);
+      color: var(--tab-hover-text-color);
+      font-weight: 600;
+      
+      &:hover {
+        background-color: var(--tab-selected-background-color);
+      }
+    }
 
+    .post-count {
+      opacity: 0.7;
+      font-size: 0.9em;
+      font-weight: 400;
+    }
+  }
+
+  // 반응형 디자인
+  @media (max-width: 768px) {
+    .post-category-selector {
+      .category-select-form {
+        min-width: 160px;
+        max-width: 200px;
+        
+        .category-select .MuiSelect-select {
+          padding: 10px 12px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .post-category-selector {
+      .category-select-form {
+        min-width: 180px;
+        max-width: 250px;
+      }
+    }
+  }
 }
