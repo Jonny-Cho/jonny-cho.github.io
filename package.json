@@ -58,7 +58,17 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "new:post": "node scripts/new-post.js",
+    "new:algorithm": "node scripts/new-post.js --type=algorithm",
+    "new:spring": "node scripts/new-post.js --type=spring",
+    "new:git": "node scripts/new-post.js --type=git",
+    "new:java": "node scripts/new-post.js --type=java",
+    "validate:posts": "node scripts/validate-post-structure.js",
+    "validate:file": "node scripts/validate-post-structure.js",
+    "standardize:existing": "node scripts/standardize-posts.js",
+    "standardize:preview": "node scripts/standardize-posts.js --dry-run",
+    "standardize:backup": "node scripts/standardize-posts.js --backup"
   },
   "repository": {
     "type": "git",
