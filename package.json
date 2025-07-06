@@ -46,7 +46,7 @@
     "cookie": "^0.7.0",
     "postcss": "^8.4.31",
     "lodash.template": "^4.5.0",
-    "workbox-build": "^7.0.0"
+    "workbox-build": "^6.6.1"
   },
   "keywords": [
     "gatsby",
