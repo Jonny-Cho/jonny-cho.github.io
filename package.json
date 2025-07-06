@@ -41,7 +41,12 @@
     "prettier": "^3.6.2"
   },
   "overrides": {
-    "core-js": "^3.39.0"
+    "core-js": "^3.39.0",
+    "path-to-regexp": "^0.1.12",
+    "cookie": "^0.7.0",
+    "postcss": "^8.4.31",
+    "lodash.template": "^4.5.0",
+    "workbox-build": "^7.0.0"
   },
   "keywords": [
     "gatsby",
