@@ -1,7 +1,7 @@
 ---
 title: 'CKA 시험 완전 정복: 실무 경험자의 합격 후기와 핵심 kubectl 명령어'
 date: 2025-07-06
-category: 'devops'
+categories: 'devops'
 description: 'CKA 시험 준비부터 합격까지의 완전 가이드. 실무에서 자주 사용되는 kubectl 명령어와 시험에서 자주 나오는 핵심 명령어를 정리했습니다.'
 ---
 
