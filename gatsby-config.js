@@ -177,7 +177,7 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`, // Temporarily disabled due to workbox-build v6 compatibility issues
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
   ],
