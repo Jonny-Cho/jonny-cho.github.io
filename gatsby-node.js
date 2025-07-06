@@ -5,12 +5,30 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `content` });
     createNodeField({ node, name: `slug`, value: slug });
+    
+    // 기존 블로그 URL 구조를 위한 추가 slug 생성
+    if (node.frontmatter && node.frontmatter.date) {
+      const date = new Date(node.frontmatter.date);
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      const category = node.frontmatter.categories || 'uncategorized';
+      
+      // 파일명에서 제목 추출 (날짜 부분 제거)
+      const filePath = node.fileAbsolutePath;
+      const fileName = filePath.split('/').pop().replace('.md', '');
+      const title = fileName.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+      
+      const legacySlug = `/${category}/${year}/${month}/${day}/${title}/`;
+      createNodeField({ node, name: `legacySlug`, value: legacySlug });
+    }
   }
 };
 
 const createBlogPages = ({ createPage, results }) => {
   const blogPostTemplate = require.resolve(`./src/templates/blog-template.js`);
   results.data.allMarkdownRemark.edges.forEach(({ node, next, previous }) => {
+    // 새로운 URL 구조로 페이지 생성
     createPage({
       path: node.fields.slug,
       component: blogPostTemplate,
@@ -21,6 +39,8 @@ const createBlogPages = ({ createPage, results }) => {
         prevSlug: previous?.fields.slug ?? '',
       },
     });
+    
+    // 404 페이지에서 리디렉션 처리하므로 별도 페이지 생성 불필요
   });
 };
 
