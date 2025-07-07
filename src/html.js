@@ -15,6 +15,7 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
+        <script src="/sw-unregister.js"></script>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
@@ -29,9 +30,30 @@ export default function HTML(props) {
             __html: `
               // Force reload on cache mismatch
               if (typeof window !== 'undefined') {
+                // Handle ChunkLoadError
                 window.addEventListener('unhandledrejection', function(event) {
                   if (event.reason && event.reason.name === 'ChunkLoadError') {
-                    window.location.reload();
+                    console.log('ChunkLoadError detected, reloading...');
+                    window.location.reload(true);
+                  }
+                });
+                
+                // Override console.error to catch chunk load errors
+                const originalError = console.error;
+                console.error = function(...args) {
+                  if (args[0] && args[0].toString().includes('Loading chunk')) {
+                    console.log('Chunk loading error detected, reloading...');
+                    window.location.reload(true);
+                    return;
+                  }
+                  originalError.apply(console, args);
+                };
+                
+                // Catch webpack chunk errors
+                window.addEventListener('error', function(event) {
+                  if (event.message && event.message.includes('Loading chunk')) {
+                    console.log('Webpack chunk error detected, reloading...');
+                    window.location.reload(true);
                   }
                 });
               }
