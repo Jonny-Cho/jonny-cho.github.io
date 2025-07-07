@@ -26,6 +26,10 @@ function PostSearch({ posts }) {
         <div className="search-input-wrapper">
           <TextField
             {...params}
+            id="post-search-input"
+            name="search"
+            label="포스트 검색"
+            placeholder="제목이나 카테고리로 검색"
             className="search-input"
             variant="standard"
             size="medium"
