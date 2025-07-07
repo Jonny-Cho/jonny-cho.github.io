@@ -49,6 +49,10 @@ class BlogPostGenerator {
       'typescript': {
         name: 'TypeScript',
         sections: ['개요', '타입 시스템', '실습', '활용']
+      },
+      'productivity': {
+        name: '생산성',
+        sections: ['개요', '기본 기능', '고급 활용', '실무 팁', '워크플로우 개선']
       }
     };
     this.postData = {};
@@ -169,6 +173,8 @@ ${sections}
           return this.generateSpringSection(sectionNumber, section);
         case 'git':
           return this.generateGitSection(sectionNumber, section);
+        case 'productivity':
+          return this.generateProductivitySection(sectionNumber, section);
         default:
           return this.generateDefaultSection(sectionNumber, section);
       }
@@ -321,6 +327,54 @@ ${sections}
 
 1. **프랙티스 1**: 설명
 2. **프랙티스 2**: 설명`
+    };
+
+    return templates[section] || `## ${num}. ${section}\n\n내용을 작성하세요.`;
+  }
+
+  generateProductivitySection(num, section) {
+    const templates = {
+      '기본 기능': `## ${num}. 기본 기능
+
+### ${num}.1 필수 기능 소개
+
+기본적인 필수 기능들을 설명합니다.
+
+### ${num}.2 설정 방법
+
+\`\`\`
+설정 예제
+\`\`\``,
+
+      '고급 활용': `## ${num}. 고급 활용
+
+### ${num}.1 고급 기능 활용
+
+고급 기능을 활용하는 방법을 설명합니다.
+
+### ${num}.2 커스터마이징
+
+사용자 환경에 맞는 커스터마이징 방법을 제시합니다.`,
+
+      '실무 팁': `## ${num}. 실무 팁
+
+### ${num}.1 자주 사용하는 패턴
+
+실무에서 자주 사용되는 패턴들을 소개합니다.
+
+### ${num}.2 시간 절약 꿀팁
+
+업무 효율성을 높이는 꿀팁들을 제공합니다.`,
+
+      '워크플로우 개선': `## ${num}. 워크플로우 개선
+
+### ${num}.1 개선 전후 비교
+
+기존 방식과 개선된 방식을 비교합니다.
+
+### ${num}.2 측정 가능한 효과
+
+실제로 얻을 수 있는 효과를 구체적으로 제시합니다.`
     };
 
     return templates[section] || `## ${num}. ${section}\n\n내용을 작성하세요.`;
