@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import React from 'react';
 import './style.scss';
 
@@ -13,9 +13,17 @@ function PostCard({ post }) {
           <div className="date">{date}</div>
           <div className="categories">
             {categories.map((category) => (
-              <Link className="category" key={category} to={`/posts/${category}`}>
+              <span 
+                className="category" 
+                key={category}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigate(`/posts/${category}`);
+                }}
+                style={{ cursor: 'pointer' }}
+              >
                 {category}
-              </Link>
+              </span>
             ))}
           </div>
         </div>
