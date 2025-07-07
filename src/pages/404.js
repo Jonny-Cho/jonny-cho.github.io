@@ -5,11 +5,11 @@ import Seo from '../components/seo';
 
 function NotFoundPage() {
   const [isRedirecting, setIsRedirecting] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // 클라이언트에서만 실행 (SSR 방지)
-    if (typeof window === 'undefined') return;
-
+    setIsClient(true);
+    
     const path = window.location.pathname;
     
     // 구 URL 패턴 체크: /category/YYYY/MM/DD/title/
@@ -26,6 +26,20 @@ function NotFoundPage() {
       window.location.replace(newPath);
     }
   }, []);
+
+  // 클라이언트 렌더링 전에는 기본 404 페이지 표시
+  if (!isClient) {
+    return (
+      <Layout>
+        <Seo title="404: Not found" />
+        <h1>404: Not Found</h1>
+        <p>요청하신 페이지를 찾을 수 없습니다.</p>
+        <p>
+          <a href="/">홈페이지로 돌아가기</a>
+        </p>
+      </Layout>
+    );
+  }
 
   if (isRedirecting) {
     return (
