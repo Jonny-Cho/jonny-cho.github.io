@@ -121,7 +121,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
 exports.onCreateWebpackConfig = ({ actions, stage }) => {
   if (stage === 'build-javascript') {
+    const timestamp = Date.now();
     actions.setWebpackConfig({
+      output: {
+        filename: `[name]-${timestamp}-[contenthash].js`,
+        chunkFilename: `[name]-${timestamp}-[contenthash].js`,
+      },
       optimization: {
         splitChunks: {
           chunks: 'all',
