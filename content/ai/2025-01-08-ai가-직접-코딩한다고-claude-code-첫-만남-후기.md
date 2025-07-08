@@ -1,6 +1,6 @@
 ---
 title: 'AI가 직접 코딩한다고? Claude Code와 블로그 목차 기능 구현기'
-date: 2025-01-08 14:00:00
+date: 2025-07-08 14:00:00
 categories: ai
 draft: false
 tags: ['Claude Code', 'AI Agent', '개발생산성', '페어프로그래밍', 'AI도구', 'TOC']
