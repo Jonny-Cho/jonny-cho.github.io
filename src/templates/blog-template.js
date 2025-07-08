@@ -23,23 +23,17 @@ function BlogTemplate({ data }) {
   return (
     <>
       <Seo title={curPost?.title} description={curPost?.excerpt} />
-      <div className="blog-layout-wrapper">
-        <Layout>
-          <div className="blog-post-container">
-            <div className="blog-post-content">
-              <PostHeader post={curPost} />
-              <PostContent html={curPost.html} />
-              <PostNavigator prevPost={prevPost} nextPost={nextPost} />
-              {utterancesRepo && <Utterances repo={utterancesRepo} path={curPost.slug} />}
-            </div>
-          </div>
-        </Layout>
-        {showToc && (
-          <aside className="blog-post-toc">
-            <TableOfContents html={curPost.html} />
-          </aside>
-        )}
-      </div>
+      <Layout>
+        <PostHeader post={curPost} />
+        <PostContent html={curPost.html} />
+        <PostNavigator prevPost={prevPost} nextPost={nextPost} />
+        {utterancesRepo && <Utterances repo={utterancesRepo} path={curPost.slug} />}
+      </Layout>
+      {showToc && (
+        <aside className="blog-post-toc">
+          <TableOfContents html={curPost.html} />
+        </aside>
+      )}
     </>
   );
 }

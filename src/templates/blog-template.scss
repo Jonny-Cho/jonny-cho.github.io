@@ -1,43 +1,18 @@
-@use '../styles/mixins' as *;
-
-.blog-layout-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  position: relative;
+.blog-post-toc {
+  position: fixed;
+  top: 75px;
+  right: 40px;
+  width: 340px;
+  max-height: calc(100vh - 100px);
+  z-index: 1;
+  pointer-events: none;
   
-  .page-wrapper {
-    flex: 1;
-    max-width: 1000px;
+  @media (max-width: 1400px) {
+    display: none;
   }
   
-  .blog-post-toc {
-    position: sticky;
-    top: 75px;
-    align-self: flex-start;
-    width: 340px;
-    max-height: calc(100vh - 100px);
-    padding-left: 0;
-    
-    @media (max-width: 1400px) {
-      display: none;
-    }
-  }
-}
-
-.blog-post-container {
-  width: 100%;
-  
-  .blog-post-content {
-    width: 100%;
-  }
-}
-
-// Ensure proper layout on medium screens
-@media (max-width: 1400px) {
-  .blog-layout-wrapper {
-    .page-wrapper {
-      max-width: 100%;
-    }
+  // TOC 내부 요소들만 클릭 가능하도록
+  * {
+    pointer-events: auto;
   }
 }

@@ -40,23 +40,13 @@
     }
   }
   
-  // Hide scrollbar but keep functionality
+  // Hide scrollbar completely
   &::-webkit-scrollbar {
-    width: 4px;
+    display: none;
   }
   
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  &::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-  }
-  
-  &::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.2);
-  }
+  // Firefox
+  scrollbar-width: none;
 }
 
 // Responsive: Hide on mobile and tablet

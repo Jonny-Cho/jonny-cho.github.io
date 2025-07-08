@@ -13,6 +13,28 @@ html {
     height: 100%;
     overflow-y: scroll;
     font-size: 14px;
+    
+    // 브라우저 스크롤바 스타일링
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+        
+        &:hover {
+            background: rgba(0, 0, 0, 0.25);
+        }
+    }
+    
+    // Firefox
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
 }
 
 body {
