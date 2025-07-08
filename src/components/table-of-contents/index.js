@@ -51,6 +51,31 @@ const TableOfContents = ({ html }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [headings]);
 
+  // Auto scroll TOC to show active item
+  useEffect(() => {
+    if (activeId) {
+      const activeElement = document.querySelector(`.table-of-contents__item.active`);
+      const tocContainer = document.querySelector('.table-of-contents');
+      
+      if (activeElement && tocContainer) {
+        const containerRect = tocContainer.getBoundingClientRect();
+        const elementRect = activeElement.getBoundingClientRect();
+        
+        // Check if active element is outside visible area
+        const isAboveView = elementRect.top < containerRect.top;
+        const isBelowView = elementRect.bottom > containerRect.bottom;
+        
+        if (isAboveView || isBelowView) {
+          const scrollTop = activeElement.offsetTop - tocContainer.offsetTop - 50;
+          tocContainer.scrollTo({
+            top: scrollTop,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }
+  }, [activeId]);
+
   const handleClick = (e, id) => {
     e.preventDefault();
     const element = document.getElementById(id);
