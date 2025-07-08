@@ -7,6 +7,8 @@ import PostNavigator from '../components/post-navigator';
 import Post from '../models/post';
 import PostContent from '../components/post-content';
 import Utterances from '../components/utterances';
+import TableOfContents from '../components/table-of-contents';
+import './blog-template.scss';
 
 function BlogTemplate({ data }) {
   const curPost = new Post(data.cur);
@@ -14,15 +16,31 @@ function BlogTemplate({ data }) {
   const nextPost = data.next && new Post(data.next);
   const { comments } = data.site?.siteMetadata;
   const utterancesRepo = comments?.utterances?.repo;
+  
+  // Check if TOC should be shown (default to true if not specified)
+  const showToc = data.cur.frontmatter.toc !== false;
 
   return (
-    <Layout>
+    <>
       <Seo title={curPost?.title} description={curPost?.excerpt} />
-      <PostHeader post={curPost} />
-      <PostContent html={curPost.html} />
-      <PostNavigator prevPost={prevPost} nextPost={nextPost} />
-      {utterancesRepo && <Utterances repo={utterancesRepo} path={curPost.slug} />}
-    </Layout>
+      <div className="blog-layout-wrapper">
+        <Layout>
+          <div className="blog-post-container">
+            <div className="blog-post-content">
+              <PostHeader post={curPost} />
+              <PostContent html={curPost.html} />
+              <PostNavigator prevPost={prevPost} nextPost={nextPost} />
+              {utterancesRepo && <Utterances repo={utterancesRepo} path={curPost.slug} />}
+            </div>
+          </div>
+        </Layout>
+        {showToc && (
+          <aside className="blog-post-toc">
+            <TableOfContents html={curPost.html} />
+          </aside>
+        )}
+      </div>
+    </>
   );
 }
 
@@ -38,6 +56,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         categories
+        toc
       }
       fields {
         slug

@@ -1,0 +1,43 @@
+@use '../styles/mixins' as *;
+
+.blog-layout-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  
+  .page-wrapper {
+    flex: 1;
+    max-width: 1000px;
+  }
+  
+  .blog-post-toc {
+    position: sticky;
+    top: 75px;
+    align-self: flex-start;
+    width: 340px;
+    max-height: calc(100vh - 100px);
+    padding-left: 0;
+    
+    @media (max-width: 1400px) {
+      display: none;
+    }
+  }
+}
+
+.blog-post-container {
+  width: 100%;
+  
+  .blog-post-content {
+    width: 100%;
+  }
+}
+
+// Ensure proper layout on medium screens
+@media (max-width: 1400px) {
+  .blog-layout-wrapper {
+    .page-wrapper {
+      max-width: 100%;
+    }
+  }
+}
