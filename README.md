@@ -27,10 +27,10 @@
 ## 📝 Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [AI가 직접 코딩한다고? Claude Code와 블로그 목차 기능 구현기](https://jonny-cho.github.io/ai/2025-01-08-ai가-직접-코딩한다고-claude-code-첫-만남-후기/)
 - [개발자의 일상을 바꾸는 IntelliJ IDEA 꿀팁 10가지](https://jonny-cho.github.io/productivity/2025-07-07-개발자의-일상을-바꾸는-intellij-idea-꿀팁-10가지/)
 - [CKA 시험 완전 정복: 실무 경험자의 합격 후기와 핵심 kubectl 명령어](https://jonny-cho.github.io/devops/2025-07-06-cka-complete-guide-with-kubectl-commands/)
 - [Git Worktree 완벽 가이드 - 효율적인 멀티 브랜치 워크플로우 구축하기](https://jonny-cho.github.io/git/2025-07-02-git-worktree-complete-guide/)
 - [Docker Compose로 로컬 개발환경 구축하기 - 개발 생산성 혁신 가이드](https://jonny-cho.github.io/devops/2025-07-01-docker-compose-development-environment/)
-- [Kotlin + Spring Boot 백엔드 비동기 프로그래밍 완전 가이드](https://jonny-cho.github.io/kotlin/2025-07-01-kotlin-spring-async-programming/)
 <!-- BLOG-POST-LIST:END -->
 
