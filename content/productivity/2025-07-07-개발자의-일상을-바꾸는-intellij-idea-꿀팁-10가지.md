@@ -10,19 +10,6 @@ tags: ['IntelliJ', 'IDE', '생산성', '개발도구', '단축키']
 
 IntelliJ IDEA는 강력한 IDE이지만, 대부분의 개발자들은 기본 기능만 사용하고 있습니다. 오늘 소개할 10가지 꿀팁을 익히면 코딩 속도가 눈에 띄게 향상되고, 반복적인 작업들을 자동화할 수 있습니다.
 
-## 목차
-
-1. [검색과 네비게이션의 마법사: Search Everywhere](#1-검색과-네비게이션의-마법사-search-everywhere)
-2. [코드 생성 자동화: Live Templates와 Generate](#2-코드-생성-자동화-live-templates와-generate)
-3. [리팩토링의 달인: 스마트한 코드 개선](#3-리팩토링의-달인-스마트한-코드-개선)
-4. [디버깅 마스터: 효율적인 문제 해결](#4-디버깅-마스터-효율적인-문제-해결)
-5. [Version Control 통합: Git을 더 스마트하게](#5-version-control-통합-git을-더-스마트하게)
-6. [플러그인으로 확장하기: 필수 플러그인 추천](#6-플러그인으로-확장하기-필수-플러그인-추천)
-7. [커스터마이징: 나만의 개발 환경](#7-커스터마이징-나만의-개발-환경)
-8. [성능 최적화: 더 빠른 IntelliJ](#8-성능-최적화-더-빠른-intellij)
-9. [실무 팁: 협업과 코드 품질](#9-실무-팁-협업과-코드-품질)
-10. [워크플로우 개선: 개발 속도 10배 향상](#10-워크플로우-개선-개발-속도-10배-향상)
-
 ## 1. 검색과 네비게이션의 마법사: Search Everywhere
 
 ### 1.1 Search Everywhere (Double Shift)
@@ -471,7 +458,3 @@ public class ${NAME} {
 **커뮤니티:**
 - [JetBrains 공식 블로그](https://blog.jetbrains.com/)
 - [IntelliJ IDEA Tips YouTube 채널](https://www.youtube.com/playlist?list=PLQ176FUIyIUYnLuYVKM6JhVd6ukPgzdW7)
-
----
-
-**태그**: #IntelliJ #IDE #생산성 #개발도구 #단축키
