@@ -130,7 +130,7 @@ Post content...
 
 ### Required Frontmatter Fields
 - title: Post title
-- date: Creation date (YYYY-MM-DD HH:MM:SS)
+- date: Creation date (YYYY-MM-DD HH:MM:SS) - **IMPORTANT**: Use the exact date and time when the content was actually written, not when the file was created
 - categories: Categories (space-separated)
 - draft: Draft status (true/false)
 
