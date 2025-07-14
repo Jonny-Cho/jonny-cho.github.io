@@ -195,6 +195,7 @@ npm run clean
 - Maintain consistent code style
 - Consider mobile responsiveness
 - **IMPORTANT**: Never include "Claude" or AI-related references in commit messages or code comments
+- **IMPORTANT**: Do not include "🤖 Generated with [Claude Code]" or "Co-Authored-By: Claude" in commit messages
 - **When user mentions deployment**: "배포해", "반영해", "반영해줘", "배포" and similar phrases mean to commit and push changes to the repository
 
 ### Blog Content in Korean

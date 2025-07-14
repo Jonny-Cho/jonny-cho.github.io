@@ -150,7 +150,7 @@ Claude Desktop에서 설정한 MCP(Model Context Protocol)를 Code에서도 사�
 
 ```bash
 # Desktop의 MCP 설정을 Code로 가져오기
-$ claude --import-mcp-from-desktop
+$ claude mcp add-from-claude-desktop
 ```
 
 ### 5. Git 통합 및 자동화
@@ -297,14 +297,8 @@ class UserService(
 
 **1단계: Claude Code 설치**
 ```bash
-# macOS
-brew install claude
-
-# Windows
-winget install claude
-
-# Linux
-curl -fsSL https://claude.ai/install.sh | sh
+# 모든 운영체제 (Node.js 18+ 필요)
+npm install -g @anthropic-ai/claude-code
 ```
 
 **2단계: 인증**
