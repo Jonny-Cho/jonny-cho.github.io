@@ -25,14 +25,14 @@ function PageHeader({ siteTitle }) {
         }
       `}
       render={(data) => (
-        <header className="page-header-wrapper">
-          <div className="page-header">
+        <header className="page-header-wrapper flex-center">
+          <div className="page-header flex-between">
             <div className="front-section">
               <Link className="link" to="/">
                 {siteTitle}
               </Link>
             </div>
-            <div className="trailing-section">
+            <div className="trailing-section flex">
               {/*<Link className="link" to="/about">*/}
               {/*  about*/}
               {/*</Link>*/}

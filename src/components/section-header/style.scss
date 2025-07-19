@@ -1,8 +1,6 @@
 @use '../../styles/mixins'as *;
 
 .section-header-wrapper {
-  display: flex;
-  justify-content: center;
   width: 100%;
   margin-bottom: 32px;
 
@@ -10,7 +8,6 @@
     padding-bottom: 5px;
     border-bottom: 4px solid var(--primary-text-color);
     font-weight: 700;
-    font-size: 30px;
     color: var(--primary-text-color);
   }
 }

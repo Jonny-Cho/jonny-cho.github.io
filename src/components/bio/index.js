@@ -8,9 +8,9 @@ function Bio({ author, language = 'ko' }) {
   if (!author) return null;
   const { bio, social, name } = author;
   return (
-    <div className="bio">
+    <div className="bio flex-column">
       {language === 'ko' ? (
-        <div className="introduction korean">
+        <div className="introduction korean flex-column">
           <p className="title">
             안녕하세요.
             <br />
@@ -24,7 +24,7 @@ function Bio({ author, language = 'ko' }) {
           </div>
         </div>
       ) : (
-        <div className="introduction english">
+        <div className="introduction english flex-column">
           <p className="title">
             Hello,
             <br />

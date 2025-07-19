@@ -15,8 +15,6 @@
 }
 
 .bio {
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
   width: 100%;
   margin-top: 120px;
@@ -30,8 +28,6 @@
   }
 
   .introduction {
-    display: flex;
-    flex-direction: column;
     word-break: keep-all;
 
     .react-rotating-text-cursor {

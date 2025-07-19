@@ -25,8 +25,8 @@ function ThemeSwitch() {
   }, [isDarkMode, isClient]);
 
   return (
-    <div className="dark-mode-button-wrapper">
-      <IconButton className="dark-mode-button" onClick={() => setIsDarkMode((isDark) => !isDark)}>
+    <div className="dark-mode-button-wrapper flex-center">
+      <IconButton className="dark-mode-button rounded-pill" onClick={() => setIsDarkMode((isDark) => !isDark)}>
         {isDarkMode ? (
           <LightModeIcon className="dark-mode-icon" fontSize="large" />
         ) : (

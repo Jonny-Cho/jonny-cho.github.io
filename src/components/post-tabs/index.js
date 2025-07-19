@@ -15,8 +15,8 @@ function PostTabs({ tabIndex, onChange, tabs, posts, showMoreButton }) {
   };
 
   return (
-    <div className="post-tabs-wrapper">
-      <div className="post-category-selector">
+    <div className="post-tabs-wrapper flex-center">
+      <div className="post-category-selector flex-center">
         <FormControl className="category-select-form">
           <InputLabel id="category-select-label">카테고리</InputLabel>
           <Select

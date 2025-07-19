@@ -52,6 +52,25 @@
 .p-md { padding: var(--spacing-md); }
 .p-lg { padding: var(--spacing-lg); }
 .p-xl { padding: var(--spacing-xl); }
+.p-15 { padding: 15px; } // 자주 사용되는 15px 패딩
+
+// Border radius 유틸리티
+.rounded-xs { border-radius: var(--border-radius-xs); }
+.rounded-sm { border-radius: var(--border-radius-sm); }
+.rounded-md { border-radius: var(--border-radius-md); }
+.rounded-lg { border-radius: var(--border-radius-lg); }
+.rounded-xl { border-radius: var(--border-radius-xl); }
+.rounded-pill { border-radius: var(--border-radius-pill); }
+
+// Font size 유틸리티
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-md { font-size: var(--font-size-md); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
 
 // 텍스트 유틸리티
 .text-center { text-align: center; }

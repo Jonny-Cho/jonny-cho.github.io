@@ -12,7 +12,7 @@ import './style.scss';
 
 function IconButtonBar({ links = {} }) {
   const IconPicker = useCallback((icon) => {
-    const props = { className: 'icon' };
+    const props = { className: 'icon text-lg' };
     switch (icon) {
       case 'post':
         return <DescriptionIcon {...props} />;

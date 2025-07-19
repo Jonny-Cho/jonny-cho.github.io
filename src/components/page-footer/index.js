@@ -3,8 +3,8 @@ import './style.scss';
 
 function PageFooter({ author, githubUrl }) {
   return (
-    <footer className="page-footer-wrapper">
-      <p className="page-footer">
+    <footer className="page-footer-wrapper flex-center">
+      <p className="page-footer text-xl">
         © {new Date().getFullYear()}
         &nbsp;
         <a href={githubUrl}>{author}</a>
