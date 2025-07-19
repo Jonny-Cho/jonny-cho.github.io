@@ -2,6 +2,7 @@
 @use '../styles/mixins'as *;
 @use '../styles/reset'as *;
 @use '../styles/colors'as *;
+@use '../styles/utilities'as *;
 
 * {
     box-sizing: border-box;
@@ -56,13 +57,12 @@ a {
     word-break: keep-all;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: $font-family;
+    font-family: var(--font-family);
     color: var(--primary-text-color);
     @include content-horizontal-padding;
 
     .page-content {
-        display: flex;
-        flex-direction: column;
+        @extend .flex-column;
         align-items: center;
         @include content-max-width;
     }
