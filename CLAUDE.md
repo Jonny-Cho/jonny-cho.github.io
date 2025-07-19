@@ -91,6 +91,40 @@ chore: Build tasks, package manager updates, etc.
 - feature/*: Feature development branches
 - fix/*: Bug fix branches
 
+### Git Workflow - **MANDATORY FOR ALL CHANGES**
+**CRITICAL**: Always follow this workflow for ANY code changes:
+
+```bash
+# 1. Create feature branch
+git checkout main
+git pull origin main
+git checkout -b feature/description-of-change
+
+# 2. Make changes and test
+npm run build  # Ensure build passes
+npm run develop  # Test locally
+
+# 3. Commit changes
+git add -A
+git commit -m "feat: descriptive commit message"
+
+# 4. Push to feature branch
+git push origin feature/description-of-change
+
+# 5. Create Pull Request on GitHub
+# - Use descriptive title
+# - Add summary of changes
+# - Review changes before merging
+
+# 6. After PR approval, merge and cleanup
+git checkout main
+git pull origin main
+git branch -d feature/description-of-change
+```
+
+**NEVER commit directly to main branch**
+**ALWAYS create PR for review**
+
 ## Build and Deployment
 
 ### Local Development
@@ -196,7 +230,8 @@ npm run clean
 - Consider mobile responsiveness
 - **IMPORTANT**: Never include "Claude" or AI-related references in commit messages or code comments
 - **IMPORTANT**: Do not include "🤖 Generated with [Claude Code]" or "Co-Authored-By: Claude" in commit messages
-- **When user mentions deployment**: "배포해", "반영해", "반영해줘", "배포" and similar phrases mean to commit and push changes to the repository
+- **When user mentions deployment**: "배포해", "반영해", "반영해줘", "배포" and similar phrases mean to follow the Git Workflow above - NEVER commit directly to main
+- **CRITICAL**: Always create feature branch → commit → push → create PR → review → merge workflow
 
 ### Blog Content in Korean
 - Blog posts are written in Korean
