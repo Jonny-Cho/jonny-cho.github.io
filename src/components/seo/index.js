@@ -21,9 +21,31 @@ function Seo({ description, title }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": site.siteMetadata.title,
+    "description": site.siteMetadata.description,
+    "url": site.siteMetadata.siteUrl,
+    "author": {
+      "@type": "Person",
+      "name": site.siteMetadata.author.name
+    },
+    "inLanguage": "ko-KR",
+    "publisher": {
+      "@type": "Organization",
+      "name": site.siteMetadata.title,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${site.siteMetadata.siteUrl}${site.siteMetadata.ogImage}`
+      }
+    }
+  };
+
   return (
     <Helmet
-      htmlAttributes={{ lang: 'en' }}
+      htmlAttributes={{ lang: 'ko' }}
       title={title}
       defaultTitle={site.siteMetadata.title}
       meta={[
@@ -56,8 +78,20 @@ function Seo({ description, title }) {
           property: `og:type`,
           content: `website`,
         },
+        {
+          property: `og:locale`,
+          content: `ko_KR`,
+        },
+        {
+          name: `google-site-verification`,
+          content: ``, // Google Search Console 인증 시 추가 필요
+        },
       ]}
-    />
+    >
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+    </Helmet>
   );
 }
 
