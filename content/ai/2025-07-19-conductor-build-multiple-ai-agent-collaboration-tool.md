@@ -1,6 +1,6 @@
 ---
 title: '개발자 1명 = AI 에이전트 10명? Conductor.build가 바꾸는 개발 패러다임'
-date: 2025-07-19 14:30:00
+date: 2025-07-19 10:30:00
 categories: ai
 draft: false
 tags: ['ai', 'claude-code', 'conductor', 'collaboration', 'development-tool']

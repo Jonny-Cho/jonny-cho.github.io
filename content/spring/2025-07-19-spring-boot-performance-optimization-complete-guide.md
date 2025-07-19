@@ -1,6 +1,6 @@
 ---
 title: '대용량 트래픽 처리를 위한 Spring Boot 성능 최적화: JVM 튜닝부터 아키텍처까지'
-date: 2025-07-19 16:00:00
+date: 2025-07-19 10:00:00
 categories: spring performance
 draft: false
 tags: ['Spring Boot', 'Performance', 'JVM', 'Optimization', 'Architecture', 'Tuning']

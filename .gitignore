@@ -26,3 +26,5 @@ public
 
 # Intellij
 .idea/
+
+.claude/
