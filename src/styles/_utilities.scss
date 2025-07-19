@@ -1,3 +1,5 @@
+@use './variables' as *;
+
 // 공통 레이아웃 유틸리티
 .flex {
   display: flex;
