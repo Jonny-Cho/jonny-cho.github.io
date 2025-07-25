@@ -14,6 +14,7 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <meta name="google-site-verification" content="ZK7amPAGlFg8qypWpF_Oh5eENxdUfpQ1cAN-ydiek4A" />
         {props.headComponents}
         <script src="/sw-unregister.js"></script>
       </head>
