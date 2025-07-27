@@ -154,15 +154,15 @@ data class ProductStat(
 
 ```mermaid
 graph TB
-    subgraph "🏗️ DailySalesJob"
-        subgraph "Step 1: 검증"
+    subgraph DailySalesJob ["🏗️ DailySalesJob"]
+        subgraph ValidationStep ["📋 Step 1: 검증"]
             V1[데이터 유효성 검사]
             V2[기존 리포트 확인]
             V3[ExecutionContext에<br/>데이터 저장]
             V1 --> V2 --> V3
         end
         
-        subgraph "Step 2: 집계"
+        subgraph AggregationStep ["📊 Step 2: 집계"]
             A1[주문 데이터 조회]
             A2[매출 통계 계산]
             A3[카테고리별 집계]
@@ -170,17 +170,17 @@ graph TB
             A1 --> A2 --> A3 --> A4
         end
         
-        subgraph "Step 3: 저장"
+        subgraph ReportStep ["💾 Step 3: 저장"]
             R1[리포트 엔티티 생성]
             R2[데이터베이스 저장]
             R1 --> R2
         end
         
-        "Step 1: 검증" --> "Step 2: 집계"
-        "Step 2: 집계" --> "Step 3: 저장"
+        ValidationStep --> AggregationStep
+        AggregationStep --> ReportStep
     end
     
-    subgraph "📊 데이터 흐름"
+    subgraph DataFlow ["📊 데이터 흐름"]
         Orders[(Orders 테이블)] 
         OrderItems[(OrderItems 테이블)]
         Reports[(DailySalesReport 테이블)]
@@ -190,10 +190,10 @@ graph TB
         R2 --> Reports
     end
     
-    style "🏗️ DailySalesJob" fill:#e3f2fd
-    style "Step 1: 검증" fill:#e8f5e8
-    style "Step 2: 집계" fill:#fff3e0
-    style "Step 3: 저장" fill:#fce4ec
+    style DailySalesJob fill:#e3f2fd
+    style ValidationStep fill:#e8f5e8
+    style AggregationStep fill:#fff3e0
+    style ReportStep fill:#fce4ec
 ```
 
 ### JobConfiguration 생성
