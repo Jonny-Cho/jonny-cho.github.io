@@ -64,9 +64,37 @@ module.exports = {
                 args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
               },
               mermaidConfig: {
+                look: 'handDrawn',
                 theme: 'neutral',
+                themeVariables: {
+                  primaryColor: '#2d2d2d',
+                  primaryTextColor: '#cccccc',
+
+                  secondaryColor: '#eeeeee',
+                  secondaryTextColor: '#cccccc',
+
+                  tertiaryColor: '#eeeeee',
+                  tertiaryTextColor: '#cccccc',
+
+                  lineColor: '#f08d49',
+                },
                 flowchart: {
-                  useMaxWidth: false,
+                  useMaxWidth: true,
+                },
+                sequence: {
+                  useMaxWidth: true,
+                },
+                gantt: {
+                  useMaxWidth: true,
+                },
+                journey: {
+                  useMaxWidth: true,
+                },
+                gitGraph: {
+                  useMaxWidth: true,
+                },
+                pie: {
+                  useMaxWidth: true,
                 },
                 securityLevel: 'loose',
               },
@@ -80,7 +108,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 720,
-              linkImagesToOriginal: false,
+              linkImagesToOriginal: true,
               backgroundColor: 'transparent',
             },
           },
@@ -88,8 +116,8 @@ module.exports = {
             resolve: `gatsby-remark-table-of-contents`,
             options: {
               exclude: 'Table of Contents',
-              tight: false,
-              ordered: false,
+              tight: true,
+              ordered: true,
               fromHeading: 2,
               toHeading: 6,
               className: 'table-of-contents',

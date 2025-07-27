@@ -1072,50 +1072,6 @@
   vertical-align: middle;
 }
 
-// added for toc - Commented out to use new TOC component
-// .markdown .table-of-contents {
-//   // &::before {
-//   //   padding-left: 35px;
-//   //   content: 'Table of Contents';
-//   //   font-weight: 500;
-//   //   font-size: 15px;
-//   //   margin-bottom: 3px;
-//   // }
-
-//   @media (max-width: 1300px) {
-//     display: none;
-//   }
-
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-start;
-//   justify-content: center;
-//   width: 340px;
-//   position: fixed;
-//   top: 75px;
-//   right: 0px;
-
-//   ul {
-//     cursor: pointer;
-//     list-style-type: none;
-
-//     li {
-//       a {
-//         width: 100%;
-//         height: 30px;
-//         padding: 6px 2px;
-//         color: var(--secondary-text-color);
-//         font-size: 14px;
-//         border-bottom: none;
-//       }
-//     }
-
-//     p {
-//       margin: 0;
-//     }
-//   }
-// }
-
 // added for image resizing
 .markdown .gatsby-resp-image-wrapper {
   display: flex !important;
@@ -1132,58 +1088,6 @@
   }
 }
 
-// Mermaid 다이어그램 전용 스타일
-.markdown .mermaid {
-  width: 100% !important;
-  max-width: none !important;
-  overflow-x: auto !important;
-  
-  // 데스크톱: 더 넓은 공간 제공
-  @media (min-width: #{$screen-lg-min}) {
-    margin-left: -80px !important;
-    margin-right: -80px !important;
-    width: calc(100% + 160px) !important;
-  }
-  
-  // 태블릿: 중간 확장
-  @media (min-width: #{$screen-md-min}) and (max-width: #{$screen-lg-min - 1px}) {
-    margin-left: -40px !important;
-    margin-right: -40px !important;
-    width: calc(100% + 80px) !important;
-  }
-  
-  // 모바일: 기본 반응형
-  @media (max-width: #{$screen-md-min - 1px}) {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    width: 100% !important;
-  }
-  
-  // SVG 요소 스타일링
-  svg {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-  
-  // 스크롤바 스타일링
-  &::-webkit-scrollbar {
-    height: 8px;
-  }
-  
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-  }
-  
-  &::-webkit-scrollbar-thumb {
-    background: #c1c1c1;
-    border-radius: 4px;
-    
-    &:hover {
-      background: #a8a8a8;
-    }
-  }
-}
 
 // caption
 .markdown .gatsby-resp-image-wrapper+em {
