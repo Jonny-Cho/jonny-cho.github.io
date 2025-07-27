@@ -62,6 +62,15 @@ graph TB
         M1 & M2 & M3 & M4 --> MR[결과: 2.5시간]
     end
     
+    subgraph AsyncProcessing["🎭 Async Processing"]
+        A1[Reader: 순차 읽기]
+        A2[AsyncProcessor: Future 10개]
+        A3[Thread Pool: 비동기 처리]
+        A4[AsyncWriter: Future 대기 & 저장]
+        A1 --> A2 --> A3 --> A4
+        A4 --> AR[결과: 2시간]
+    end
+    
     subgraph Partitioning["🚀 Partitioning"]
         P1[Partition 1: 200만 건]
         P2[Partition 2: 200만 건]
@@ -71,10 +80,11 @@ graph TB
         P1 & P2 & P3 & P4 & P5 --> PR[결과: 1시간!]
     end
     
-    Sequential --> MultiThread --> Partitioning
+    Sequential --> MultiThread --> AsyncProcessing --> Partitioning
     
     style Sequential fill:#ffcdd2
     style MultiThread fill:#fff3e0
+    style AsyncProcessing fill:#e1f5fe
     style Partitioning fill:#c8e6c9
 ```
 
@@ -85,6 +95,7 @@ graph TB
 | 순차 처리 | 10시간 | 25% | 512MB | ⭐ | ❌ |
 | Multi-threaded | 2.5시간 | 80% | 1GB | ⭐⭐ | ✅ |
 | Parallel Steps | 3시간 | 70% | 800MB | ⭐⭐ | ⚠️ |
+| Async Processing | 2시간 | 60% | 1.5GB | ⭐⭐⭐ | ✅ |
 | **Partitioning** | **1시간** | **90%** | **2GB** | **⭐⭐⭐** | **🏆** |
 
 ## 🏗️ 1. Multi-threaded Step - 가장 쉬운 병렬화
@@ -440,10 +451,10 @@ graph TB
     end
     
     subgraph SlaveSteps["⚡ Slave Steps (병렬 실행)"]
-        S1[Slave Step 1<br/>250만 건 처리]
-        S2[Slave Step 2<br/>250만 건 처리]
-        S3[Slave Step 3<br/>250만 건 처리]
-        S4[Slave Step 4<br/>250만 건 처리]
+        S1[Slave Step 1: 250만 건 처리]
+        S2[Slave Step 2: 250만 건 처리]
+        S3[Slave Step 3: 250만 건 처리]
+        S4[Slave Step 4: 250만 건 처리]
     end
     
     P1 --> S1
@@ -649,6 +660,7 @@ class PartitionedJobConfig(
 | 순차 처리 | 1 | **10시간 15분** | 273 TPS | 25% | 512MB |
 | Multi-threaded | 4 | **2시간 45분** | 1,010 TPS | 80% | 1GB |
 | Multi-threaded | 8 | **1시간 30분** | 1,850 TPS | 95% | 1.5GB |
+| Async Processing | 10 | **2시간** | 1,390 TPS | 60% | 1.5GB |
 | **Partitioning** | **8** | **🏆 58분** | **🏆 2,870 TPS** | **90%** | **2GB** |
 | Partitioning | 16 | 45분 | 3,700 TPS | 95% | 3GB |
 
@@ -843,6 +855,7 @@ Spring Batch의 병렬 처리 기능으로 **10배 이상의 성능 향상**을 
 2. **방식별 추천 시나리오**
    - **Multi-threaded**: 100만 건 이하, 빠른 적용 원할 때
    - **Parallel Steps**: 독립적인 여러 작업이 있을 때  
+   - **Async Processing**: I/O 집약적 작업, 외부 API 호출이 많을 때
    - **Partitioning**: 500만 건 이상 대용량, 최고 성능 필요할 때
 
 3. **성능 최적화 체크리스트** ✅
