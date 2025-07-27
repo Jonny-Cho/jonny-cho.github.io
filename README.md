@@ -27,10 +27,10 @@
 ## 📝 Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [[Spring Batch 마스터 클래스] Chapter 1: Spring Batch가 뭐고, 왜 필요한가?](https://jonny-cho.github.io/spring/2025-07-27-spring-batch-chapter1-what-is-spring-batch/)
 - [개발자 1명 = AI 에이전트 10명? Conductor.build가 바꾸는 개발 패러다임](https://jonny-cho.github.io/ai/2025-07-19-conductor-build-multiple-ai-agent-collaboration-tool/)
 - [대용량 트래픽 처리를 위한 Spring Boot 성능 최적화: JVM 튜닝부터 아키텍처까지](https://jonny-cho.github.io/spring/2025-07-19-spring-boot-performance-optimization-complete-guide/)
 - [개발자를 위한 macOS 터미널 완벽 세팅 가이드 - 생산성 10배 향상](https://jonny-cho.github.io/productivity/2025-07-19-개발자를-위한-macos-터미널-완벽-세팅-가이드/)
 - [Spring Boot + Kotlin에서 Redis 캐싱 완벽 가이드: 기본 전략부터 커스텀 AOP까지](https://jonny-cho.github.io/database/2025-07-17-redis-caching-strategies/)
-- [Claude Desktop이 아니라 Claude Code를 사용해야 하는 이유](https://jonny-cho.github.io/ai/2025-07-10-claude-desktop이-아니라-claude-code를-사용해야-하는-이유/)
 <!-- BLOG-POST-LIST:END -->
 
