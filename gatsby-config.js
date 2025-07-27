@@ -57,6 +57,26 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-mermaid`,
+            options: {
+              browser: 'chromium',
+              launchOptions: {
+                args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+              },
+              mermaidConfig: {
+                theme: 'neutral',
+                flowchart: {
+                  useMaxWidth: false,
+                },
+                securityLevel: 'loose',
+              },
+              errorFallback: (errors) => {
+                console.error('Mermaid rendering error:', errors);
+                return '<div class="mermaid-error">다이어그램을 렌더링할 수 없습니다.</div>';
+              },
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 720,
@@ -145,7 +165,7 @@ module.exports = {
             query: `
               {
                 allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { frontmatter: { date: DESC } },
                   filter: { frontmatter: { draft: { ne: true } } }
                 ) {
                   nodes {
