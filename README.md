@@ -27,10 +27,10 @@
 ## 📝 Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [[Spring Batch 마스터 클래스] Chapter 5: 실패와 재시작 - 안전한 배치 운영의 핵심](https://jonny-cho.github.io/spring/2025-07-27-spring-batch-chapter5-skip-retry-restart/)
 - [[Spring Batch 마스터 클래스] Chapter 4: 병렬 처리와 파티셔닝으로 성능 극대화하기](https://jonny-cho.github.io/spring/2025-07-27-spring-batch-chapter4-parallel-partitioning/)
 - [[Spring Batch 마스터 클래스] Chapter 3: Chunk 방식으로 대용량 데이터 정복하기](https://jonny-cho.github.io/spring/2025-07-27-spring-batch-chapter3-chunk-processing/)
 - [[Spring Batch 마스터 클래스] Chapter 2: Hello, Spring Batch!](https://jonny-cho.github.io/spring/2025-07-27-spring-batch-chapter2-hello-spring-batch/)
 - [[Spring Batch 마스터 클래스] Chapter 1: Spring Batch가 뭐고, 왜 필요한가?](https://jonny-cho.github.io/spring/2025-07-27-spring-batch-chapter1-what-is-spring-batch/)
-- [개발자 1명 = AI 에이전트 10명? Conductor.build가 바꾸는 개발 패러다임](https://jonny-cho.github.io/ai/2025-07-19-conductor-build-multiple-ai-agent-collaboration-tool/)
 <!-- BLOG-POST-LIST:END -->
 
