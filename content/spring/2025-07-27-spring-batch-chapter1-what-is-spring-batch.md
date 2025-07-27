@@ -143,17 +143,17 @@ Spring Batch의 핵심 구조를 아파트 건설에 비유해볼게요!
 ### 🏢 아파트 건설 프로젝트 = Job
 
 ```mermaid
-graph TD
-    A[아파트 건설 프로젝트<br/>Job] --> B[기초 공사<br/>Step 1]
-    B --> C[골조 공사<br/>Step 2]
-    C --> D[내부 공사<br/>Step 3]
-    D --> E[마감 공사<br/>Step 4]
+graph LR
+    A["아파트 건설 프로젝트 (Job)"]
+    B["기초 공사 (Step 1)"]
+    C["골조 공사 (Step 2)"]
+    D["내부 공사 (Step 3)"]
+    E["마감 공사 (Step 4)"]
     
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#f3e5f5
-    style D fill:#f3e5f5
-    style E fill:#f3e5f5
+    A --> B
+    B --> C
+    C --> D
+    D --> E
 ```
 
 ### 핵심 컴포넌트
@@ -182,15 +182,15 @@ graph TD
 
 ```mermaid
 graph TB
-    subgraph Job ["🏗️ Job (배치 작업)"]
-        subgraph Step1 ["📋 Step 1"]
-            Reader1[ItemReader<br/>데이터 읽기] 
-            Processor1[ItemProcessor<br/>데이터 가공]
-            Writer1[ItemWriter<br/>데이터 저장]
+    subgraph Job ["Job (배치 작업)"]
+        subgraph Step1 ["Step 1"]
+            Reader1[ItemReader 데이터 읽기] 
+            Processor1[ItemProcessor 데이터 가공]
+            Writer1[ItemWriter 데이터 저장]
             Reader1 --> Processor1 --> Writer1
         end
         
-        subgraph Step2 ["📋 Step 2"]
+        subgraph Step2 ["Step 2"]
             Reader2[ItemReader] 
             Processor2[ItemProcessor]
             Writer2[ItemWriter]
@@ -200,18 +200,13 @@ graph TB
         Step1 --> Step2
     end
     
-    subgraph Meta ["📊 메타데이터 관리"]
-        JobRepo[JobRepository<br/>실행 이력 저장]
-        JobLauncher[JobLauncher<br/>Job 실행]
+    subgraph Meta ["메타데이터 관리"]
+        JobLauncher[JobLauncher Job 실행]
+        JobRepo[JobRepository 실행 이력 저장]
     end
     
     JobLauncher --> Job
     Job --> JobRepo
-    
-    style Job fill:#e3f2fd
-    style Step1 fill:#f1f8e9
-    style Step2 fill:#f1f8e9
-    style Meta fill:#fff3e0
 ```
 
 ### 실행 흐름 다이어그램

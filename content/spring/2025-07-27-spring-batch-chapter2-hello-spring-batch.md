@@ -618,17 +618,17 @@ erDiagram
 ```mermaid
 graph LR
     subgraph "☕ 카페 비유"
-        Menu[📋 아메리카노 제조법<br/>Job]
+        Menu[📋 아메리카노 제조법 Job]
         
         subgraph "주문 관리"
-            Order1[🎫 주문 #001<br/>JobInstance<br/>targetDate=2025-07-27]
-            Order2[🎫 주문 #002<br/>JobInstance<br/>targetDate=2025-07-28]
+            Order1[🎫 주문 #001 JobInstance targetDate=2025-07-27]
+            Order2[🎫 주문 #002 JobInstance targetDate=2025-07-28]
         end
         
         subgraph "제조 시도들"
-            Attempt1[❌ 1차 시도<br/>JobExecution #1<br/>FAILED]
-            Attempt2[✅ 2차 시도<br/>JobExecution #2<br/>COMPLETED]
-            Attempt3[✅ 1차 시도<br/>JobExecution #3<br/>COMPLETED]
+            Attempt1[❌ 1차 시도 JobExecution #1 FAILED]
+            Attempt2[✅ 2차 시도 JobExecution #2 COMPLETED]
+            Attempt3[✅ 1차 시도 JobExecution #3 COMPLETED]
         end
         
         Menu --> Order1
