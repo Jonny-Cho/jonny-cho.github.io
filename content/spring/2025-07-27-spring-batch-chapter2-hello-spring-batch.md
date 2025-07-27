@@ -158,7 +158,8 @@ graph TB
         subgraph ValidationStep ["📋 Step 1: 검증"]
             V1[데이터 유효성 검사]
             V2[기존 리포트 확인]
-            V3[ExecutionContext에<br/>데이터 저장]
+            V3["ExecutionContext에
+            데이터 저장"]
             V1 --> V2 --> V3
         end
         
