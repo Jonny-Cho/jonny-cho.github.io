@@ -49,11 +49,24 @@ sales-batch-project/
 
 먼저 주문 관련 엔티티들을 만들어봅시다.
 
+**필요한 Import 문들:**
+```kotlin
+import org.hibernate.annotations.JdbcTypeCode
+import org.hibernate.type.SqlTypes
+import org.slf4j.LoggerFactory
+import java.math.BigDecimal
+import java.time.LocalDate
+import java.time.LocalDateTime
+import javax.persistence.*
+```
+
+> 💡 **주의사항**: JPA Entity에서는 `data class`보다 일반 `class` 사용을 권장합니다. `equals`, `hashCode`, `toString` 등을 Entity 특성에 맞게 커스터마이징해야 하기 때문입니다.
+
 ```kotlin
 // Order.kt - 주문 정보
 @Entity
 @Table(name = "orders")
-data class Order(
+class Order(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
@@ -82,7 +95,7 @@ data class Order(
 // OrderItem.kt - 주문 상품 정보
 @Entity
 @Table(name = "order_items")
-data class OrderItem(
+class OrderItem(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
@@ -102,7 +115,7 @@ data class OrderItem(
 // DailySalesReport.kt - 일별 매출 리포트
 @Entity
 @Table(name = "daily_sales_report")
-data class DailySalesReport(
+class DailySalesReport(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
@@ -114,11 +127,11 @@ data class DailySalesReport(
     val totalOrders: Int,
     val averageOrderValue: BigDecimal,
     
-    @Type(type = "json")
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(columnDefinition = "json")
     val categoryStats: Map<String, BigDecimal>,
     
-    @Type(type = "json")
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(columnDefinition = "json")
     val topProducts: List<ProductStat>,
     
@@ -224,6 +237,10 @@ class ValidationStepConfig(
     private val reportRepository: DailySalesReportRepository
 ) {
     
+    companion object {
+        private val log = LoggerFactory.getLogger(ValidationStepConfig::class.java)
+    }
+    
     @Bean
     fun validationStep(): Step {
         return StepBuilder("validationStep", jobRepository)
@@ -277,6 +294,10 @@ class AggregationStepConfig(
     private val transactionManager: PlatformTransactionManager,
     private val orderRepository: OrderRepository
 ) {
+    
+    companion object {
+        private val log = LoggerFactory.getLogger(AggregationStepConfig::class.java)
+    }
     
     @Bean
     fun aggregationStep(): Step {
@@ -357,6 +378,10 @@ class ReportStepConfig(
     private val reportRepository: DailySalesReportRepository
 ) {
     
+    companion object {
+        private val log = LoggerFactory.getLogger(ReportStepConfig::class.java)
+    }
+    
     @Bean
     fun reportStep(): Step {
         return StepBuilder("reportStep", jobRepository)
@@ -373,13 +398,19 @@ class ReportStepConfig(
             val executionContext = chunkContext.stepContext.stepExecution
                 .jobExecution.executionContext
             
+            // ExecutionContext에서 안전하게 데이터 조회
+            val categoryStats = executionContext.get("categoryStats") as? Map<String, BigDecimal>
+                ?: throw IllegalStateException("categoryStats를 찾을 수 없습니다")
+            val topProducts = executionContext.get("topProducts") as? List<ProductStat>
+                ?: throw IllegalStateException("topProducts를 찾을 수 없습니다")
+            
             val report = DailySalesReport(
                 reportDate = LocalDate.parse(executionContext.getString("processDate")),
                 totalSales = BigDecimal(executionContext.getString("totalSales")),
                 totalOrders = executionContext.getInt("totalOrders"),
                 averageOrderValue = BigDecimal(executionContext.getString("averageOrderValue")),
-                categoryStats = executionContext.get("categoryStats") as Map<String, BigDecimal>,
-                topProducts = executionContext.get("topProducts") as List<ProductStat>
+                categoryStats = categoryStats,
+                topProducts = topProducts
             )
             
             val savedReport = reportRepository.save(report)
@@ -782,6 +813,3 @@ class BatchExecutor(
 Tasklet은 간단한 작업에 적합하지만, 대용량 데이터를 처리할 때는 Chunk 방식이 훨씬 효율적입니다. 어떻게 100만 건의 데이터도 OutOfMemory 없이 처리할 수 있는지 알아보겠습니다! 😊
 
 ---
-
-질문이나 피드백은 댓글로 남겨주세요!
-다음 포스트: [[Spring Batch 마스터 클래스] Chapter 3: 데이터 처리의 핵심 - Chunk 방식](#)
