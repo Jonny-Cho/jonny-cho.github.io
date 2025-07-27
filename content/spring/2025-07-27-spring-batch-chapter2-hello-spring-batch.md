@@ -150,6 +150,52 @@ data class ProductStat(
 
 이제 본격적으로 Spring Batch Job을 만들어봅시다!
 
+### 📊 일일 매출 집계 배치 아키텍처
+
+```mermaid
+graph TB
+    subgraph "🏗️ DailySalesJob"
+        subgraph "Step 1: 검증"
+            V1[데이터 유효성 검사]
+            V2[기존 리포트 확인]
+            V3[ExecutionContext에<br/>데이터 저장]
+            V1 --> V2 --> V3
+        end
+        
+        subgraph "Step 2: 집계"
+            A1[주문 데이터 조회]
+            A2[매출 통계 계산]
+            A3[카테고리별 집계]
+            A4[TOP 10 상품 추출]
+            A1 --> A2 --> A3 --> A4
+        end
+        
+        subgraph "Step 3: 저장"
+            R1[리포트 엔티티 생성]
+            R2[데이터베이스 저장]
+            R1 --> R2
+        end
+        
+        "Step 1: 검증" --> "Step 2: 집계"
+        "Step 2: 집계" --> "Step 3: 저장"
+    end
+    
+    subgraph "📊 데이터 흐름"
+        Orders[(Orders 테이블)] 
+        OrderItems[(OrderItems 테이블)]
+        Reports[(DailySalesReport 테이블)]
+        
+        Orders --> A1
+        OrderItems --> A1
+        R2 --> Reports
+    end
+    
+    style "🏗️ DailySalesJob" fill:#e3f2fd
+    style "Step 1: 검증" fill:#e8f5e8
+    style "Step 2: 집계" fill:#fff3e0
+    style "Step 3: 저장" fill:#fce4ec
+```
+
 ### JobConfiguration 생성
 
 ```kotlin
@@ -524,18 +570,116 @@ class BatchController(
 
 이 개념이 헷갈리시죠? 카페로 비유해드릴게요! ☕
 
+### 메타데이터 관계 다이어그램
+
+```mermaid
+erDiagram
+    JOB ||--o{ JOB_INSTANCE : contains
+    JOB_INSTANCE ||--o{ JOB_EXECUTION : executes
+    JOB_EXECUTION ||--o{ STEP_EXECUTION : contains
+    JOB_EXECUTION ||--o{ JOB_EXECUTION_PARAMS : has
+    
+    JOB {
+        string job_name "dailySalesJob"
+    }
+    
+    JOB_INSTANCE {
+        long job_instance_id PK
+        string job_name
+        string job_key "targetDate=2025-07-27"
+    }
+    
+    JOB_EXECUTION {
+        long job_execution_id PK
+        long job_instance_id FK
+        string status "COMPLETED/FAILED"
+        datetime start_time
+        datetime end_time
+    }
+    
+    STEP_EXECUTION {
+        long step_execution_id PK
+        long job_execution_id FK
+        string step_name "validationStep"
+        string status
+        int read_count
+        int write_count
+    }
+    
+    JOB_EXECUTION_PARAMS {
+        long job_execution_id FK
+        string parameter_name "targetDate"
+        string parameter_value "2025-07-27"
+    }
+```
+
 ### 카페 비유로 이해하기
 
-```kotlin
-// Job = 카페의 메뉴판
-val cafeMenu = "아메리카노 제조법"
+```mermaid
+graph LR
+    subgraph "☕ 카페 비유"
+        Menu[📋 아메리카노 제조법<br/>Job]
+        
+        subgraph "주문 관리"
+            Order1[🎫 주문 #001<br/>JobInstance<br/>targetDate=2025-07-27]
+            Order2[🎫 주문 #002<br/>JobInstance<br/>targetDate=2025-07-28]
+        end
+        
+        subgraph "제조 시도들"
+            Attempt1[❌ 1차 시도<br/>JobExecution #1<br/>FAILED]
+            Attempt2[✅ 2차 시도<br/>JobExecution #2<br/>COMPLETED]
+            Attempt3[✅ 1차 시도<br/>JobExecution #3<br/>COMPLETED]
+        end
+        
+        Menu --> Order1
+        Menu --> Order2
+        Order1 --> Attempt1
+        Order1 --> Attempt2
+        Order2 --> Attempt3
+    end
+    
+    style Menu fill:#e1f5fe
+    style Order1 fill:#f3e5f5
+    style Order2 fill:#f3e5f5
+    style Attempt1 fill:#ffebee
+    style Attempt2 fill:#e8f5e8
+    style Attempt3 fill:#e8f5e8
+```
 
-// JobInstance = 주문 번호
-val orderNumber = "2025-07-27-001호"  // targetDate로 구분
+### 실제 배치 실행 시나리오
 
-// JobExecution = 실제 음료 제조 시도
-val firstAttempt = "첫 번째 시도: 커피머신 고장으로 실패"
-val secondAttempt = "두 번째 시도: 성공!"
+```mermaid
+sequenceDiagram
+    participant API as REST API
+    participant JL as JobLauncher
+    participant JR as JobRepository
+    participant Job as DailySalesJob
+    
+    Note over API,Job: 첫 번째 실행: 2025-07-27 데이터
+    API->>JL: 실행 요청 (targetDate=2025-07-27)
+    JL->>JR: JobInstance 생성/조회
+    JR-->>JL: JobInstance #1 생성
+    JL->>Job: 실행 시작
+    Job-->>JL: 실행 중 오류 발생 ❌
+    JL->>JR: JobExecution #1 FAILED 저장
+    JL-->>API: 실행 실패 응답
+    
+    Note over API,Job: 재실행: 같은 파라미터
+    API->>JL: 재실행 요청 (targetDate=2025-07-27)
+    JL->>JR: 기존 JobInstance #1 조회
+    JL->>Job: 재실행 시작 (실패 지점부터)
+    Job-->>JL: 실행 완료 ✅
+    JL->>JR: JobExecution #2 COMPLETED 저장
+    JL-->>API: 실행 성공 응답
+    
+    Note over API,Job: 새로운 날짜: 2025-07-28 데이터
+    API->>JL: 실행 요청 (targetDate=2025-07-28)
+    JL->>JR: JobInstance 생성
+    JR-->>JL: JobInstance #2 생성 (새로운 파라미터)
+    JL->>Job: 실행 시작
+    Job-->>JL: 실행 완료 ✅
+    JL->>JR: JobExecution #3 COMPLETED 저장
+    JL-->>API: 실행 성공 응답
 ```
 
 ### 실제 코드로 확인하기

@@ -142,12 +142,18 @@ Spring Batch의 핵심 구조를 아파트 건설에 비유해볼게요!
 
 ### 🏢 아파트 건설 프로젝트 = Job
 
-```
-[아파트 건설 프로젝트] = Job
-    ├── [기초 공사] = Step 1
-    ├── [골조 공사] = Step 2  
-    ├── [내부 공사] = Step 3
-    └── [마감 공사] = Step 4
+```mermaid
+graph TD
+    A[아파트 건설 프로젝트<br/>Job] --> B[기초 공사<br/>Step 1]
+    B --> C[골조 공사<br/>Step 2]
+    C --> D[내부 공사<br/>Step 3]
+    D --> E[마감 공사<br/>Step 4]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#f3e5f5
+    style D fill:#f3e5f5
+    style E fill:#f3e5f5
 ```
 
 ### 핵심 컴포넌트
@@ -172,22 +178,71 @@ Spring Batch의 핵심 구조를 아파트 건설에 비유해볼게요!
 - 가공된 데이터를 저장하는 역할
 - 예: 리포트를 파일로 저장
 
+### Spring Batch 핵심 컴포넌트 구조
+
+```mermaid
+graph TB
+    subgraph Job ["🏗️ Job (배치 작업)"]
+        subgraph Step1 ["📋 Step 1"]
+            Reader1[ItemReader<br/>데이터 읽기] 
+            Processor1[ItemProcessor<br/>데이터 가공]
+            Writer1[ItemWriter<br/>데이터 저장]
+            Reader1 --> Processor1 --> Writer1
+        end
+        
+        subgraph Step2 ["📋 Step 2"]
+            Reader2[ItemReader] 
+            Processor2[ItemProcessor]
+            Writer2[ItemWriter]
+            Reader2 --> Processor2 --> Writer2
+        end
+        
+        Step1 --> Step2
+    end
+    
+    subgraph Meta ["📊 메타데이터 관리"]
+        JobRepo[JobRepository<br/>실행 이력 저장]
+        JobLauncher[JobLauncher<br/>Job 실행]
+    end
+    
+    JobLauncher --> Job
+    Job --> JobRepo
+    
+    style Job fill:#e3f2fd
+    style Step1 fill:#f1f8e9
+    style Step2 fill:#f1f8e9
+    style Meta fill:#fff3e0
+```
+
 ### 실행 흐름 다이어그램
 
-```
-[Job 시작]
-    ↓
-[Step 1 시작]
-    ↓
-[ItemReader] → [ItemProcessor] → [ItemWriter]
-(1000건 읽기)   (1000건 가공)     (1000건 저장)
-    ↓
-[다음 1000건 반복...]
-    ↓
-[Step 1 완료]
-    ↓
-[Step 2 시작]
-    ...
+```mermaid
+sequenceDiagram
+    participant JL as JobLauncher
+    participant J as Job
+    participant S as Step
+    participant R as ItemReader
+    participant P as ItemProcessor
+    participant W as ItemWriter
+    participant JR as JobRepository
+    
+    JL->>J: 1. Job 실행 시작
+    J->>JR: 2. JobExecution 생성
+    J->>S: 3. Step 실행
+    
+    loop 청크 단위 처리 (예: 1000건씩)
+        S->>R: 4. 데이터 읽기
+        R-->>S: 데이터 청크 반환
+        S->>P: 5. 데이터 가공
+        P-->>S: 가공된 데이터 반환
+        S->>W: 6. 데이터 저장
+        W-->>S: 저장 완료
+        S->>JR: 7. 진행상황 저장
+    end
+    
+    S-->>J: Step 완료
+    J->>JR: 8. JobExecution 완료 처리
+    J-->>JL: Job 실행 완료
 ```
 
 ## 🛠️ 개발 환경 세팅
