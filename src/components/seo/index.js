@@ -86,6 +86,10 @@ function Seo({ description, title }) {
           name: `google-site-verification`,
           content: ``, // Google Search Console 인증 시 추가 필요
         },
+        {
+          name: `google-adsense-account`,
+          content: `ca-pub-6754483654653335`,
+        },
       ]}
     >
       <script type="application/ld+json">

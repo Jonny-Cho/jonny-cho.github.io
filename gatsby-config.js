@@ -25,7 +25,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://jonny-cho.github.io',
-        sitemap: 'https://jonny-cho.github.io/sitemap-index.xml',
+        sitemap: 'https://jonny-cho.github.io/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
@@ -160,7 +160,14 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        excludes: [`/dev-404-page/`, `/404/`, `/404.html`, `/offline-plugin-app-shell-fallback/`],
+        createLinkInHead: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
