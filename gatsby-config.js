@@ -166,14 +166,6 @@ module.exports = {
         output: `/sitemap.xml`,
         excludes: [`/dev-404-page/`, `/404/`, `/404.html`, `/offline-plugin-app-shell-fallback/`],
         createLinkInHead: true,
-        serialize: ({ site, allSitePage }) =>
-          allSitePage.nodes.map(node => {
-            return {
-              url: `${site.siteMetadata.siteUrl}${node.path}`,
-              changefreq: `daily`,
-              priority: node.path === `/` ? 1.0 : 0.7,
-            }
-          })
       },
     },
     {
