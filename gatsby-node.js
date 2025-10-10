@@ -160,3 +160,17 @@ exports.onCreateWebpackConfig = ({ actions, stage }) => {
     });
   }
 };
+
+exports.onPostBuild = () => {
+  const fs = require('fs');
+  const path = require('path');
+
+  // sitemap-index.xml을 sitemap.xml로 복사
+  const sitemapIndexPath = path.join(__dirname, 'public', 'sitemap-index.xml');
+  const sitemapPath = path.join(__dirname, 'public', 'sitemap.xml');
+
+  if (fs.existsSync(sitemapIndexPath)) {
+    fs.copyFileSync(sitemapIndexPath, sitemapPath);
+    console.log('✅ sitemap-index.xml copied to sitemap.xml');
+  }
+};
