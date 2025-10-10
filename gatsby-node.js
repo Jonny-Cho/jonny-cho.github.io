@@ -165,12 +165,25 @@ exports.onPostBuild = () => {
   const fs = require('fs');
   const path = require('path');
 
-  // sitemap-index.xml을 sitemap.xml로 복사
-  const sitemapIndexPath = path.join(__dirname, 'public', 'sitemap-index.xml');
+  // sitemap-0.xml의 내용을 sitemap.xml로 복사 (실제 URL 목록)
+  const sitemap0Path = path.join(__dirname, 'public', 'sitemap-0.xml');
   const sitemapPath = path.join(__dirname, 'public', 'sitemap.xml');
+  const sitemapIndexPath = path.join(__dirname, 'public', 'sitemap-index.xml');
 
-  if (fs.existsSync(sitemapIndexPath)) {
-    fs.copyFileSync(sitemapIndexPath, sitemapPath);
-    console.log('✅ sitemap-index.xml copied to sitemap.xml');
+  if (fs.existsSync(sitemap0Path)) {
+    // sitemap-0.xml의 내용을 sitemap.xml로 복사
+    fs.copyFileSync(sitemap0Path, sitemapPath);
+    console.log('✅ sitemap-0.xml copied to sitemap.xml');
+
+    // 불필요한 파일들 삭제
+    if (fs.existsSync(sitemap0Path)) {
+      fs.unlinkSync(sitemap0Path);
+      console.log('🗑️ sitemap-0.xml deleted');
+    }
+
+    if (fs.existsSync(sitemapIndexPath)) {
+      fs.unlinkSync(sitemapIndexPath);
+      console.log('🗑️ sitemap-index.xml deleted');
+    }
   }
 };
