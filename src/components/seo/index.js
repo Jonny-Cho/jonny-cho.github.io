@@ -95,6 +95,11 @@ function Seo({ description, title }) {
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
       </script>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6754483654653335"
+        crossOrigin="anonymous"
+      />
     </Helmet>
   );
 }
