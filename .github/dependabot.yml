@@ -1,0 +1,62 @@
+version: 2
+updates:
+  # npm 패키지 업데이트
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Seoul"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "Jonny-Cho"
+    assignees:
+      - "Jonny-Cho"
+    labels:
+      - "dependencies"
+      - "npm"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    # 보안 업데이트는 즉시 처리
+    versioning-strategy: increase
+    # 그룹화 설정 (관련 패키지 함께 업데이트)
+    groups:
+      gatsby:
+        patterns:
+          - "gatsby*"
+        update-types:
+          - "minor"
+          - "patch"
+      react:
+        patterns:
+          - "react*"
+        update-types:
+          - "minor"
+          - "patch"
+      dev-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # GitHub Actions 워크플로우 업데이트
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Seoul"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "Jonny-Cho"
+    assignees:
+      - "Jonny-Cho"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
