@@ -4,11 +4,10 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: "daily"
       time: "09:00"
       timezone: "Asia/Seoul"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 3
     reviewers:
       - "Jonny-Cho"
     assignees:
@@ -19,23 +18,15 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
-    # 보안 업데이트는 즉시 처리
     versioning-strategy: increase
-    # 그룹화 설정 (관련 패키지 함께 업데이트)
+    # 그룹화 설정 (패치/마이너 업데이트는 함께 처리)
     groups:
-      gatsby:
-        patterns:
-          - "gatsby*"
+      production-dependencies:
+        dependency-type: "production"
         update-types:
           - "minor"
           - "patch"
-      react:
-        patterns:
-          - "react*"
-        update-types:
-          - "minor"
-          - "patch"
-      dev-dependencies:
+      development-dependencies:
         dependency-type: "development"
         update-types:
           - "minor"
@@ -49,7 +40,7 @@ updates:
       day: "monday"
       time: "09:00"
       timezone: "Asia/Seoul"
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 2
     reviewers:
       - "Jonny-Cho"
     assignees:
@@ -60,3 +51,10 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
