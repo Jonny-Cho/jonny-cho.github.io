@@ -1,3 +1,0 @@
-# ads.txt for jonny-cho.github.io
-# Google AdSense
-google.com, pub-6754483654653335, DIRECT, f08c47fec0942fa0
